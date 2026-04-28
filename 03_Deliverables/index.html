@@ -355,10 +355,12 @@
             max-width: 130px;
             object-fit: contain;
             filter: grayscale(1);
-            opacity: 0.6;
+            opacity: 0.85;
             transition: opacity 0.25s, filter 0.25s;
         }
         .partner:hover img { opacity: 1; filter: none; }
+        .partner-invert img { filter: invert(1) grayscale(1); opacity: 0.7; }
+        .partner-invert:hover img { filter: invert(1); opacity: 1; }
 
         .partner-label {
             font-size: 0.78rem;
@@ -556,7 +558,7 @@
     <canvas id="heroCanvas"></canvas>
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
-    <p class="hero-tag">FN Olomouc — Innovation Platform</p>
+    <p class="hero-tag">FN Olomouc — Innovation Platform and HUB (in preparation)</p>
     <h1 class="hero-title">
         <span class="ac">Tafelberg</span><br>Ventures
     </h1>
@@ -653,6 +655,9 @@
                 </div>
             </div>
         </div>
+        <p style="margin-top:2rem;font-size:0.85rem;color:var(--muted);line-height:1.7;max-width:660px;">
+            Beyond the acronym, Tafelberg Ventures is equally focused on <strong style="color:var(--text);font-weight:600;">Medicine</strong>, <strong style="color:var(--text);font-weight:600;">Prevention</strong>, and <strong style="color:var(--text);font-weight:600;">Startups</strong> — integrating clinical practice, proactive health innovation, and entrepreneurial venture-building into one cohesive platform.
+        </p>
     </div>
 </div>
 
@@ -716,23 +721,23 @@
     <p class="section-lead">Building the future of healthcare innovation together with world-class institutions, investors, and industry leaders.</p>
     <div class="partners-grid">
         <a class="partner" href="https://www.dendiscapital.com/" target="_blank" rel="noopener">
-            <img src="https://logo.clearbit.com/dendiscapital.com" alt="Dendis Capital" onerror="this.style.display='none'">
+            <img src="https://www.dendiscapital.com/wp-content/uploads/2023/11/Group-4140.svg" alt="Dendis Capital" onerror="this.style.display='none'">
             <span class="partner-label">Dendis Capital</span>
         </a>
         <a class="partner" href="https://www.siemens-healthineers.com/" target="_blank" rel="noopener">
-            <img src="https://logo.clearbit.com/siemens-healthineers.com" alt="Siemens Healthineers" onerror="this.style.display='none'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Siemens_Healthineers_logo.svg/250px-Siemens_Healthineers_logo.svg.png" alt="Siemens Healthineers" onerror="this.style.display='none'">
             <span class="partner-label">Siemens Healthineers</span>
         </a>
-        <a class="partner" href="https://www.elyxeer.com/" target="_blank" rel="noopener">
-            <img src="https://logo.clearbit.com/elyxeer.com" alt="Elyxeer" onerror="this.style.display='none'">
-            <span class="partner-label">Elyxeer</span>
+        <a class="partner partner-invert" href="https://genespector.com/" target="_blank" rel="noopener">
+            <img src="https://genespector.com/img/gs-logo.svg" alt="Genespector" onerror="this.style.display='none'">
+            <span class="partner-label">Genespector</span>
         </a>
         <a class="partner" href="https://www.ministrzdravi.cz/" target="_blank" rel="noopener">
-            <img src="https://logo.clearbit.com/mzcr.cz" alt="Ministry of Health" onerror="this.style.display='none'">
+            <img src="https://www.ministrzdravi.cz/app/themes/ipress/build/images/logo.svg" alt="Ministry of Health" onerror="this.style.display='none'">
             <span class="partner-label">Ministry of Health CR</span>
         </a>
         <a class="partner" href="https://www.phf.cz/" target="_blank" rel="noopener">
-            <img src="https://logo.clearbit.com/phf.cz" alt="PHF" onerror="this.style.display='none'">
+            <img src="https://www.phf.cz/frontend/img/phf-logo.png" alt="PHF" onerror="this.style.display='none'">
             <span class="partner-label">PHF</span>
         </a>
     </div>
