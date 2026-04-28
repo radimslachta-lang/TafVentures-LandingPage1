@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tafelberg Ventures | Health Innovation & Venture Building Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:        #f0f4f9;
+            --bg-card:   #ffffff;
+            --bg-glass:  rgba(240, 244, 249, 0.93);
+            --accent:    #1d63d0;
+            --accent2:   #6366f1;
+            --text:      #111827;
+            --muted:     #64748b;
+            --border:    rgba(0,0,0,0.09);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 100;
+            padding: 1.25rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s;
+        }
+
+        .nav-logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.04em;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.4rem;
+            border-radius: 3px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg);
+        }
+        .btn-primary:hover {
+            background: #0a3fa0;
+            box-shadow: 0 4px 20px rgba(29,99,208,0.35);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid rgba(29,99,208,0.35);
+        }
+        .btn-ghost:hover {
+            background: rgba(29,99,208,0.07);
+            border-color: var(--accent);
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 7rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(29,99,208,0.08) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-glow2 {
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 1.75rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.3s;
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 9vw, 7.5rem);
+            font-weight: 700;
+            line-height: 1.0;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.5s;
+        }
+        .hero-title .ac { color: var(--accent); }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--muted);
+            max-width: 540px;
+            margin-bottom: 2.75rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.7s;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.9s;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--muted);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 1.6s;
+        }
+
+        .scroll-bar {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* ─── SECTION COMMONS ─── */
+        .section {
+            padding: 6rem 2.5rem;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 0.9rem;
+        }
+
+        .section-h {
+            font-size: clamp(1.8rem, 4vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+            line-height: 1.15;
+        }
+
+        .section-lead {
+            color: var(--muted);
+            font-size: 1rem;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        /* ─── ACRONYM ─── */
+        .acronym-wrap {
+            background:
+                linear-gradient(180deg, transparent, rgba(29,99,208,0.05) 50%, transparent),
+                radial-gradient(circle, rgba(29,99,208,0.14) 1.5px, transparent 1.5px);
+            background-size: auto, 30px 30px;
+            padding: 6rem 0;
+        }
+
+        .acronym-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        .acronym-table {
+            margin-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .a-row {
+            display: grid;
+            grid-template-columns: 72px 1fr;
+            gap: 2rem;
+            align-items: start;
+            padding: 1.4rem 0;
+            border-bottom: 1px solid var(--border);
+            opacity: 0;
+            transform: translateX(-24px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+        .a-row.vis { opacity: 1; transform: none; }
+
+        .a-letter {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            text-shadow: none;
+        }
+
+        .a-word {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .a-desc {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        /* ─── MISSION CARDS ─── */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 2rem 1.75rem;
+            transition: border-color 0.3s, transform 0.25s;
+        }
+        .card:hover { border-color: rgba(29,99,208,0.4); transform: translateY(-4px); }
+
+        .card-icon {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(29,99,208,0.3);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.65rem;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+
+        /* ─── PARTNERS ─── */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+
+        .partner {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.75rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            transition: border-color 0.3s, transform 0.25s;
+        }
+        .partner:hover { border-color: rgba(29,99,208,0.4); transform: translateY(-4px); }
+
+        .partner img {
+            height: 38px;
+            max-width: 130px;
+            object-fit: contain;
+            filter: grayscale(1);
+            opacity: 0.6;
+            transition: opacity 0.25s, filter 0.25s;
+        }
+        .partner:hover img { opacity: 1; filter: none; }
+
+        .partner-label {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        /* ─── CONTACT ─── */
+        .contact-wrap {
+            max-width: 700px;
+        }
+
+        .form {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .row2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .fg {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        label {
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        input, select, textarea {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237d8590' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.85rem center;
+            padding-right: 2.5rem;
+        }
+        select option { background: #ffffff; color: #111827; }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(29,99,208,0.12);
+        }
+
+        textarea { resize: vertical; min-height: 110px; }
+
+        .form-foot { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+
+        .form-note { font-size: 0.75rem; color: var(--muted); }
+
+        .success {
+            display: none;
+            padding: 1rem 1.25rem;
+            background: rgba(29,99,208,0.07);
+            border: 1px solid rgba(29,99,208,0.25);
+            border-radius: 4px;
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.25rem 2.5rem;
+        }
+
+        .foot-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .foot-logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .foot-copy {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.25; }
+            50%       { opacity: 1; }
+        }
+
+        /* ─── CANVAS ─── */
+        #heroCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ─── ECG DIVIDER ─── */
+        .ecg-wrap { width: 100%; overflow: hidden; line-height: 0; }
+        .ecg-line {
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 1.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .ecg-anim {
+            stroke-dasharray: 2200;
+            stroke-dashoffset: 2200;
+            animation: ecgReveal 3s cubic-bezier(0.4,0,0.2,1) forwards 0.3s;
+        }
+        @keyframes ecgReveal { to { stroke-dashoffset: 0; } }
+
+        /* ─── CELL / MOLECULE DECORATION ─── */
+        .platform-section { position: relative; overflow: hidden; }
+        .cell-deco {
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 360px;
+            height: 360px;
+            pointer-events: none;
+            opacity: 0.18;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
+            .row2 { grid-template-columns: 1fr; }
+            .foot-inner { flex-direction: column; text-align: center; }
+            .a-letter { font-size: 1.9rem; }
+            .a-word { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+    <a href="#" class="nav-logo">Tafelberg Ventures</a>
+    <ul class="nav-links">
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <p class="hero-tag">FN Olomouc — Innovation Platform</p>
+    <h1 class="hero-title">
+        <span class="ac">Tafelberg</span><br>Ventures
+    </h1>
+    <p class="hero-sub">Health Innovation and Venture Building Platform — connecting medical research, biomedical excellence, and entrepreneurial capital.</p>
+    <div class="hero-cta">
+        <a href="#platform" class="btn btn-primary">Explore Platform</a>
+        <a href="#contact" class="btn btn-ghost">Partner With Us</a>
+    </div>
+    <div class="scroll-hint">
+        <div class="scroll-bar"></div>
+        <span>Scroll</span>
+    </div>
+</div>
+
+<!-- ECG heartbeat divider -->
+<div class="ecg-wrap">
+    <svg viewBox="0 0 1200 50" preserveAspectRatio="none" style="width:100%;height:50px;display:block;opacity:.4">
+        <path class="ecg-line ecg-anim" d="M0,25 L75,25 L93,22 L102,25 L110,3 L117,47 L124,14 L133,25
+            L210,25 L300,25 L318,22 L327,25 L335,3 L342,47 L349,14 L358,25
+            L435,25 L525,25 L543,22 L552,25 L560,3 L567,47 L574,14 L583,25
+            L660,25 L750,25 L768,22 L777,25 L785,3 L792,47 L799,14 L808,25
+            L885,25 L975,25 L993,22 L1002,25 L1010,3 L1017,47 L1024,14 L1033,25
+            L1110,25 L1200,25"/>
+    </svg>
+</div>
+
+<!-- ═══ TAFELBERG ACRONYM ═══ -->
+<div class="acronym-wrap" id="vision">
+    <div class="acronym-inner">
+        <p class="label">Our Identity</p>
+        <h2 class="section-h">What TAFELBERG Stands For</h2>
+        <div class="acronym-table" id="acronymTable">
+            <div class="a-row">
+                <div class="a-letter">T</div>
+                <div>
+                    <div class="a-word">Technology</div>
+                    <div class="a-desc">Driving innovation through cutting-edge MedTech solutions and digital health infrastructure built for real clinical environments.</div>
+                </div>
+            </div>
+            <div class="a-row">
+                <div class="a-letter">A</div>
+                <div>
+                    <div class="a-word">Artificial Intelligence</div>
+                    <div class="a-desc">Harnessing AI to transform healthcare data into actionable clinical and commercial insights that accelerate diagnosis, treatment, and research.</div>
+                </div>
+            </div>
+            <div class="a-row">
+                <div class="a-letter">F</div>
+                <div>
+                    <div class="a-word">Future Health</div>
+                    <div class="a-desc">Building the healthcare ecosystem of tomorrow — proactive, personalized, predictive, and grounded in the realities of modern medicine.</div>
+                </div>
+            </div>
+            <div class="a-row">
+                <div class="a-letter">E</div>
+                <div>
+                    <div class="a-word">Entrepreneurship</div>
+                    <div class="a-desc">Empowering founders and innovators with hospital-grade validation, clinical access, and venture support to bring ideas to market.</div>
+                </div>
+            </div>
+            <div class="a-row">
+                <div class="a-letter">L</div>
+                <div>
+                    <div class="a-word">Longevity</div>
+                    <div class="a-desc">Advancing science and business at the frontier of healthy aging, precision medicine, and evidence-backed longevity interventions.</div>
+                </div>
+            </div>
+            <div class="a-row">
+                <div class="a-letter">B</div>
+                <div>
+                    <div class="a-word">Biomedical</div>
+                    <div class="a-desc">Grounded in world-class biomedical research and clinical expertise at one of the Czech Republic's top teaching hospitals.</div>
+                </div>
+            </div>
+            <div class="a-row">
+                <div class="a-letter">E</div>
+                <div>
+                    <div class="a-word">Evidence-based</div>
+                    <div class="a-desc">Every innovation validated against rigorous clinical evidence and real-world outcomes — not just theory or prototype-stage assumptions.</div>
+                </div>
+            </div>
+            <div class="a-row">
+                <div class="a-letter">R</div>
+                <div>
+                    <div class="a-word">Research</div>
+                    <div class="a-desc">Deep integration with academic and applied research programs to accelerate translational medicine and bring discoveries to patients faster.</div>
+                </div>
+            </div>
+            <div class="a-row">
+                <div class="a-letter">G</div>
+                <div>
+                    <div class="a-word">Growth</div>
+                    <div class="a-desc">Scaling healthcare ventures from concept to commercialization with strategic capital connections, partnership networks, and venture-building expertise.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ PLATFORM / MISSION ═══ -->
+<section class="section platform-section" id="platform">
+    <svg class="cell-deco" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- outer membrane -->
+        <circle cx="200" cy="200" r="185" stroke="#1d63d0" stroke-width="1"/>
+        <!-- dashed ring -->
+        <circle cx="200" cy="200" r="135" stroke="#1d63d0" stroke-width="0.8" stroke-dasharray="5 7"/>
+        <!-- inner ring -->
+        <circle cx="200" cy="200" r="78" stroke="#1d63d0" stroke-width="1"/>
+        <!-- nucleus -->
+        <circle cx="200" cy="200" r="28" stroke="#1d63d0" stroke-width="1.4"/>
+        <!-- organelle nodes -->
+        <circle cx="200" cy="42"  r="7"  fill="#1d63d0"/>
+        <circle cx="330" cy="118" r="5.5" fill="#1d63d0"/>
+        <circle cx="348" cy="272" r="7.5" fill="#1d63d0"/>
+        <circle cx="200" cy="358" r="6"  fill="#1d63d0"/>
+        <circle cx="52"  cy="272" r="7"  fill="#1d63d0"/>
+        <circle cx="70"  cy="118" r="5.5" fill="#1d63d0"/>
+        <!-- spokes to inner ring -->
+        <line x1="200" y1="42"  x2="200" y2="122" stroke="#1d63d0" stroke-width="0.65"/>
+        <line x1="330" y1="118" x2="264" y2="152" stroke="#1d63d0" stroke-width="0.65"/>
+        <line x1="348" y1="272" x2="272" y2="248" stroke="#1d63d0" stroke-width="0.65"/>
+        <line x1="200" y1="358" x2="200" y2="278" stroke="#1d63d0" stroke-width="0.65"/>
+        <line x1="52"  y1="272" x2="128" y2="248" stroke="#1d63d0" stroke-width="0.65"/>
+        <line x1="70"  y1="118" x2="136" y2="152" stroke="#1d63d0" stroke-width="0.65"/>
+    </svg>
+    <p class="label">The Platform</p>
+    <h2 class="section-h">Where Medicine Meets<br>Venture Capital</h2>
+    <p class="section-lead">Tafelberg Ventures is the innovation and commercialization arm of Fakultní nemocnice Olomouc — one of the Czech Republic's leading teaching hospitals. We bridge the gap between world-class biomedical research and scalable healthcare businesses.</p>
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">◈</div>
+            <h3>For Startups &amp; Innovators</h3>
+            <p>Access clinical environments, anonymized patient data, medical expertise, and a validation pathway that investors trust. Turn your MedTech concept into a fundable, deployable solution.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">◈</div>
+            <h3>For Investors &amp; Funds</h3>
+            <p>Access a curated pipeline of hospital-validated health innovations. Benefit from early co-investment opportunities in de-risked, evidence-backed MedTech and digital health ventures.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">◈</div>
+            <h3>For Researchers</h3>
+            <p>Transform discoveries into real-world impact. We provide a structured commercialization pathway, industry partnerships, and capital connections to bring research to market.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">◈</div>
+            <h3>For Healthcare Business</h3>
+            <p>Co-create solutions directly within a leading clinical institution. Validate technologies, run pilots, and develop strategic partnerships with Central Europe's top medical center.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PARTNERS ═══ -->
+<section class="section" id="partners">
+    <p class="label">Ecosystem</p>
+    <h2 class="section-h">Our Partners</h2>
+    <p class="section-lead">Building the future of healthcare innovation together with world-class institutions, investors, and industry leaders.</p>
+    <div class="partners-grid">
+        <a class="partner" href="https://www.dendiscapital.com/" target="_blank" rel="noopener">
+            <img src="https://logo.clearbit.com/dendiscapital.com" alt="Dendis Capital" onerror="this.style.display='none'">
+            <span class="partner-label">Dendis Capital</span>
+        </a>
+        <a class="partner" href="https://www.siemens-healthineers.com/" target="_blank" rel="noopener">
+            <img src="https://logo.clearbit.com/siemens-healthineers.com" alt="Siemens Healthineers" onerror="this.style.display='none'">
+            <span class="partner-label">Siemens Healthineers</span>
+        </a>
+        <a class="partner" href="https://www.elyxeer.com/" target="_blank" rel="noopener">
+            <img src="https://logo.clearbit.com/elyxeer.com" alt="Elyxeer" onerror="this.style.display='none'">
+            <span class="partner-label">Elyxeer</span>
+        </a>
+        <a class="partner" href="https://www.ministrzdravi.cz/" target="_blank" rel="noopener">
+            <img src="https://logo.clearbit.com/mzcr.cz" alt="Ministry of Health" onerror="this.style.display='none'">
+            <span class="partner-label">Ministry of Health CR</span>
+        </a>
+        <a class="partner" href="https://www.phf.cz/" target="_blank" rel="noopener">
+            <img src="https://logo.clearbit.com/phf.cz" alt="PHF" onerror="this.style.display='none'">
+            <span class="partner-label">PHF</span>
+        </a>
+    </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section contact-wrap" id="contact">
+    <p class="label">Get Involved</p>
+    <h2 class="section-h">Start a Conversation</h2>
+    <p class="section-lead">Whether you're a startup, investor, researcher, or healthcare organization — we want to hear from you.</p>
+
+    <div class="success" id="successMsg">
+        Thank you. We'll be in touch within 2 business days.
+    </div>
+
+    <form class="form" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="row2">
+            <div class="fg">
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" name="name" placeholder="Jane Smith" required>
+            </div>
+            <div class="fg">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+            </div>
+        </div>
+        <div class="fg">
+            <label for="interest">Area of Interest</label>
+            <select id="interest" name="interest" required>
+                <option value="" disabled selected>Select your role or interest</option>
+                <option value="startup">Startup / Innovator seeking validation</option>
+                <option value="investor">Investor / Venture Fund</option>
+                <option value="researcher">Researcher / Academic Institution</option>
+                <option value="healthcarebiz">Healthcare Business / Industry</option>
+                <option value="media">Media / Press</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="fg">
+            <label for="msg">Message <span style="opacity:.5;font-weight:400">(optional)</span></label>
+            <textarea id="msg" name="message" placeholder="Tell us briefly about your project or question..."></textarea>
+        </div>
+        <div class="form-foot">
+            <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+            <span class="form-note">We typically respond within 2 business days.</span>
+        </div>
+    </form>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <div class="foot-inner">
+        <span class="foot-logo">Tafelberg Ventures</span>
+        <span class="foot-copy">An innovation platform of Fakultní nemocnice Olomouc</span>
+        <span class="foot-copy">© 2026 Tafelberg Ventures. All rights reserved.</span>
+    </div>
+</footer>
+
+<script>
+    // ── Acronym scroll reveal ──
+    const rows = document.querySelectorAll('.a-row');
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const idx = Array.from(rows).indexOf(entry.target);
+            setTimeout(() => entry.target.classList.add('vis'), idx * 90);
+            io.unobserve(entry.target);
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    rows.forEach(r => io.observe(r));
+
+    // ── Nav opacity on scroll ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        nav.style.background = window.scrollY > 60
+            ? 'rgba(240,244,249,0.98)'
+            : 'rgba(240,244,249,0.93)';
+    }, { passive: true });
+
+    // ── Molecular particle network (hero canvas) ──
+    (function () {
+        const canvas = document.getElementById('heroCanvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H, pts;
+        const N = 44, LINK = 155;
+
+        function resize() {
+            W = canvas.width  = canvas.offsetWidth;
+            H = canvas.height = canvas.offsetHeight;
+        }
+
+        function mk() {
+            return {
+                x:  Math.random() * W,
+                y:  Math.random() * H,
+                vx: (Math.random() - 0.5) * 0.22,
+                vy: (Math.random() - 0.5) * 0.22,
+                r:  Math.random() * 2 + 1
+            };
+        }
+
+        function tick() {
+            ctx.clearRect(0, 0, W, H);
+            for (let i = 0; i < N; i++) {
+                for (let j = i + 1; j < N; j++) {
+                    const dx = pts[i].x - pts[j].x;
+                    const dy = pts[i].y - pts[j].y;
+                    const d  = Math.hypot(dx, dy);
+                    if (d < LINK) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(29,99,208,${0.22 * (1 - d / LINK)})`;
+                        ctx.lineWidth = 0.9;
+                        ctx.moveTo(pts[i].x, pts[i].y);
+                        ctx.lineTo(pts[j].x, pts[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            pts.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(29,99,208,0.6)';
+                ctx.fill();
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < 0 || p.x > W) p.vx *= -1;
+                if (p.y < 0 || p.y > H) p.vy *= -1;
+            });
+            requestAnimationFrame(tick);
+        }
+
+        window.addEventListener('resize', () => {
+            resize();
+            pts.forEach(p => { p.x = Math.min(p.x, W); p.y = Math.min(p.y, H); });
+        }, { passive: true });
+
+        requestAnimationFrame(() => {
+            resize();
+            pts = Array.from({ length: N }, mk);
+            tick();
+        });
+    })();
+
+    // ── Contact form ──
+    function handleSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        // Replace timeout with real fetch() to your backend/form service
+        setTimeout(() => {
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        }, 750);
+    }
+</script>
+</body>
+</html>
