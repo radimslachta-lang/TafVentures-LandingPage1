@@ -245,45 +245,97 @@
             max-width: 1140px;
             margin: 0 auto;
             padding: 0 2.5rem;
+            text-align: center;
         }
 
-        .acronym-table {
-            margin-top: 3rem;
-            border-top: 1px solid var(--border);
+        /* ─── HONEYCOMB ─── */
+        .hive {
+            width: 632px; /* 5×120 + 4×8 */
+            margin: 2.5rem auto 0;
         }
+        .hive-row { display: flex; gap: 8px; }
+        .hive-row + .hive-row { margin-top: -27px; margin-left: 64px; }
 
-        .a-row {
-            display: grid;
-            grid-template-columns: 72px 1fr;
-            gap: 2rem;
-            align-items: start;
-            padding: 1.4rem 0;
-            border-bottom: 1px solid var(--border);
-            opacity: 0;
-            transform: translateX(-24px);
-            transition: opacity 0.55s ease, transform 0.55s ease;
+        .hex-btn {
+            width: 120px;
+            height: 138px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: var(--bg-card);
+            border: none;
+            appearance: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 0 12px;
+            transition: background 0.18s;
+            outline: none;
         }
-        .a-row.vis { opacity: 1; transform: none; }
+        .hex-btn:hover, .hex-btn.active { background: var(--accent); }
 
-        .a-letter {
+        .hex-l {
             font-family: 'Space Mono', monospace;
-            font-size: 2.6rem;
+            font-size: 2.4rem;
             font-weight: 700;
             color: var(--accent);
             line-height: 1;
-            text-shadow: none;
+            transition: color 0.18s;
         }
+        .hex-btn:hover .hex-l, .hex-btn.active .hex-l { color: #fff; }
 
-        .a-word {
-            font-size: 1.15rem;
+        .hex-w {
+            font-size: 0.62rem;
             font-weight: 600;
-            margin-bottom: 0.3rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: center;
+            line-height: 1.3;
+            transition: color 0.18s;
+        }
+        .hex-btn:hover .hex-w, .hex-btn.active .hex-w { color: rgba(255,255,255,0.8); }
+
+        .hex-panel {
+            max-width: 580px;
+            margin: 2rem auto 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.5rem 1.75rem;
+            display: none;
+            text-align: left;
+        }
+        .hex-panel.open {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            animation: panelIn 0.22s ease;
+        }
+        @keyframes panelIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: none; }
         }
 
-        .a-desc {
+        .hp-letter {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        .hp-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .hp-desc {
             font-size: 0.85rem;
             color: var(--muted);
-            line-height: 1.65;
+            line-height: 1.7;
         }
 
         /* ─── MISSION CARDS ─── */
@@ -326,6 +378,20 @@
             color: var(--muted);
             font-size: 0.875rem;
             line-height: 1.7;
+        }
+
+        /* ─── CENTERED SECTION HEADINGS (showcase sections) ─── */
+        #ecosystem > .label,
+        #ecosystem > .section-h,
+        #partners  > .label,
+        #partners  > .section-h {
+            text-align: center;
+        }
+        #ecosystem > .section-lead,
+        #partners  > .section-lead {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* ─── PARTNERS ─── */
@@ -548,6 +614,15 @@
             pointer-events: none;
         }
 
+        .eco-svg-overlay {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+        }
+
         .eco-hex {
             position: absolute;
             left: 340px; top: 158px;
@@ -662,6 +737,19 @@
         .eco-cap .eco-box-cat { color: #d97706; }
         .eco-com .eco-box-cat { color: #7c3aed; }
 
+        /* ─── FLOW ARROWS ─── */
+        @keyframes flowDash {
+            to { stroke-dashoffset: -9; }
+        }
+        .flow-svc {
+            stroke-dasharray: 5 4;
+            animation: flowDash 0.9s linear infinite;
+        }
+        .flow-sel {
+            stroke-dasharray: 5 4;
+            animation: flowDash 1.3s linear infinite;
+        }
+
         .eco-side-box {
             position: absolute;
             width: 150px;
@@ -737,144 +825,74 @@
     <div class="acronym-inner">
         <p class="label">Our Identity</p>
         <h2 class="section-h">What TAFELBERG Stands For</h2>
-        <div class="acronym-table" id="acronymTable">
-            <div class="a-row">
-                <div class="a-letter">T</div>
-                <div>
-                    <div class="a-word">Technology</div>
-                    <div class="a-desc">Driving innovation through cutting-edge MedTech solutions and digital health infrastructure built for real clinical environments.</div>
-                </div>
+        <div class="hive">
+            <div class="hive-row">
+                <button class="hex-btn" data-key="T" data-letter="T">
+                    <span class="hex-l">T</span>
+                    <span class="hex-w">Technology</span>
+                </button>
+                <button class="hex-btn" data-key="A" data-letter="A">
+                    <span class="hex-l">A</span>
+                    <span class="hex-w">Artificial Intelligence</span>
+                </button>
+                <button class="hex-btn" data-key="F" data-letter="F">
+                    <span class="hex-l">F</span>
+                    <span class="hex-w">Future Health</span>
+                </button>
+                <button class="hex-btn" data-key="E1" data-letter="E">
+                    <span class="hex-l">E</span>
+                    <span class="hex-w">Entrepreneurship</span>
+                </button>
+                <button class="hex-btn" data-key="L" data-letter="L">
+                    <span class="hex-l">L</span>
+                    <span class="hex-w">Longevity</span>
+                </button>
             </div>
-            <div class="a-row">
-                <div class="a-letter">A</div>
-                <div>
-                    <div class="a-word">Artificial Intelligence</div>
-                    <div class="a-desc">Harnessing AI to transform healthcare data into actionable clinical and commercial insights that accelerate diagnosis, treatment, and research.</div>
-                </div>
-            </div>
-            <div class="a-row">
-                <div class="a-letter">F</div>
-                <div>
-                    <div class="a-word">Future Health</div>
-                    <div class="a-desc">Building the healthcare ecosystem of tomorrow — proactive, personalized, predictive, and grounded in the realities of modern medicine.</div>
-                </div>
-            </div>
-            <div class="a-row">
-                <div class="a-letter">E</div>
-                <div>
-                    <div class="a-word">Entrepreneurship</div>
-                    <div class="a-desc">Empowering founders and innovators with hospital-grade validation, clinical access, and venture support to bring ideas to market.</div>
-                </div>
-            </div>
-            <div class="a-row">
-                <div class="a-letter">L</div>
-                <div>
-                    <div class="a-word">Longevity</div>
-                    <div class="a-desc">Advancing science and business at the frontier of healthy aging, precision medicine, and evidence-backed longevity interventions.</div>
-                </div>
-            </div>
-            <div class="a-row">
-                <div class="a-letter">B</div>
-                <div>
-                    <div class="a-word">Biomedical</div>
-                    <div class="a-desc">Grounded in world-class biomedical research and clinical expertise at one of the Czech Republic's top teaching hospitals.</div>
-                </div>
-            </div>
-            <div class="a-row">
-                <div class="a-letter">E</div>
-                <div>
-                    <div class="a-word">Evidence-based</div>
-                    <div class="a-desc">Every innovation validated against rigorous clinical evidence and real-world outcomes — not just theory or prototype-stage assumptions.</div>
-                </div>
-            </div>
-            <div class="a-row">
-                <div class="a-letter">R</div>
-                <div>
-                    <div class="a-word">Research</div>
-                    <div class="a-desc">Deep integration with academic and applied research programs to accelerate translational medicine and bring discoveries to patients faster.</div>
-                </div>
-            </div>
-            <div class="a-row">
-                <div class="a-letter">G</div>
-                <div>
-                    <div class="a-word">Growth</div>
-                    <div class="a-desc">Scaling healthcare ventures from concept to commercialization with strategic capital connections, partnership networks, and venture-building expertise.</div>
-                </div>
+            <div class="hive-row">
+                <button class="hex-btn" data-key="B" data-letter="B">
+                    <span class="hex-l">B</span>
+                    <span class="hex-w">Biomedical</span>
+                </button>
+                <button class="hex-btn" data-key="E2" data-letter="E">
+                    <span class="hex-l">E</span>
+                    <span class="hex-w">Evidence-based</span>
+                </button>
+                <button class="hex-btn" data-key="R" data-letter="R">
+                    <span class="hex-l">R</span>
+                    <span class="hex-w">Research</span>
+                </button>
+                <button class="hex-btn" data-key="G" data-letter="G">
+                    <span class="hex-l">G</span>
+                    <span class="hex-w">Growth</span>
+                </button>
             </div>
         </div>
-        <p style="margin-top:2rem;font-size:0.85rem;color:var(--muted);line-height:1.7;max-width:660px;">
+
+        <div class="hex-panel" id="hexPanel">
+            <span class="hp-letter" id="hpLetter"></span>
+            <div>
+                <div class="hp-title" id="hpTitle"></div>
+                <div class="hp-desc"  id="hpDesc"></div>
+            </div>
+        </div>
+        <p style="margin-top:2rem;font-size:0.85rem;color:var(--muted);line-height:1.7;max-width:660px;margin-left:auto;margin-right:auto;">
             Beyond the acronym, Tafelberg Ventures is equally focused on <strong style="color:var(--text);font-weight:600;">Medicine</strong>, <strong style="color:var(--text);font-weight:600;">Prevention</strong>, and <strong style="color:var(--text);font-weight:600;">Startups</strong> — integrating clinical practice, proactive health innovation, and entrepreneurial venture-building into one cohesive ecosystem.
         </p>
     </div>
 </div>
 
-<!-- ═══ PLATFORM / MISSION ═══ -->
-<section class="section ecosystem-section" id="ecosystem">
-    <svg class="cell-deco" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- outer membrane -->
-        <circle cx="200" cy="200" r="185" stroke="#1d63d0" stroke-width="1"/>
-        <!-- dashed ring -->
-        <circle cx="200" cy="200" r="135" stroke="#1d63d0" stroke-width="0.8" stroke-dasharray="5 7"/>
-        <!-- inner ring -->
-        <circle cx="200" cy="200" r="78" stroke="#1d63d0" stroke-width="1"/>
-        <!-- nucleus -->
-        <circle cx="200" cy="200" r="28" stroke="#1d63d0" stroke-width="1.4"/>
-        <!-- organelle nodes -->
-        <circle cx="200" cy="42"  r="7"  fill="#1d63d0"/>
-        <circle cx="330" cy="118" r="5.5" fill="#1d63d0"/>
-        <circle cx="348" cy="272" r="7.5" fill="#1d63d0"/>
-        <circle cx="200" cy="358" r="6"  fill="#1d63d0"/>
-        <circle cx="52"  cy="272" r="7"  fill="#1d63d0"/>
-        <circle cx="70"  cy="118" r="5.5" fill="#1d63d0"/>
-        <!-- spokes to inner ring -->
-        <line x1="200" y1="42"  x2="200" y2="122" stroke="#1d63d0" stroke-width="0.65"/>
-        <line x1="330" y1="118" x2="264" y2="152" stroke="#1d63d0" stroke-width="0.65"/>
-        <line x1="348" y1="272" x2="272" y2="248" stroke="#1d63d0" stroke-width="0.65"/>
-        <line x1="200" y1="358" x2="200" y2="278" stroke="#1d63d0" stroke-width="0.65"/>
-        <line x1="52"  y1="272" x2="128" y2="248" stroke="#1d63d0" stroke-width="0.65"/>
-        <line x1="70"  y1="118" x2="136" y2="152" stroke="#1d63d0" stroke-width="0.65"/>
-    </svg>
-    <p class="label">The Ecosystem</p>
-    <h2 class="section-h">Where Medicine Meets<br>Venture Capital</h2>
-    <p class="section-lead">Tafelberg Ventures is the innovation and commercialization arm of Fakultní nemocnice Olomouc — one of the Czech Republic's leading teaching hospitals. We bridge the gap between world-class biomedical research and scalable healthcare businesses.</p>
-    <div class="cards">
-        <div class="card">
-            <div class="card-icon">◈</div>
-            <h3>For Startups &amp; Innovators</h3>
-            <p>Access clinical environments, anonymized patient data, medical expertise, and a validation pathway that investors trust. Turn your MedTech concept into a fundable, deployable solution.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">◈</div>
-            <h3>For Investors &amp; Funds</h3>
-            <p>Access a curated pipeline of hospital-validated health innovations. Benefit from early co-investment opportunities in de-risked, evidence-backed MedTech and digital health ventures.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">◈</div>
-            <h3>For Researchers</h3>
-            <p>Transform discoveries into real-world impact. We provide a structured commercialization pathway, industry partnerships, and capital connections to bring research to market.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">◈</div>
-            <h3>For Healthcare Business</h3>
-            <p>Co-create solutions directly within a leading clinical institution. Validate technologies, run pilots, and develop strategic partnerships with Central Europe's top medical center.</p>
-        </div>
-    </div>
-</section>
-
 <!-- ═══ ECOSYSTEM DIAGRAM ═══ -->
 <section class="section" id="ecosystem">
-    <p class="label">Ecosystem Structure</p>
+    <p class="label">Ecosystem</p>
     <h2 class="section-h">The Innovation Ecosystem</h2>
     <p class="section-lead">Tafelberg Ventures sits at the intersection of clinical excellence, capital flows, research infrastructure, and commercial partnerships — creating a unique healthcare innovation flywheel.</p>
 
     <div class="eco-scroll">
         <div class="eco-diagram">
+            <!-- Background SVG: hex polygon + eco-box connector lines -->
             <svg class="eco-svg" viewBox="0 0 840 480" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <polygon points="420,51 593,150 593,350 420,449 247,350 247,150"
                          fill="rgba(29,99,208,0.10)" stroke="rgba(29,99,208,0.5)" stroke-width="1.5"/>
-                <!-- Side cluster connectors -->
-                <line x1="170" y1="243" x2="247" y2="250" stroke="rgba(29,99,208,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
-                <line x1="675" y1="243" x2="593" y2="250" stroke="rgba(29,99,208,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
                 <line x1="332" y1="89"  x2="420" y2="250" stroke="rgba(29,99,208,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
                 <line x1="507" y1="89"  x2="420" y2="250" stroke="rgba(29,99,208,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
                 <line x1="332" y1="401" x2="420" y2="250" stroke="rgba(5,150,105,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -883,6 +901,64 @@
                 <line x1="247" y1="297" x2="420" y2="250" stroke="rgba(217,119,6,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
                 <line x1="592" y1="203" x2="420" y2="250" stroke="rgba(124,58,237,0.28)" stroke-width="1.5" stroke-dasharray="5 4"/>
                 <line x1="592" y1="297" x2="420" y2="250" stroke="rgba(124,58,237,0.28)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            </svg>
+
+            <!-- Overlay SVG: flow arrows — z-index 10, renders above all eco-boxes -->
+            <!--
+                SERVICES (blue)  — start at large hex boundary, arrow points outward into E.services space
+                  • top-left:     large hex TL vertex (247,150) → outer upper-left (165,68)
+                  • bottom-right: large hex BR vertex (593,350) → outer lower-right (675,434)
+                  Both paths stay OUTSIDE the large hex — no eco-box crossings.
+
+                SELECTION (green) — start in E.services space, arrow points inward to small hex boundary
+                  • bottom-left: outer lower-left (155,415) → small hex left face (340,280)
+                  • top-right:   outer upper-right (685,85) → small hex right face (500,220)
+                  These paths cross the eco-player zone (unavoidable); overlay ensures visibility.
+
+                Large hex vertices: TL(247,150) TR(593,150) BL(247,350) BR(593,350)
+                Small hex faces:    left x=340 y=204–296 | right x=500 y=204–296
+            -->
+            <svg class="eco-svg-overlay" viewBox="0 0 840 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arrowSvc" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+                        <path d="M0,1 L0,10 L10,5.5 z" fill="rgba(29,99,208,0.95)"/>
+                    </marker>
+                    <marker id="arrowSel" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+                        <path d="M0,1 L0,10 L10,5.5 z" fill="rgba(5,150,105,0.95)"/>
+                    </marker>
+                </defs>
+
+                <!-- SERVICES — top-left: hex TL vertex → upper-left outer space (no box crossings) -->
+                <path d="M 247,150 Q 200,106 165,68"
+                      stroke="rgba(29,99,208,0.88)" stroke-width="2.5" fill="none"
+                      marker-end="url(#arrowSvc)" class="flow-svc"/>
+                <text x="160" y="64" text-anchor="end"
+                      font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
+                      fill="rgba(29,99,208,0.85)">SERVICES</text>
+
+                <!-- SERVICES — bottom-right: hex BR vertex → lower-right outer space (no box crossings) -->
+                <path d="M 593,350 Q 637,394 675,434"
+                      stroke="rgba(29,99,208,0.88)" stroke-width="2.5" fill="none"
+                      marker-end="url(#arrowSvc)" class="flow-svc"/>
+                <text x="680" y="438" text-anchor="start"
+                      font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
+                      fill="rgba(29,99,208,0.85)">SERVICES</text>
+
+                <!-- SELECTION — bottom-left: lower-left outer → small hex left face y=280 -->
+                <path d="M 155,415 Q 228,374 340,280"
+                      stroke="rgba(5,150,105,0.88)" stroke-width="2.5" fill="none"
+                      marker-end="url(#arrowSel)" class="flow-sel"/>
+                <text x="148" y="420" text-anchor="end"
+                      font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
+                      fill="rgba(5,150,105,0.85)">SELECTION</text>
+
+                <!-- SELECTION — top-right: upper-right outer → small hex right face y=220 -->
+                <path d="M 685,85 Q 612,128 500,220"
+                      stroke="rgba(5,150,105,0.88)" stroke-width="2.5" fill="none"
+                      marker-end="url(#arrowSel)" class="flow-sel"/>
+                <text x="690" y="82" text-anchor="start"
+                      font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
+                      fill="rgba(5,150,105,0.85)">SELECTION</text>
             </svg>
 
             <div class="eco-hex"></div>
@@ -1029,17 +1105,41 @@
 </footer>
 
 <script>
-    // ── Acronym scroll reveal ──
-    const rows = document.querySelectorAll('.a-row');
-    const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            const idx = Array.from(rows).indexOf(entry.target);
-            setTimeout(() => entry.target.classList.add('vis'), idx * 90);
-            io.unobserve(entry.target);
+    // ── Hex acronym panel (hover) ──
+    const hexBtns     = document.querySelectorAll('.hex-btn');
+    const hexPanel    = document.getElementById('hexPanel');
+    const hpLetter    = document.getElementById('hpLetter');
+    const hpTitle     = document.getElementById('hpTitle');
+    const hpDesc      = document.getElementById('hpDesc');
+    const acronymInner = document.querySelector('.acronym-inner');
+    const hexData  = {
+        T:  { word: 'Technology',              desc: 'Driving innovation through cutting-edge MedTech solutions and digital health infrastructure built for real clinical environments.' },
+        A:  { word: 'Artificial Intelligence', desc: 'Harnessing AI to transform healthcare data into actionable clinical and commercial insights that accelerate diagnosis, treatment, and research.' },
+        F:  { word: 'Future Health',           desc: 'Building the healthcare ecosystem of tomorrow — proactive, personalized, predictive, and grounded in the realities of modern medicine.' },
+        E1: { word: 'Entrepreneurship',        desc: 'Empowering founders and innovators with hospital-grade validation, clinical access, and venture support to bring ideas to market.' },
+        L:  { word: 'Longevity',               desc: 'Advancing science and business at the frontier of healthy aging, precision medicine, and evidence-backed longevity interventions.' },
+        B:  { word: 'Biomedical',              desc: 'Grounded in world-class biomedical research and clinical expertise at one of the Czech Republic\'s top teaching hospitals.' },
+        E2: { word: 'Evidence-based',          desc: 'Every innovation validated against rigorous clinical evidence and real-world outcomes — not just theory or prototype-stage assumptions.' },
+        R:  { word: 'Research',                desc: 'Deep integration with academic and applied research programs to accelerate translational medicine and bring discoveries to patients faster.' },
+        G:  { word: 'Growth',                  desc: 'Scaling healthcare ventures from concept to commercialization with strategic capital connections, partnership networks, and venture-building expertise.' }
+    };
+    hexBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            hexBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const d = hexData[btn.dataset.key];
+            hpLetter.textContent = btn.dataset.letter;
+            hpTitle.textContent  = d.word;
+            hpDesc.textContent   = d.desc;
+            hexPanel.classList.remove('open');
+            void hexPanel.offsetWidth;
+            hexPanel.classList.add('open');
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    rows.forEach(r => io.observe(r));
+    });
+    acronymInner.addEventListener('mouseleave', () => {
+        hexBtns.forEach(b => b.classList.remove('active'));
+        hexPanel.classList.remove('open');
+    });
 
     // ── Nav opacity on scroll ──
     const nav = document.getElementById('nav');
