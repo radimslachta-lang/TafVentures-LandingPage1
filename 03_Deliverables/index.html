@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tafelberg Ventures | Health Innovation & Venture Building Platform</title>
+    <title>Tafelberg Ventures | Health Innovation & Venture Building Ecosystem</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -517,7 +517,7 @@
         @keyframes ecgReveal { to { stroke-dashoffset: 0; } }
 
         /* ─── CELL / MOLECULE DECORATION ─── */
-        .platform-section { position: relative; overflow: hidden; }
+        .ecosystem-section { position: relative; overflow: hidden; }
         .cell-deco {
             position: absolute;
             right: -40px;
@@ -527,6 +527,153 @@
             height: 360px;
             pointer-events: none;
             opacity: 0.18;
+        }
+
+        /* ─── ECOSYSTEM DIAGRAM ─── */
+        .eco-scroll { overflow-x: auto; margin-top: 3.5rem; padding-bottom: 0.5rem; }
+
+        .eco-diagram {
+            position: relative;
+            width: 840px;
+            height: 480px;
+            margin: 0 auto;
+        }
+
+        .eco-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .eco-hex {
+            position: absolute;
+            left: 340px; top: 158px;
+            width: 160px; height: 184px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: #ffffff;
+            z-index: 2;
+        }
+
+        .eco-hex-inner { text-align: center; color: #fff; padding: 0 1.2rem; line-height: 1.3; }
+
+        .eco-hex-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.5rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            opacity: 0.72;
+            margin-bottom: 0.4rem;
+        }
+
+        .eco-hex-name { font-size: 0.82rem; font-weight: 700; letter-spacing: -0.01em; }
+
+        .eco-box {
+            position: absolute;
+            width: 165px;
+            height: 80px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.6rem 1rem;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+        }
+        .eco-box:hover {
+            border-color: rgba(29,99,208,0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+        }
+
+        .eco-box-cat {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.5rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .eco-box-name { font-size: 0.78rem; font-weight: 600; color: var(--text); line-height: 1.35; }
+
+        .eco-t1 { left: 250px; top:  50px; }
+        .eco-t2 { left: 425px; top:  50px; }
+        .eco-b1 { left: 250px; top: 362px; }
+        .eco-b2 { left: 425px; top: 362px; }
+
+        .eco-zone-label {
+            position: absolute;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.46rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(29,99,208,0.5);
+            z-index: 4;
+            pointer-events: none;
+            white-space: nowrap;
+            text-align: center;
+        }
+        .eco-l1 { left: 165px; top: 164px; }
+        .eco-l2 { left: 165px; top: 258px; }
+        .eco-r1 { left: 510px; top: 164px; }
+        .eco-r2 { left: 510px; top: 258px; }
+
+        .eco-inner-label {
+            position: absolute;
+            left: 340px; top: 210px;
+            width: 160px;
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.46rem;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--accent);
+            z-index: 4;
+        }
+
+        .eco-inner-box {
+            position: absolute;
+            width: 62px;
+            background: rgba(255,255,255,0.92);
+            border: 1px solid rgba(29,99,208,0.28);
+            border-radius: 3px;
+            padding: 0.18rem 0.25rem;
+            z-index: 4;
+            font-size: 0.48rem;
+            font-weight: 500;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .eco-tv  { border-left: 2px solid var(--accent); }
+        .eco-fn  { border-left: 2px solid #059669; }
+        .eco-cap { border-left: 2px solid #d97706; }
+        .eco-com { border-left: 2px solid #7c3aed; }
+
+        .eco-tv  .eco-box-cat { color: var(--accent); }
+        .eco-fn  .eco-box-cat { color: #059669; }
+        .eco-cap .eco-box-cat { color: #d97706; }
+        .eco-com .eco-box-cat { color: #7c3aed; }
+
+        .eco-side-box {
+            position: absolute;
+            width: 150px;
+            background: var(--bg);
+            border: 1px dashed rgba(29,99,208,0.3);
+            border-radius: 4px;
+            padding: 2px 8px;
+            z-index: 3;
+            font-size: 0.48rem;
+            font-weight: 500;
+            color: var(--muted);
+            text-align: center;
         }
 
         /* ─── RESPONSIVE ─── */
@@ -545,7 +692,7 @@
 <nav id="nav">
     <a href="#" class="nav-logo">Tafelberg Ventures</a>
     <ul class="nav-links">
-        <li><a href="#platform">Platform</a></li>
+        <li><a href="#ecosystem">Ecosystem</a></li>
         <li><a href="#vision">Vision</a></li>
         <li><a href="#partners">Partners</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -558,13 +705,13 @@
     <canvas id="heroCanvas"></canvas>
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
-    <p class="hero-tag">FN Olomouc — Innovation Platform and HUB (in preparation)</p>
+    <p class="hero-tag">FN Olomouc — Innovation Ecosystem and HUB (in preparation)</p>
     <h1 class="hero-title">
         <span class="ac">Tafelberg</span><br>Ventures
     </h1>
-    <p class="hero-sub">Health Innovation and Venture Building Platform — connecting medical research, biomedical excellence, and entrepreneurial capital.</p>
+    <p class="hero-sub">Health Innovation and Venture Building Ecosystem — connecting medical research, biomedical excellence, and entrepreneurial capital.</p>
     <div class="hero-cta">
-        <a href="#platform" class="btn btn-primary">Explore Platform</a>
+        <a href="#ecosystem" class="btn btn-primary">Explore Ecosystem</a>
         <a href="#contact" class="btn btn-ghost">Partner With Us</a>
     </div>
     <div class="scroll-hint">
@@ -656,13 +803,13 @@
             </div>
         </div>
         <p style="margin-top:2rem;font-size:0.85rem;color:var(--muted);line-height:1.7;max-width:660px;">
-            Beyond the acronym, Tafelberg Ventures is equally focused on <strong style="color:var(--text);font-weight:600;">Medicine</strong>, <strong style="color:var(--text);font-weight:600;">Prevention</strong>, and <strong style="color:var(--text);font-weight:600;">Startups</strong> — integrating clinical practice, proactive health innovation, and entrepreneurial venture-building into one cohesive platform.
+            Beyond the acronym, Tafelberg Ventures is equally focused on <strong style="color:var(--text);font-weight:600;">Medicine</strong>, <strong style="color:var(--text);font-weight:600;">Prevention</strong>, and <strong style="color:var(--text);font-weight:600;">Startups</strong> — integrating clinical practice, proactive health innovation, and entrepreneurial venture-building into one cohesive ecosystem.
         </p>
     </div>
 </div>
 
 <!-- ═══ PLATFORM / MISSION ═══ -->
-<section class="section platform-section" id="platform">
+<section class="section ecosystem-section" id="ecosystem">
     <svg class="cell-deco" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- outer membrane -->
         <circle cx="200" cy="200" r="185" stroke="#1d63d0" stroke-width="1"/>
@@ -687,7 +834,7 @@
         <line x1="52"  y1="272" x2="128" y2="248" stroke="#1d63d0" stroke-width="0.65"/>
         <line x1="70"  y1="118" x2="136" y2="152" stroke="#1d63d0" stroke-width="0.65"/>
     </svg>
-    <p class="label">The Platform</p>
+    <p class="label">The Ecosystem</p>
     <h2 class="section-h">Where Medicine Meets<br>Venture Capital</h2>
     <p class="section-lead">Tafelberg Ventures is the innovation and commercialization arm of Fakultní nemocnice Olomouc — one of the Czech Republic's leading teaching hospitals. We bridge the gap between world-class biomedical research and scalable healthcare businesses.</p>
     <div class="cards">
@@ -714,9 +861,94 @@
     </div>
 </section>
 
+<!-- ═══ ECOSYSTEM DIAGRAM ═══ -->
+<section class="section" id="ecosystem">
+    <p class="label">Ecosystem Structure</p>
+    <h2 class="section-h">The Innovation Ecosystem</h2>
+    <p class="section-lead">Tafelberg Ventures sits at the intersection of clinical excellence, capital flows, research infrastructure, and commercial partnerships — creating a unique healthcare innovation flywheel.</p>
+
+    <div class="eco-scroll">
+        <div class="eco-diagram">
+            <svg class="eco-svg" viewBox="0 0 840 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="420,51 593,150 593,350 420,449 247,350 247,150"
+                         fill="rgba(29,99,208,0.10)" stroke="rgba(29,99,208,0.5)" stroke-width="1.5"/>
+                <!-- Side cluster connectors -->
+                <line x1="170" y1="243" x2="247" y2="250" stroke="rgba(29,99,208,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="675" y1="243" x2="593" y2="250" stroke="rgba(29,99,208,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="332" y1="89"  x2="420" y2="250" stroke="rgba(29,99,208,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="507" y1="89"  x2="420" y2="250" stroke="rgba(29,99,208,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="332" y1="401" x2="420" y2="250" stroke="rgba(5,150,105,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="507" y1="401" x2="420" y2="250" stroke="rgba(5,150,105,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="247" y1="203" x2="420" y2="250" stroke="rgba(217,119,6,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="247" y1="297" x2="420" y2="250" stroke="rgba(217,119,6,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="592" y1="203" x2="420" y2="250" stroke="rgba(124,58,237,0.28)" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="592" y1="297" x2="420" y2="250" stroke="rgba(124,58,237,0.28)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            </svg>
+
+            <div class="eco-hex"></div>
+
+            <!-- Zone labels -->
+            <div class="eco-zone-label" style="left:310px;top:18px;width:220px;">Ecosystem services</div>
+            <div class="eco-zone-label" style="left:310px;top:134px;width:220px;">Ecosystem players</div>
+
+            <div class="eco-inner-label">Ecosystem incubation</div>
+            <div class="eco-inner-box" style="left:350px;top:226px;">Portfolio project / venture</div>
+            <div class="eco-inner-box" style="left:424px;top:226px;">Portfolio project / venture</div>
+            <div class="eco-inner-box" style="left:350px;top:266px;">Portfolio project / venture</div>
+            <div class="eco-inner-box" style="left:424px;top:266px;">Portfolio project / venture</div>
+
+            <div class="eco-box eco-tv eco-t1">
+                <div class="eco-box-cat">TaflVent</div>
+                <div class="eco-box-name">Venture Building</div>
+            </div>
+            <div class="eco-box eco-tv eco-t2">
+                <div class="eco-box-cat">TaflVent</div>
+                <div class="eco-box-name">Infrastructure<br>Labs / Testbeds</div>
+            </div>
+
+            <div class="eco-box eco-fn eco-b1">
+                <div class="eco-box-cat">FN Olomouc</div>
+                <div class="eco-box-name">Clinical Settings</div>
+            </div>
+            <div class="eco-box eco-fn eco-b2">
+                <div class="eco-box-cat">FN Olomouc</div>
+                <div class="eco-box-name">Data &amp; ICT</div>
+            </div>
+
+            <div class="eco-box eco-cap eco-l1">
+                <div class="eco-box-cat">Capital</div>
+                <div class="eco-box-name">Venture / Private Capital</div>
+            </div>
+            <div class="eco-box eco-cap eco-l2">
+                <div class="eco-box-cat">Capital</div>
+                <div class="eco-box-name">Grants &amp; Public Funds</div>
+            </div>
+
+            <div class="eco-box eco-com eco-r1">
+                <div class="eco-box-cat">Market</div>
+                <div class="eco-box-name">Companies &amp;<br>Commercial Partners</div>
+            </div>
+            <div class="eco-box eco-com eco-r2">
+                <div class="eco-box-cat">Public</div>
+                <div class="eco-box-name">State / Public<br>Stakeholders</div>
+            </div>
+
+            <!-- Left side -->
+            <div class="eco-side-box" style="left:20px;top:115px;">FN projects</div>
+            <div class="eco-side-box" style="left:20px;top:232px;">Startups / MSP</div>
+            <div class="eco-side-box" style="left:20px;top:355px;">External projects</div>
+
+            <!-- Right side -->
+            <div class="eco-side-box" style="left:675px;top:115px;">FN projects</div>
+            <div class="eco-side-box" style="left:675px;top:232px;">Startups / MSP</div>
+            <div class="eco-side-box" style="left:675px;top:355px;">External projects</div>
+        </div>
+    </div>
+</section>
+
 <!-- ═══ PARTNERS ═══ -->
 <section class="section" id="partners">
-    <p class="label">Ecosystem</p>
+    <p class="label">Partners &amp; Network</p>
     <h2 class="section-h">Our Partners</h2>
     <p class="section-lead">Building the future of healthcare innovation together with world-class institutions, investors, and industry leaders.</p>
     <div class="partners-grid">
@@ -791,7 +1023,7 @@
 <footer>
     <div class="foot-inner">
         <span class="foot-logo">Tafelberg Ventures</span>
-        <span class="foot-copy">An innovation platform of Fakultní nemocnice Olomouc</span>
+        <span class="foot-copy">An innovation ecosystem of Fakultní nemocnice Olomouc</span>
         <span class="foot-copy">© 2026 Tafelberg Ventures. All rights reserved.</span>
     </div>
 </footer>
