@@ -1518,6 +1518,8 @@
     </div>
 
     <form class="form" id="contactForm" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_subject" value="Tafelberg Ventures — New Contact Form Submission">
+        <input type="hidden" name="_replyto" value="">
         <div class="row2">
             <div class="fg">
                 <label for="fname">Full Name</label>
@@ -1691,17 +1693,37 @@
         });
     })();
 
-    // ── Contact form ──
-    function handleSubmit(e) {
+    // ── Contact form — Formspree ──
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnjronle';
+
+    async function handleSubmit(e) {
         e.preventDefault();
-        const btn = document.getElementById('submitBtn');
+        const form = document.getElementById('contactForm');
+        const btn  = document.getElementById('submitBtn');
+        const data = new FormData(form);
+        // Mirror sender email into _replyto so Formspree threads replies correctly
+        data.set('_replyto', data.get('email'));
+
         btn.textContent = 'Sending…';
         btn.disabled = true;
-        // Replace timeout with real fetch() to your backend/form service
-        setTimeout(() => {
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('successMsg').style.display = 'block';
-        }, 750);
+
+        try {
+            const res = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+                form.style.display = 'none';
+                document.getElementById('successMsg').style.display = 'block';
+            } else {
+                btn.textContent = 'Error — please try again';
+                btn.disabled = false;
+            }
+        } catch {
+            btn.textContent = 'Error — please try again';
+            btn.disabled = false;
+        }
     }
 </script>
 </body>
