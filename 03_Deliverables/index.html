@@ -32,9 +32,42 @@
         }
 
         /* ─── NAV ─── */
-        nav {
+        .ticker-bar {
             position: fixed;
             inset: 0 0 auto 0;
+            z-index: 110;
+            background: #1d63d0;
+            color: rgba(255,255,255,0.92);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker-track {
+            display: inline-flex;
+            animation: ticker 28s linear infinite;
+        }
+        .ticker-track span {
+            padding: 0 3rem;
+        }
+        .ticker-track span::before {
+            content: '⬡';
+            margin-right: 1rem;
+            opacity: 0.5;
+        }
+        @keyframes ticker {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        nav {
+            position: fixed;
+            inset: 26px 0 auto 0;
             z-index: 100;
             padding: 1.25rem 2.5rem;
             display: flex;
@@ -110,7 +143,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 7rem 2rem 5rem;
+            padding: 8.5rem 2rem 5rem;
             position: relative;
             overflow: hidden;
         }
@@ -229,6 +262,203 @@
             font-size: 1rem;
             max-width: 600px;
             line-height: 1.8;
+        }
+
+        /* ─── MISSION ─── */
+        .mission-wrap {
+            background: linear-gradient(135deg, rgba(29,99,208,0.06) 0%, rgba(99,102,241,0.04) 100%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .mission-statement {
+            font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+            line-height: 1.8;
+            color: var(--text);
+            max-width: 780px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-weight: 400;
+        }
+        .mission-statement strong { color: var(--accent); font-weight: 600; }
+        .mission-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .pillar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+        }
+        .pillar-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+        .pillar-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+        .pillar-desc {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* ─── WHO WE WORK WITH ─── */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .audience-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem 1.75rem;
+            transition: border-color 0.3s, transform 0.25s, box-shadow 0.25s;
+        }
+        .audience-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(29,99,208,0.10);
+        }
+        .audience-tag {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.65rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .audience-tag.tag-clinical { background: rgba(5,150,105,0.1); color: #059669; }
+        .audience-tag.tag-startup  { background: rgba(29,99,208,0.1); color: var(--accent); }
+        .audience-tag.tag-investor { background: rgba(217,119,6,0.1);  color: #d97706; }
+        .audience-tag.tag-industry { background: rgba(124,58,237,0.1); color: #7c3aed; }
+        .audience-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+        .audience-hook {
+            font-size: 0.92rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+        .audience-desc {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+        .audience-list {
+            margin-top: 0.75rem;
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .audience-list li {
+            font-size: 0.82rem;
+            color: var(--muted);
+            padding-left: 1.1rem;
+            position: relative;
+        }
+        .audience-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.7rem;
+        }
+
+        /* ─── INNOVATION PIPELINE ─── */
+        .pipeline-section {
+            background: linear-gradient(180deg, transparent, rgba(29,99,208,0.04) 50%, transparent);
+        }
+        .pipeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-top: 3rem;
+            position: relative;
+        }
+        .pipeline::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), #6366f1);
+            opacity: 0.3;
+            z-index: 0;
+        }
+        .stage {
+            text-align: center;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .stage-num {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            transition: background 0.25s, color 0.25s;
+        }
+        .stage:hover .stage-num {
+            background: var(--accent);
+            color: #fff;
+        }
+        .stage-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+        .stage-desc {
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .stage-badge {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.55rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.55rem;
+            border-radius: 20px;
+            background: rgba(29,99,208,0.08);
+            color: var(--accent);
         }
 
         /* ─── ACRONYM ─── */
@@ -771,6 +1001,11 @@
         @media (max-width: 720px) {
             nav { padding: 1rem 1.25rem; }
             .nav-links { display: none; }
+            .mission-pillars { grid-template-columns: 1fr; gap: 1rem; }
+            .audience-grid   { grid-template-columns: 1fr; }
+            .pipeline        { grid-template-columns: repeat(2, 1fr); gap: 2rem 0; }
+            .pipeline::before { top: 36px; left: 25%; right: 25%; }
+            .stage { padding: 0 0.5rem; }
 
             .section { padding: 4.5rem 1.5rem; }
             .acronym-wrap { padding: 4.5rem 0; }
@@ -793,6 +1028,8 @@
 
         /* Mobile ≤ 480px — 60px hexes → hive 312px */
         @media (max-width: 480px) {
+            .pipeline { grid-template-columns: 1fr; }
+            .pipeline::before { display: none; }
             nav { padding: 0.85rem 1rem; }
 
             .section { padding: 3.5rem 1.25rem; }
@@ -818,6 +1055,14 @@
     </style>
 </head>
 <body>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker-bar" role="marquee" aria-label="Work in progress notice">
+    <div class="ticker-track">
+        <span>This page is a working draft used to iteratively clarify the concept of a future innovation centre. All information presented is illustrative and indicative only.</span>
+        <span>This page is a working draft used to iteratively clarify the concept of a future innovation centre. All information presented is illustrative and indicative only.</span>
+    </div>
+</div>
 
 <!-- ═══ NAV ═══ -->
 <nav id="nav">
@@ -850,8 +1095,10 @@
         </svg>
     </a>
     <ul class="nav-links">
+        <li><a href="#mission">Mission</a></li>
         <li><a href="#ecosystem">Ecosystem</a></li>
-        <li><a href="#vision">Vision</a></li>
+        <li><a href="#join">Join</a></li>
+        <li><a href="#programs">Programs</a></li>
         <li><a href="#partners">Partners</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -867,7 +1114,7 @@
     <h1 class="hero-title">
         <span class="ac">Tafelberg</span><br>Ventures
     </h1>
-    <p class="hero-sub">Health Innovation and Venture Building Ecosystem — connecting medical research, biomedical excellence, and entrepreneurial capital.</p>
+    <p class="hero-sub">Health Innovation and Venture Building Ecosystem — turning clinical excellence and biomedical research into real-world impact. From clinic to market, together.</p>
     <div class="hero-cta">
         <a href="#ecosystem" class="btn btn-primary">Explore Ecosystem</a>
         <a href="#contact" class="btn btn-ghost">Partner With Us</a>
@@ -888,6 +1135,45 @@
             L885,25 L975,25 L993,22 L1002,25 L1010,3 L1017,47 L1024,14 L1033,25
             L1110,25 L1200,25"/>
     </svg>
+</div>
+
+<!-- ═══ MISSION ═══ -->
+<div class="mission-wrap">
+    <div class="section" style="text-align:center;" id="mission">
+        <p class="label">Our Mission</p>
+        <h2 class="section-h">From Clinic to Real-World Impact</h2>
+        <p class="mission-statement">
+            Tafelberg Ventures is the innovation and venture-building platform of FN Olomouc —
+            <strong>bridging clinical excellence with entrepreneurial capital</strong>.
+            We turn medical research, biomedical expertise, and hospital-grade data into real-world health solutions
+            that improve patients' lives. We support clinicians, researchers, and innovators
+            in developing ideas with genuine patient impact —
+            through spin-offs, commercial partnerships, and open innovation.
+        </p>
+        <div class="mission-pillars">
+            <div class="pillar">
+                <span class="pillar-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+                </span>
+                <div class="pillar-title">Clinical Depth</div>
+                <p class="pillar-desc">Rooted in real hospital practice and evidence-based research. Every innovation we support must demonstrate genuine clinical relevance and patient benefit.</p>
+            </div>
+            <div class="pillar">
+                <span class="pillar-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </span>
+                <div class="pillar-title">Entrepreneurial Drive</div>
+                <p class="pillar-desc">We believe great research deserves to reach the world. We provide the business infrastructure, networks, and mentorship that turn ideas into ventures.</p>
+            </div>
+            <div class="pillar">
+                <span class="pillar-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                </span>
+                <div class="pillar-title">Evidence-based Impact</div>
+                <p class="pillar-desc">Results matter. We measure success in patient outcomes, commercial traction, and the systemic change we enable across the Central European health ecosystem.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- ═══ TAFELBERG ACRONYM ═══ -->
@@ -1092,6 +1378,106 @@
     </div>
 </section>
 
+<!-- ═══ WHO WE WORK WITH ═══ -->
+<section class="section" id="join">
+    <p class="label">Who We Work With</p>
+    <h2 class="section-h">Built for Every Innovator</h2>
+    <p class="section-lead">Whether you come from the lab, the clinic, or the boardroom — there is a place for you in the Tafelberg Ventures ecosystem.</p>
+    <div class="audience-grid">
+
+        <div class="audience-card">
+            <span class="audience-tag tag-clinical">Clinicians &amp; Researchers</span>
+            <h3>You have the knowledge. We handle the rest.</h3>
+            <p class="audience-hook">"My job is medicine, not business" — we hear that. And we agree.</p>
+            <p class="audience-desc">You don't need to become an entrepreneur. You need a partner who can translate your clinical insight into a scalable solution. Tafelberg Ventures provides the structure, the legal setup, the business mentors, and the capital connections — so you can stay focused on what you do best.</p>
+            <ul class="audience-list">
+                <li>Dedicated business development support</li>
+                <li>IP protection and spin-off guidance</li>
+                <li>Access to FN Olomouc clinical validation infrastructure</li>
+                <li>Connection to investors and industry partners</li>
+            </ul>
+        </div>
+
+        <div class="audience-card">
+            <span class="audience-tag tag-startup">Startups &amp; Innovators</span>
+            <h3>Validate in a real hospital. Scale with confidence.</h3>
+            <p class="audience-hook">"We have the product — we need clinical proof."</p>
+            <p class="audience-desc">Clinical validation is the hardest and most valuable step in MedTech. Tafelberg Ventures opens the doors of FN Olomouc for structured pilots, real patient data access (within legal frameworks), and clinical co-development with department heads and researchers.</p>
+            <ul class="audience-list">
+                <li>Structured clinical pilot programmes</li>
+                <li>Access to anonymised patient data and cohorts</li>
+                <li>Co-development with clinical specialists</li>
+                <li>Regulatory and reimbursement pathway guidance</li>
+            </ul>
+        </div>
+
+        <div class="audience-card">
+            <span class="audience-tag tag-investor">Investors &amp; Capital Partners</span>
+            <h3>Curated deal flow from the heart of clinical practice.</h3>
+            <p class="audience-hook">"Where do I find validated MedTech opportunities in Central Europe?"</p>
+            <p class="audience-desc">Every project in our pipeline has been evaluated by clinicians, tested against real patient needs, and stress-tested for commercial viability. We connect venture funds, family offices, and angel investors with innovations that have real hospital backing behind them.</p>
+            <ul class="audience-list">
+                <li>Pre-screened, hospital-validated deal flow</li>
+                <li>Co-investment structures with public grant matching</li>
+                <li>Early-stage access to spin-off projects</li>
+                <li>LP and strategic partnership opportunities</li>
+            </ul>
+        </div>
+
+        <div class="audience-card">
+            <span class="audience-tag tag-industry">Industry &amp; Corporate Partners</span>
+            <h3>The most direct route to clinical co-development in the region.</h3>
+            <p class="audience-hook">"We need a real hospital partner for our innovation pipeline."</p>
+            <p class="audience-desc">Pharma, MedTech, Digital Health, and Life Sciences companies gain a structured gateway into FN Olomouc — one of the Czech Republic's leading university hospitals. Pilot your technology, run studies, or co-develop solutions with our clinical teams under clear governance.</p>
+            <ul class="audience-list">
+                <li>Structured industry collaboration frameworks</li>
+                <li>Access to clinical departments and data infrastructure</li>
+                <li>Joint R&amp;D and grant applications</li>
+                <li>Regional market entry and expansion support</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ INNOVATION PIPELINE ═══ -->
+<section class="section pipeline-section" id="programs">
+    <p class="label">Innovation Programs</p>
+    <h2 class="section-h" style="text-align:center;">Our Innovation Pipeline</h2>
+    <p class="section-lead" style="margin:0 auto 0; text-align:center;">From a first idea to a scaled health innovation — we support projects at every stage of the journey.</p>
+    <div class="pipeline">
+
+        <div class="stage">
+            <div class="stage-num">01</div>
+            <div class="stage-title">Idea &amp; Discovery</div>
+            <p class="stage-desc">Identify and evaluate innovations with genuine clinical potential. We assess feasibility, patient relevance, and commercial fit — together with your team.</p>
+            <span class="stage-badge">Open to all</span>
+        </div>
+
+        <div class="stage">
+            <div class="stage-num">02</div>
+            <div class="stage-title">Clinical Validation</div>
+            <p class="stage-desc">Structured pilots within FN Olomouc departments. Real data, real patients, real feedback. This is where ideas become evidence.</p>
+            <span class="stage-badge">Cohort-based</span>
+        </div>
+
+        <div class="stage">
+            <div class="stage-num">03</div>
+            <div class="stage-title">Incubation &amp; Build</div>
+            <p class="stage-desc">Legal entity setup, IP structuring, product development, team building, and first capital. We provide the scaffolding — you build the company.</p>
+            <span class="stage-badge">Selected projects</span>
+        </div>
+
+        <div class="stage">
+            <div class="stage-num">04</div>
+            <div class="stage-title">Scale &amp; Commercialise</div>
+            <p class="stage-desc">Growth financing, market entry, regulatory approval, and international expansion. We open doors — to investors, industry partners, and global health markets.</p>
+            <span class="stage-badge">Portfolio ventures</span>
+        </div>
+
+    </div>
+</section>
+
 <!-- ═══ PARTNERS ═══ -->
 <section class="section" id="partners">
     <p class="label">Partners &amp; Network</p>
@@ -1125,7 +1511,7 @@
 <section class="section contact-wrap" id="contact">
     <p class="label">Get Involved</p>
     <h2 class="section-h">Start a Conversation</h2>
-    <p class="section-lead">Whether you're a startup, investor, researcher, or healthcare organization — we want to hear from you.</p>
+    <p class="section-lead">Whether you're a clinician with an idea, a startup seeking clinical validation, an investor, or an industry partner — we want to hear from you. You don't need a business plan to start a conversation.</p>
 
     <div class="success" id="successMsg">
         Thank you. We'll be in touch within 2 business days.
@@ -1146,10 +1532,12 @@
             <label for="interest">Area of Interest</label>
             <select id="interest" name="interest" required>
                 <option value="" disabled selected>Select your role or interest</option>
-                <option value="startup">Startup / Innovator seeking validation</option>
-                <option value="investor">Investor / Venture Fund</option>
-                <option value="researcher">Researcher / Academic Institution</option>
-                <option value="healthcarebiz">Healthcare Business / Industry</option>
+                <option value="clinician">Clinician / Hospital Staff (FN Olomouc or other)</option>
+                <option value="researcher">Researcher / Academic — I have an idea to explore</option>
+                <option value="startup">Startup / Innovator seeking clinical validation</option>
+                <option value="investor">Investor / Venture Fund / Family Office</option>
+                <option value="industry">Healthcare Industry / Pharma / MedTech / Digital Health</option>
+                <option value="grants">Grants &amp; Public Funding Body</option>
                 <option value="media">Media / Press</option>
                 <option value="other">Other</option>
             </select>
