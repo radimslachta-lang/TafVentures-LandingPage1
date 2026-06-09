@@ -475,52 +475,48 @@
 
         /* ─── HONEYCOMB ─── */
         .hive {
-            width: 632px; /* 5×120 + 4×8 */
+            width: 338px; /* 4×80 + 3×6 */
             margin: 2.5rem auto 0;
         }
-        .hive-row { display: flex; gap: 8px; }
-        .hive-row + .hive-row { margin-top: -27px; margin-left: 64px; }
+        .hive-row { display: flex; gap: 6px; }
+        .hive-row + .hive-row { margin-top: -18px; }
+        /* Pyramid offsets: peak→TA→FEL→BERG */
+        .hive-row:nth-child(1) { margin-left: 129px; }
+        .hive-row:nth-child(2) { margin-left: 86px; }
+        .hive-row:nth-child(3) { margin-left: 43px; }
+        .hive-row:nth-child(4) { margin-left: 0; }
 
         .hex-btn {
-            width: 120px;
-            height: 138px;
+            width: 80px;
+            height: 92px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            background: var(--bg-card);
+            background: var(--accent);
             border: none;
             appearance: none;
             cursor: pointer;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            padding: 0 12px;
             transition: background 0.18s;
             outline: none;
         }
-        .hex-btn:hover, .hex-btn.active { background: var(--accent); }
+        .hex-btn:hover, .hex-btn.active { background: #1a3870; }
+
+        /* Peak: cyan špička, neinteraktivní */
+        .hex-peak { background: #17c3e6; pointer-events: none; cursor: default; }
+        .hex-peak:hover { background: #17c3e6; }
+
+        /* BERG row: červená jako v logu */
+        .hex-red { background: #b21612; }
+        .hex-red:hover, .hex-red.active { background: #8f1010; }
 
         .hex-l {
             font-family: 'Space Mono', monospace;
-            font-size: 2.4rem;
+            font-size: 1.55rem;
             font-weight: 700;
-            color: var(--accent);
+            color: #fff;
             line-height: 1;
-            transition: color 0.18s;
         }
-        .hex-btn:hover .hex-l, .hex-btn.active .hex-l { color: #fff; }
-
-        .hex-w {
-            font-size: 0.62rem;
-            font-weight: 600;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            text-align: center;
-            line-height: 1.3;
-            transition: color 0.18s;
-        }
-        .hex-btn:hover .hex-w, .hex-btn.active .hex-w { color: rgba(255,255,255,0.8); }
 
         .hex-panel {
             max-width: 580px;
@@ -1024,13 +1020,16 @@
             .foot-inner { flex-direction: column; text-align: center; }
             footer { padding: 1.75rem 1.5rem; }
 
-            /* Honeycomb: W=84 H=97 gap=5 → hive=440px; margin-top=-20px margin-left=45px */
-            .hive { width: 440px; }
-            .hive-row { gap: 5px; }
-            .hive-row + .hive-row { margin-top: -20px; margin-left: 45px; }
-            .hex-btn { width: 84px; height: 97px; gap: 4px; padding: 0 9px; }
-            .hex-l { font-size: 1.9rem; }
-            .hex-w { font-size: 0.55rem; }
+            /* Honeycomb pyramid: 4×56 + 3×4 = 236px */
+            .hive { width: 236px; }
+            .hive-row { gap: 4px; }
+            .hive-row + .hive-row { margin-top: -13px; }
+            .hive-row:nth-child(1) { margin-left: 90px; }
+            .hive-row:nth-child(2) { margin-left: 60px; }
+            .hive-row:nth-child(3) { margin-left: 30px; }
+            .hive-row:nth-child(4) { margin-left: 0; }
+            .hex-btn { width: 56px; height: 64px; }
+            .hex-l { font-size: 1.1rem; }
 
             .hex-panel { padding: 1.25rem 1.5rem; }
         }
@@ -1045,10 +1044,14 @@
             .acronym-wrap { padding: 3.5rem 0; }
             .acronym-inner { padding: 0 1.25rem; }
 
-            /* Honeycomb: W=60 H=69 gap=3 → hive=312px; margin-top=-15px margin-left=32px */
-            .hive { width: 312px; }
+            /* Honeycomb pyramid: 4×40 + 3×3 = 169px */
+            .hive { width: 169px; }
             .hive-row { gap: 3px; }
-            .hive-row + .hive-row { margin-top: -15px; margin-left: 32px; }
+            .hive-row + .hive-row { margin-top: -9px; }
+            .hive-row:nth-child(1) { margin-left: 64px; }
+            .hive-row:nth-child(2) { margin-left: 43px; }
+            .hive-row:nth-child(3) { margin-left: 21px; }
+            .hive-row:nth-child(4) { margin-left: 0; }
             .hex-btn { width: 60px; height: 69px; gap: 3px; padding: 0 6px; }
             .hex-l { font-size: 1.3rem; }
             .hex-w { font-size: 0.42rem; }
@@ -1076,31 +1079,33 @@
 <!-- ═══ NAV ═══ -->
 <nav id="nav">
     <a href="#" class="nav-logo" aria-label="Tafelberg Ventures">
-        <svg viewBox="0 0 84 45" height="52" xmlns="http://www.w3.org/2000/svg">
-            <!-- Row 1: T A F E L — centers y=9, x=8,25,42,59,76 -->
-            <polygon points="8,0 15.8,4.5 15.8,13.5 8,18 0.2,13.5 0.2,4.5"   fill="#244a90"/>
-            <polygon points="25,0 32.8,4.5 32.8,13.5 25,18 17.2,13.5 17.2,4.5" fill="#244a90"/>
-            <polygon points="42,0 49.8,4.5 49.8,13.5 42,18 34.2,13.5 34.2,4.5" fill="#244a90"/>
-            <polygon points="59,0 66.8,4.5 66.8,13.5 59,18 51.2,13.5 51.2,4.5" fill="#244a90"/>
-            <polygon points="76,0 83.8,4.5 83.8,13.5 76,18 68.2,13.5 68.2,4.5" fill="#244a90"/>
-            <!-- Row 2: B E R G — centers y=23.4, x=16.3,33.3,50.3,67.3 -->
-            <polygon points="16.3,14.4 24.1,18.9 24.1,27.9 16.3,32.4 8.5,27.9 8.5,18.9"   fill="#244a90"/>
-            <polygon points="33.3,14.4 41.1,18.9 41.1,27.9 33.3,32.4 25.5,27.9 25.5,18.9" fill="#244a90"/>
-            <polygon points="50.3,14.4 58.1,18.9 58.1,27.9 50.3,32.4 42.5,27.9 42.5,18.9" fill="#244a90"/>
-            <polygon points="67.3,14.4 75.1,18.9 75.1,27.9 67.3,32.4 59.5,27.9 59.5,18.9" fill="#244a90"/>
-            <!-- Letters row 1 -->
-            <text x="8"  y="9"   text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">T</text>
-            <text x="25" y="9"   text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">A</text>
-            <text x="42" y="9"   text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">F</text>
-            <text x="59" y="9"   text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">E</text>
-            <text x="76" y="9"   text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">L</text>
-            <!-- Letters row 2 -->
-            <text x="16.3" y="23.4" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">B</text>
-            <text x="33.3" y="23.4" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">E</text>
-            <text x="50.3" y="23.4" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">R</text>
-            <text x="67.3" y="23.4" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">G</text>
+        <svg viewBox="0 0 67 72" height="52" xmlns="http://www.w3.org/2000/svg">
+            <!-- Peak: cyan -->
+            <polygon points="33.5,0 41.3,4.5 41.3,13.5 33.5,18 25.7,13.5 25.7,4.5" fill="#17c3e6"/>
+            <!-- Row 1: T A -->
+            <polygon points="25,14.4 32.8,18.9 32.8,27.9 25,32.4 17.2,27.9 17.2,18.9"  fill="#244a90"/>
+            <polygon points="42,14.4 49.8,18.9 49.8,27.9 42,32.4 34.2,27.9 34.2,18.9"  fill="#244a90"/>
+            <!-- Row 2: F E L -->
+            <polygon points="16.5,28.8 24.3,33.3 24.3,42.3 16.5,46.8 8.7,42.3 8.7,33.3"   fill="#244a90"/>
+            <polygon points="33.5,28.8 41.3,33.3 41.3,42.3 33.5,46.8 25.7,42.3 25.7,33.3"  fill="#244a90"/>
+            <polygon points="50.5,28.8 58.3,33.3 58.3,42.3 50.5,46.8 42.7,42.3 42.7,33.3"  fill="#244a90"/>
+            <!-- Row 3: B E R G — FNOL red -->
+            <polygon points="8,43.2 15.8,47.7 15.8,56.7 8,61.2 0.2,56.7 0.2,47.7"     fill="#b21612"/>
+            <polygon points="25,43.2 32.8,47.7 32.8,56.7 25,61.2 17.2,56.7 17.2,47.7"   fill="#b21612"/>
+            <polygon points="42,43.2 49.8,47.7 49.8,56.7 42,61.2 34.2,56.7 34.2,47.7"   fill="#b21612"/>
+            <polygon points="59,43.2 66.8,47.7 66.8,56.7 59,61.2 51.2,56.7 51.2,47.7"   fill="#b21612"/>
+            <!-- Letters -->
+            <text x="25"   y="23.4" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">T</text>
+            <text x="42"   y="23.4" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">A</text>
+            <text x="16.5" y="37.8" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">F</text>
+            <text x="33.5" y="37.8" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">E</text>
+            <text x="50.5" y="37.8" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">L</text>
+            <text x="8"    y="52.2" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">B</text>
+            <text x="25"   y="52.2" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">E</text>
+            <text x="42"   y="52.2" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">R</text>
+            <text x="59"   y="52.2" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">G</text>
             <!-- VENTURES -->
-            <text x="42" y="41.5" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6.5" font-weight="700" fill="#244a90" textLength="70" lengthAdjust="spacing">VENTURES</text>
+            <text x="33.5" y="69" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" font-weight="700" fill="#244a90" textLength="58" lengthAdjust="spacing">VENTURES</text>
         </svg>
     </a>
     <ul class="nav-links">
@@ -1190,45 +1195,27 @@
         <p class="label">Our Identity</p>
         <h2 class="section-h">What TAFELBERG Stands For</h2>
         <div class="hive">
+            <!-- Peak: cyan špička — dekorativní, neinteraktivní -->
             <div class="hive-row">
-                <button class="hex-btn" data-key="T" data-letter="T">
-                    <span class="hex-l">T</span>
-                    <span class="hex-w">Technology</span>
-                </button>
-                <button class="hex-btn" data-key="A" data-letter="A">
-                    <span class="hex-l">A</span>
-                    <span class="hex-w">Artificial Intelligence</span>
-                </button>
-                <button class="hex-btn" data-key="F" data-letter="F">
-                    <span class="hex-l">F</span>
-                    <span class="hex-w">Future Health</span>
-                </button>
-                <button class="hex-btn" data-key="E1" data-letter="E">
-                    <span class="hex-l">E</span>
-                    <span class="hex-w">Entrepreneurship</span>
-                </button>
-                <button class="hex-btn" data-key="L" data-letter="L">
-                    <span class="hex-l">L</span>
-                    <span class="hex-w">Longevity</span>
-                </button>
+                <div class="hex-btn hex-peak" aria-hidden="true"></div>
             </div>
+            <!-- Row 1: T A -->
             <div class="hive-row">
-                <button class="hex-btn" data-key="B" data-letter="B">
-                    <span class="hex-l">B</span>
-                    <span class="hex-w">Biomedical</span>
-                </button>
-                <button class="hex-btn" data-key="E2" data-letter="E">
-                    <span class="hex-l">E</span>
-                    <span class="hex-w">Evidence-based</span>
-                </button>
-                <button class="hex-btn" data-key="R" data-letter="R">
-                    <span class="hex-l">R</span>
-                    <span class="hex-w">Research</span>
-                </button>
-                <button class="hex-btn" data-key="G" data-letter="G">
-                    <span class="hex-l">G</span>
-                    <span class="hex-w">Growth</span>
-                </button>
+                <button class="hex-btn" data-key="T" data-letter="T"><span class="hex-l">T</span></button>
+                <button class="hex-btn" data-key="A" data-letter="A"><span class="hex-l">A</span></button>
+            </div>
+            <!-- Row 2: F E L -->
+            <div class="hive-row">
+                <button class="hex-btn" data-key="F" data-letter="F"><span class="hex-l">F</span></button>
+                <button class="hex-btn" data-key="E1" data-letter="E"><span class="hex-l">E</span></button>
+                <button class="hex-btn" data-key="L" data-letter="L"><span class="hex-l">L</span></button>
+            </div>
+            <!-- Row 3: B E R G — FNOL red -->
+            <div class="hive-row">
+                <button class="hex-btn hex-red" data-key="B" data-letter="B"><span class="hex-l">B</span></button>
+                <button class="hex-btn hex-red" data-key="E2" data-letter="E"><span class="hex-l">E</span></button>
+                <button class="hex-btn hex-red" data-key="R" data-letter="R"><span class="hex-l">R</span></button>
+                <button class="hex-btn hex-red" data-key="G" data-letter="G"><span class="hex-l">G</span></button>
             </div>
         </div>
 
