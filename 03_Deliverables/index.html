@@ -11,12 +11,12 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg:        #f0f4f9;
+            --bg:        #ebeff5;
             --bg-card:   #ffffff;
-            --bg-glass:  rgba(240, 244, 249, 0.93);
-            --accent:    #1d63d0;
-            --accent2:   #6366f1;
-            --text:      #111827;
+            --bg-glass:  rgba(235, 239, 245, 0.93);
+            --accent:    #244a90;
+            --accent2:   #17c3e6;
+            --text:      #394a59;
             --muted:     #64748b;
             --border:    rgba(0,0,0,0.09);
         }
@@ -36,7 +36,7 @@
             position: fixed;
             inset: 0 0 auto 0;
             z-index: 110;
-            background: #1d63d0;
+            background: #244a90;
             color: rgba(255,255,255,0.92);
             font-family: 'Space Mono', monospace;
             font-size: 0.65rem;
@@ -345,7 +345,7 @@
             margin-bottom: 1rem;
             font-weight: 700;
         }
-        .audience-tag.tag-clinical { background: rgba(5,150,105,0.1); color: #059669; }
+        .audience-tag.tag-clinical { background: rgba(178,22,18,0.08); color: #b21612; }
         .audience-tag.tag-startup  { background: rgba(29,99,208,0.1); color: var(--accent); }
         .audience-tag.tag-investor { background: rgba(217,119,6,0.1);  color: #d97706; }
         .audience-tag.tag-industry { background: rgba(124,58,237,0.1); color: #7c3aed; }
@@ -407,7 +407,7 @@
             left: 12.5%;
             right: 12.5%;
             height: 2px;
-            background: linear-gradient(90deg, var(--accent), #6366f1);
+            background: linear-gradient(90deg, var(--accent), #17c3e6);
             opacity: 0.3;
             z-index: 0;
         }
@@ -463,10 +463,6 @@
 
         /* ─── ACRONYM ─── */
         .acronym-wrap {
-            background:
-                linear-gradient(180deg, transparent, rgba(29,99,208,0.05) 50%, transparent),
-                radial-gradient(circle, rgba(29,99,208,0.14) 1.5px, transparent 1.5px);
-            background-size: auto, 30px 30px;
             padding: 6rem 0;
         }
 
@@ -624,6 +620,27 @@
         }
 
         /* ─── PARTNERS ─── */
+        .partners-disclaimer {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1rem;
+            background: rgba(99,102,241,0.06);
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 6px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            line-height: 1.5;
+            max-width: 680px;
+        }
+        .partners-disclaimer svg {
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+            color: var(--accent);
+            opacity: 0.7;
+        }
+
         .partners-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
@@ -718,7 +735,7 @@
             background-position: right 0.85rem center;
             padding-right: 2.5rem;
         }
-        select option { background: #ffffff; color: #111827; }
+        select option { background: #ffffff; color: #394a59; }
 
         input:focus, select:focus, textarea:focus {
             border-color: var(--accent);
@@ -785,15 +802,7 @@
             50%       { opacity: 1; }
         }
 
-        /* ─── CANVAS ─── */
-        #heroCanvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
+
 
         /* ─── ECG DIVIDER ─── */
         .ecg-wrap { width: 100%; overflow: hidden; line-height: 0; }
@@ -958,13 +967,13 @@
 
         /* Internal hub boxes — solid tinted fill (opaque) + coloured border */
         .eco-tv  { background: #eef3fd; border: 1.5px solid rgba(29,99,208,0.28); border-left: 3px solid var(--accent); }
-        .eco-fn  { background: #eef8f5; border: 1.5px solid rgba(5,150,105,0.28);  border-left: 3px solid #059669; }
+        .eco-fn  { background: #fdf1f1; border: 1.5px solid rgba(178,22,18,0.2);  border-left: 3px solid #b21612; }
         /* External partner boxes — white, left accent only */
         .eco-cap { border-left: 2px solid #d97706; }
         .eco-com { border-left: 2px solid #7c3aed; }
 
         .eco-tv  .eco-box-cat { color: var(--accent); }
-        .eco-fn  .eco-box-cat { color: #059669; }
+        .eco-fn  .eco-box-cat { color: #b21612; }
         .eco-cap .eco-box-cat { color: #d97706; }
         .eco-com .eco-box-cat { color: #7c3aed; }
 
@@ -1069,16 +1078,16 @@
     <a href="#" class="nav-logo" aria-label="Tafelberg Ventures">
         <svg viewBox="0 0 84 45" height="52" xmlns="http://www.w3.org/2000/svg">
             <!-- Row 1: T A F E L — centers y=9, x=8,25,42,59,76 -->
-            <polygon points="8,0 15.8,4.5 15.8,13.5 8,18 0.2,13.5 0.2,4.5"   fill="#1d63d0"/>
-            <polygon points="25,0 32.8,4.5 32.8,13.5 25,18 17.2,13.5 17.2,4.5" fill="#1d63d0"/>
-            <polygon points="42,0 49.8,4.5 49.8,13.5 42,18 34.2,13.5 34.2,4.5" fill="#1d63d0"/>
-            <polygon points="59,0 66.8,4.5 66.8,13.5 59,18 51.2,13.5 51.2,4.5" fill="#1d63d0"/>
-            <polygon points="76,0 83.8,4.5 83.8,13.5 76,18 68.2,13.5 68.2,4.5" fill="#1d63d0"/>
+            <polygon points="8,0 15.8,4.5 15.8,13.5 8,18 0.2,13.5 0.2,4.5"   fill="#244a90"/>
+            <polygon points="25,0 32.8,4.5 32.8,13.5 25,18 17.2,13.5 17.2,4.5" fill="#244a90"/>
+            <polygon points="42,0 49.8,4.5 49.8,13.5 42,18 34.2,13.5 34.2,4.5" fill="#244a90"/>
+            <polygon points="59,0 66.8,4.5 66.8,13.5 59,18 51.2,13.5 51.2,4.5" fill="#244a90"/>
+            <polygon points="76,0 83.8,4.5 83.8,13.5 76,18 68.2,13.5 68.2,4.5" fill="#244a90"/>
             <!-- Row 2: B E R G — centers y=23.4, x=16.3,33.3,50.3,67.3 -->
-            <polygon points="16.3,14.4 24.1,18.9 24.1,27.9 16.3,32.4 8.5,27.9 8.5,18.9"   fill="#1d63d0"/>
-            <polygon points="33.3,14.4 41.1,18.9 41.1,27.9 33.3,32.4 25.5,27.9 25.5,18.9" fill="#1d63d0"/>
-            <polygon points="50.3,14.4 58.1,18.9 58.1,27.9 50.3,32.4 42.5,27.9 42.5,18.9" fill="#1d63d0"/>
-            <polygon points="67.3,14.4 75.1,18.9 75.1,27.9 67.3,32.4 59.5,27.9 59.5,18.9" fill="#1d63d0"/>
+            <polygon points="16.3,14.4 24.1,18.9 24.1,27.9 16.3,32.4 8.5,27.9 8.5,18.9"   fill="#244a90"/>
+            <polygon points="33.3,14.4 41.1,18.9 41.1,27.9 33.3,32.4 25.5,27.9 25.5,18.9" fill="#244a90"/>
+            <polygon points="50.3,14.4 58.1,18.9 58.1,27.9 50.3,32.4 42.5,27.9 42.5,18.9" fill="#244a90"/>
+            <polygon points="67.3,14.4 75.1,18.9 75.1,27.9 67.3,32.4 59.5,27.9 59.5,18.9" fill="#244a90"/>
             <!-- Letters row 1 -->
             <text x="8"  y="9"   text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">T</text>
             <text x="25" y="9"   text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">A</text>
@@ -1091,7 +1100,7 @@
             <text x="50.3" y="23.4" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">R</text>
             <text x="67.3" y="23.4" text-anchor="middle" dominant-baseline="central" font-family="'Space Mono',monospace" font-size="7.5" font-weight="700" fill="white">G</text>
             <!-- VENTURES -->
-            <text x="42" y="41.5" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6.5" font-weight="700" fill="#1d63d0" textLength="70" lengthAdjust="spacing">VENTURES</text>
+            <text x="42" y="41.5" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6.5" font-weight="700" fill="#244a90" textLength="70" lengthAdjust="spacing">VENTURES</text>
         </svg>
     </a>
     <ul class="nav-links">
@@ -1107,10 +1116,9 @@
 
 <!-- ═══ HERO ═══ -->
 <div class="hero">
-    <canvas id="heroCanvas"></canvas>
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
-    <p class="hero-tag">FN Olomouc — Innovation Ecosystem and HUB (in preparation)</p>
+    <p class="hero-tag"><span style="color:#b21612">FN Olomouc</span> — Innovation Ecosystem and HUB (in preparation)</p>
     <h1 class="hero-title">
         <span class="ac">Tafelberg</span><br>Ventures
     </h1>
@@ -1251,8 +1259,8 @@
                          fill="rgba(29,99,208,0.10)" stroke="rgba(29,99,208,0.5)" stroke-width="1.5"/>
                 <line x1="332" y1="89"  x2="420" y2="250" stroke="rgba(29,99,208,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
                 <line x1="507" y1="89"  x2="420" y2="250" stroke="rgba(29,99,208,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
-                <line x1="332" y1="401" x2="420" y2="250" stroke="rgba(5,150,105,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
-                <line x1="507" y1="401" x2="420" y2="250" stroke="rgba(5,150,105,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="332" y1="401" x2="420" y2="250" stroke="rgba(178,22,18,0.2)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="507" y1="401" x2="420" y2="250" stroke="rgba(178,22,18,0.2)"  stroke-width="1.5" stroke-dasharray="5 4"/>
                 <line x1="247" y1="203" x2="420" y2="250" stroke="rgba(217,119,6,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
                 <line x1="247" y1="297" x2="420" y2="250" stroke="rgba(217,119,6,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
                 <line x1="592" y1="203" x2="420" y2="250" stroke="rgba(124,58,237,0.28)" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -1280,7 +1288,7 @@
                         <path d="M0,1 L0,10 L10,5.5 z" fill="rgba(29,99,208,0.95)"/>
                     </marker>
                     <marker id="arrowSel" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
-                        <path d="M0,1 L0,10 L10,5.5 z" fill="rgba(5,150,105,0.95)"/>
+                        <path d="M0,1 L0,10 L10,5.5 z" fill="rgba(178,22,18,0.95)"/>
                     </marker>
                 </defs>
 
@@ -1302,19 +1310,19 @@
 
                 <!-- SELECTION — bottom-left: lower-left outer → small hex left face y=280 -->
                 <path d="M 155,415 Q 228,374 340,280"
-                      stroke="rgba(5,150,105,0.88)" stroke-width="2.5" fill="none"
+                      stroke="rgba(178,22,18,0.88)" stroke-width="2.5" fill="none"
                       marker-end="url(#arrowSel)" class="flow-sel"/>
                 <text x="148" y="420" text-anchor="end"
                       font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
-                      fill="rgba(5,150,105,0.85)">APPLICATION/SELECTION</text>
+                      fill="rgba(178,22,18,0.85)">APPLICATION/SELECTION</text>
 
                 <!-- SELECTION — top-right: upper-right outer → small hex right face y=220 -->
                 <path d="M 685,85 Q 612,128 500,220"
-                      stroke="rgba(5,150,105,0.88)" stroke-width="2.5" fill="none"
+                      stroke="rgba(178,22,18,0.88)" stroke-width="2.5" fill="none"
                       marker-end="url(#arrowSel)" class="flow-sel"/>
                 <text x="690" y="82" text-anchor="start"
                       font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
-                      fill="rgba(5,150,105,0.85)">APPLICATION/SELECTION</text>
+                      fill="rgba(178,22,18,0.85)">APPLICATION/SELECTION</text>
             </svg>
 
             <div class="eco-hex"></div>
@@ -1483,6 +1491,10 @@
     <p class="label">Partners &amp; Network</p>
     <h2 class="section-h">Our Partners</h2>
     <p class="section-lead">Building the future of healthcare innovation together with world-class institutions, investors, and industry leaders.</p>
+    <div class="partners-disclaimer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>The partners listed are for illustrative purposes only — they represent areas where we are actively seeking partnerships and conducting initial discussions.</span>
+    </div>
     <div class="partners-grid">
         <a class="partner partner-invert" href="https://www.dendiscapital.com/" target="_blank" rel="noopener">
             <img src="https://www.dendiscapital.com/wp-content/uploads/2023/11/Group-4140.svg" alt="Dendis Capital" onerror="this.style.display='none'">
@@ -1628,70 +1640,6 @@
             ? 'rgba(240,244,249,0.98)'
             : 'rgba(240,244,249,0.93)';
     }, { passive: true });
-
-    // ── Molecular particle network (hero canvas) ──
-    (function () {
-        const canvas = document.getElementById('heroCanvas');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        let W, H, pts;
-        const N = 44, LINK = 155;
-
-        function resize() {
-            W = canvas.width  = canvas.offsetWidth;
-            H = canvas.height = canvas.offsetHeight;
-        }
-
-        function mk() {
-            return {
-                x:  Math.random() * W,
-                y:  Math.random() * H,
-                vx: (Math.random() - 0.5) * 0.22,
-                vy: (Math.random() - 0.5) * 0.22,
-                r:  Math.random() * 2 + 1
-            };
-        }
-
-        function tick() {
-            ctx.clearRect(0, 0, W, H);
-            for (let i = 0; i < N; i++) {
-                for (let j = i + 1; j < N; j++) {
-                    const dx = pts[i].x - pts[j].x;
-                    const dy = pts[i].y - pts[j].y;
-                    const d  = Math.hypot(dx, dy);
-                    if (d < LINK) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(29,99,208,${0.22 * (1 - d / LINK)})`;
-                        ctx.lineWidth = 0.9;
-                        ctx.moveTo(pts[i].x, pts[i].y);
-                        ctx.lineTo(pts[j].x, pts[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            pts.forEach(p => {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(29,99,208,0.6)';
-                ctx.fill();
-                p.x += p.vx; p.y += p.vy;
-                if (p.x < 0 || p.x > W) p.vx *= -1;
-                if (p.y < 0 || p.y > H) p.vy *= -1;
-            });
-            requestAnimationFrame(tick);
-        }
-
-        window.addEventListener('resize', () => {
-            resize();
-            pts.forEach(p => { p.x = Math.min(p.x, W); p.y = Math.min(p.y, H); });
-        }, { passive: true });
-
-        requestAnimationFrame(() => {
-            resize();
-            pts = Array.from({ length: N }, mk);
-            tick();
-        });
-    })();
 
     // ── Contact form — Formspree ──
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnjronle';
