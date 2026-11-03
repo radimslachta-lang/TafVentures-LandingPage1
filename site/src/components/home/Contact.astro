@@ -1,0 +1,81 @@
+<!-- ═══ CONTACT ═══ -->
+<section class="section contact-wrap" id="contact">
+    <p class="label">Get Involved</p>
+    <h2 class="section-h">Start a Conversation</h2>
+    <p class="section-lead">Whether you're a clinician with an idea, a startup seeking clinical validation, an investor, or an industry partner — we want to hear from you. You don't need a business plan to start a conversation.</p>
+
+    <div class="success" id="successMsg">
+        Thank you. We'll be in touch within 2 business days.
+    </div>
+
+    <form class="form" id="contactForm" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_subject" value="Tafelberg Ventures — New Contact Form Submission">
+        <input type="hidden" name="_replyto" value="">
+        <div class="row2">
+            <div class="fg">
+                <label for="fname">Full Name</label>
+                <input type="text" id="fname" name="name" placeholder="Jane Smith" required>
+            </div>
+            <div class="fg">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+            </div>
+        </div>
+        <div class="fg">
+            <label for="interest">Area of Interest</label>
+            <select id="interest" name="interest" required>
+                <option value="" disabled selected>Select your role or interest</option>
+                <option value="clinician">Clinician / Hospital Staff (FN Olomouc or other)</option>
+                <option value="researcher">Researcher / Academic — I have an idea to explore</option>
+                <option value="startup">Startup / Innovator seeking clinical validation</option>
+                <option value="investor">Investor / Venture Fund / Family Office</option>
+                <option value="industry">Healthcare Industry / Pharma / MedTech / Digital Health</option>
+                <option value="grants">Grants &amp; Public Funding Body</option>
+                <option value="media">Media / Press</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="fg">
+            <label for="msg">Message <span style="opacity:.5;font-weight:400">(optional)</span></label>
+            <textarea id="msg" name="message" placeholder="Tell us briefly about your project or question..."></textarea>
+        </div>
+        <div class="form-foot">
+            <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+            <span class="form-note">We typically respond within 2 business days.</span>
+        </div>
+    </form>
+</section>
+<script is:inline>
+// ── Contact form — Formspree ──
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnjronle';
+
+async function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const btn  = document.getElementById('submitBtn');
+    const data = new FormData(form);
+    // Mirror sender email into _replyto so Formspree threads replies correctly
+    data.set('_replyto', data.get('email'));
+
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+            form.style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        } else {
+            btn.textContent = 'Error — please try again';
+            btn.disabled = false;
+        }
+    } catch {
+        btn.textContent = 'Error — please try again';
+        btn.disabled = false;
+    }
+}
+</script>

@@ -1,0 +1,47 @@
+---
+import Logo from './Logo.astro';
+import { nav, cta } from '../data/nav.js';
+---
+<nav id="nav" aria-label="Main">
+    <a href="/" class="nav-logo" aria-label="Tafelberg Ventures">
+        <Logo />
+    </a>
+    <ul class="nav-links" id="navLinks">
+        {nav.map((item) => (
+            <li class={item.children ? 'has-sub' : undefined}>
+                <a href={item.href}>{item.label}</a>
+                {item.children && (
+                    <ul class="sub">
+                        {item.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}
+                    </ul>
+                )}
+            </li>
+        ))}
+        <li class="nav-cta-mobile"><a href={cta.href} class="btn btn-primary">{cta.label}</a></li>
+    </ul>
+    <a href={cta.href} class="btn btn-primary nav-cta">{cta.label}</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<script is:inline>
+    // ── Nav opacity on scroll ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        nav.style.background = window.scrollY > 60
+            ? 'rgba(240,244,249,0.98)'
+            : 'rgba(240,244,249,0.93)';
+    }, { passive: true });
+
+    // ── Mobile menu ──
+    const navToggle = document.getElementById('navToggle');
+    navToggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+    }));
+</script>

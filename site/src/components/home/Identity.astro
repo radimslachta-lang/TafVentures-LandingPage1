@@ -1,0 +1,100 @@
+<!-- ═══ TAFELBERG ACRONYM ═══ -->
+<div class="acronym-wrap" id="vision">
+    <div class="acronym-inner">
+        <p class="label">Our Identity</p>
+        <h2 class="section-h">What TAFELBERG Stands For</h2>
+        <div class="hive">
+            <!-- Peak: cyan špička — dekorativní, neinteraktivní -->
+            <div class="hive-row">
+                <div class="hex-btn hex-peak" aria-hidden="true"></div>
+            </div>
+            <!-- Row 1: T A -->
+            <div class="hive-row">
+                <button class="hex-btn" data-key="T" data-letter="T"><span class="hex-l">T</span></button>
+                <button class="hex-btn" data-key="A" data-letter="A"><span class="hex-l">A</span></button>
+            </div>
+            <!-- Row 2: F E L -->
+            <div class="hive-row">
+                <button class="hex-btn" data-key="F" data-letter="F"><span class="hex-l">F</span></button>
+                <button class="hex-btn" data-key="E1" data-letter="E"><span class="hex-l">E</span></button>
+                <button class="hex-btn" data-key="L" data-letter="L"><span class="hex-l">L</span></button>
+            </div>
+            <!-- Row 3: B E R G — FNOL red -->
+            <div class="hive-row">
+                <button class="hex-btn hex-red" data-key="B" data-letter="B"><span class="hex-l">B</span></button>
+                <button class="hex-btn hex-red" data-key="E2" data-letter="E"><span class="hex-l">E</span></button>
+                <button class="hex-btn hex-red" data-key="R" data-letter="R"><span class="hex-l">R</span></button>
+                <button class="hex-btn hex-red" data-key="G" data-letter="G"><span class="hex-l">G</span></button>
+            </div>
+        </div>
+
+        <div class="hex-panel" id="hexPanel">
+            <span class="hp-letter" id="hpLetter"></span>
+            <div>
+                <div class="hp-title" id="hpTitle"></div>
+                <div class="hp-desc"  id="hpDesc"></div>
+            </div>
+        </div>
+        <p style="margin-top:2rem;font-size:0.85rem;color:var(--muted);line-height:1.7;max-width:660px;margin-left:auto;margin-right:auto;">
+            Beyond the acronym, Tafelberg Ventures is equally focused on <strong style="color:var(--text);font-weight:600;">Medicine</strong>, <strong style="color:var(--text);font-weight:600;">Prevention</strong>, and <strong style="color:var(--text);font-weight:600;">Startups</strong> — integrating clinical practice, proactive health innovation, and entrepreneurial venture-building into one cohesive platform.
+        </p>
+    </div>
+</div>
+
+<script is:inline>
+// ── Hex acronym panel (hover) ──
+const hexBtns     = document.querySelectorAll('.hex-btn');
+const hexPanel    = document.getElementById('hexPanel');
+const hpLetter    = document.getElementById('hpLetter');
+const hpTitle     = document.getElementById('hpTitle');
+const hpDesc      = document.getElementById('hpDesc');
+const acronymInner = document.querySelector('.acronym-inner');
+const hexData  = {
+    T:  { word: 'Technology',              desc: 'Driving innovation through cutting-edge MedTech solutions and digital health infrastructure built for real clinical environments.' },
+    A:  { word: 'Artificial Intelligence', desc: 'Harnessing AI to transform healthcare data into actionable clinical and commercial insights that accelerate diagnosis, treatment, and research.' },
+    F:  { word: 'Future Health',           desc: 'Building the healthcare platform of tomorrow — proactive, personalized, predictive, and grounded in the realities of modern medicine.' },
+    E1: { word: 'Entrepreneurship',        desc: 'Empowering founders and innovators with hospital-grade validation, clinical access, and venture support to bring ideas to market.' },
+    L:  { word: 'Longevity',               desc: 'Advancing science and business at the frontier of healthy aging, precision medicine, and evidence-backed longevity interventions.' },
+    B:  { word: 'Biomedical',              desc: 'Grounded in world-class biomedical research and clinical expertise at one of the Czech Republic\'s top teaching hospitals.' },
+    E2: { word: 'Evidence-based',          desc: 'Every innovation validated against rigorous clinical evidence and real-world outcomes — not just theory or prototype-stage assumptions.' },
+    R:  { word: 'Research',                desc: 'Deep integration with academic and applied research programs to accelerate translational medicine and bring discoveries to patients faster.' },
+    G:  { word: 'Growth',                  desc: 'Scaling healthcare ventures from concept to commercialization with strategic capital connections, partnership networks, and venture-building expertise.' }
+};
+const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+function showHex(btn) {
+    hexBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = hexData[btn.dataset.key];
+    hpLetter.textContent = btn.dataset.letter;
+    hpTitle.textContent  = d.word;
+    hpDesc.textContent   = d.desc;
+    hexPanel.classList.remove('open');
+    void hexPanel.offsetWidth;
+    hexPanel.classList.add('open');
+}
+
+if (isTouch) {
+    hexBtns.forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.stopPropagation();
+            if (btn.classList.contains('active')) {
+                btn.classList.remove('active');
+                hexPanel.classList.remove('open');
+            } else {
+                showHex(btn);
+            }
+        });
+    });
+    document.addEventListener('click', () => {
+        hexBtns.forEach(b => b.classList.remove('active'));
+        hexPanel.classList.remove('open');
+    });
+} else {
+    hexBtns.forEach(btn => btn.addEventListener('mouseenter', () => showHex(btn)));
+    acronymInner.addEventListener('mouseleave', () => {
+        hexBtns.forEach(b => b.classList.remove('active'));
+        hexPanel.classList.remove('open');
+    });
+}
+</script>

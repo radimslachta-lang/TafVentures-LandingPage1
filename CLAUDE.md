@@ -36,7 +36,8 @@ Health Innovation and Venture Building Platform
 - PHF: https://www.phf.cz/
 
 ## Technické požadavky
-- Jednoduchý HTML/CSS/JS soubor (bez frameworků)
+- Od 3. 11. 2026 statický web v Astru ve složce `site/` (`npm run dev` / `npm run build`)
+  - menu: `site/src/data/nav.js`, sekce úvodní stránky: `site/src/components/home/`, styly: `site/src/styles/`
+  - angličtina na `/`, čeština na `/cs/` (Astro i18n)
+- `03_Deliverables/index.html` = původní jednosouborová verze, slouží jen do přepnutí Vercelu na `site/`
 - Česky i anglicky (primárně anglicky)
-- Formulář pro sběr kontaktů (jméno, email, zájem o spolupráci)
-- Soubory ukládat do: TafVentures_LandingPage_2026_1/03_Deliverables/

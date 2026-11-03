@@ -1,0 +1,140 @@
+<!-- ═══ PLATFORM DIAGRAM ═══ -->
+<section class="section" id="platform">
+    <p class="label">Platform</p>
+    <h2 class="section-h">The Innovation Platform</h2>
+    <p class="section-lead">Tafelberg Ventures sits at the intersection of clinical excellence, capital flows, research infrastructure, and commercial partnerships — creating a unique healthcare innovation flywheel.</p>
+
+    <div class="eco-scroll">
+        <div class="eco-diagram">
+            <!-- Background SVG: hex polygon + eco-box connector lines -->
+            <svg class="eco-svg" viewBox="0 0 840 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="420,51 593,150 593,350 420,449 247,350 247,150"
+                         fill="rgba(29,99,208,0.10)" stroke="rgba(29,99,208,0.5)" stroke-width="1.5"/>
+                <line x1="332" y1="89"  x2="420" y2="250" stroke="rgba(29,99,208,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="507" y1="89"  x2="420" y2="250" stroke="rgba(29,99,208,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="332" y1="401" x2="420" y2="250" stroke="rgba(178,22,18,0.2)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="507" y1="401" x2="420" y2="250" stroke="rgba(178,22,18,0.2)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="247" y1="203" x2="420" y2="250" stroke="rgba(217,119,6,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="247" y1="297" x2="420" y2="250" stroke="rgba(217,119,6,0.28)"  stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="592" y1="203" x2="420" y2="250" stroke="rgba(124,58,237,0.28)" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="592" y1="297" x2="420" y2="250" stroke="rgba(124,58,237,0.28)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            </svg>
+
+            <!-- Overlay SVG: flow arrows — z-index 10, renders above all eco-boxes -->
+            <!--
+                SERVICES (blue)  — start at large hex boundary, arrow points outward into E.services space
+                  • top-left:     large hex TL vertex (247,150) → outer upper-left (165,68)
+                  • bottom-right: large hex BR vertex (593,350) → outer lower-right (675,434)
+                  Both paths stay OUTSIDE the large hex — no eco-box crossings.
+
+                SELECTION (green) — start in E.services space, arrow points inward to small hex boundary
+                  • bottom-left: outer lower-left (155,415) → small hex left face (340,280)
+                  • top-right:   outer upper-right (685,85) → small hex right face (500,220)
+                  These paths cross the eco-player zone (unavoidable); overlay ensures visibility.
+
+                Large hex vertices: TL(247,150) TR(593,150) BL(247,350) BR(593,350)
+                Small hex faces:    left x=340 y=204–296 | right x=500 y=204–296
+            -->
+            <svg class="eco-svg-overlay" viewBox="0 0 840 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arrowSvc" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+                        <path d="M0,1 L0,10 L10,5.5 z" fill="rgba(29,99,208,0.95)"/>
+                    </marker>
+                    <marker id="arrowSel" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+                        <path d="M0,1 L0,10 L10,5.5 z" fill="rgba(178,22,18,0.95)"/>
+                    </marker>
+                </defs>
+
+                <!-- SERVICES — top-left: hex TL vertex → upper-left outer space (no box crossings) -->
+                <path d="M 247,150 Q 200,106 165,68"
+                      stroke="rgba(29,99,208,0.88)" stroke-width="2.5" fill="none"
+                      marker-end="url(#arrowSvc)" class="flow-svc"/>
+                <text x="160" y="64" text-anchor="end"
+                      font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
+                      fill="rgba(29,99,208,0.85)">SUPPORT/SERVICES</text>
+
+                <!-- SERVICES — bottom-right: hex BR vertex → lower-right outer space (no box crossings) -->
+                <path d="M 593,350 Q 637,394 675,434"
+                      stroke="rgba(29,99,208,0.88)" stroke-width="2.5" fill="none"
+                      marker-end="url(#arrowSvc)" class="flow-svc"/>
+                <text x="680" y="438" text-anchor="start"
+                      font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
+                      fill="rgba(29,99,208,0.85)">SUPPORT/SERVICES</text>
+
+                <!-- SELECTION — bottom-left: lower-left outer → small hex left face y=280 -->
+                <path d="M 155,415 Q 228,374 340,280"
+                      stroke="rgba(178,22,18,0.88)" stroke-width="2.5" fill="none"
+                      marker-end="url(#arrowSel)" class="flow-sel"/>
+                <text x="148" y="420" text-anchor="end"
+                      font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
+                      fill="rgba(178,22,18,0.85)">APPLICATION/SELECTION</text>
+
+                <!-- SELECTION — top-right: upper-right outer → small hex right face y=220 -->
+                <path d="M 685,85 Q 612,128 500,220"
+                      stroke="rgba(178,22,18,0.88)" stroke-width="2.5" fill="none"
+                      marker-end="url(#arrowSel)" class="flow-sel"/>
+                <text x="690" y="82" text-anchor="start"
+                      font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
+                      fill="rgba(178,22,18,0.85)">APPLICATION/SELECTION</text>
+            </svg>
+
+            <div class="eco-hex"></div>
+
+            <!-- Zone labels -->
+            <div class="eco-zone-label" style="left:310px;top:18px;width:220px;">Platform services</div>
+            <div class="eco-zone-label" style="left:310px;top:134px;width:220px;">Platform players</div>
+
+            <div class="eco-inner-label">Platform incubation</div>
+            <div class="eco-inner-box" style="left:350px;top:226px;">Portfolio project / venture</div>
+            <div class="eco-inner-box" style="left:424px;top:226px;">Portfolio project / venture</div>
+            <div class="eco-inner-box" style="left:350px;top:266px;">Portfolio project / venture</div>
+            <div class="eco-inner-box" style="left:424px;top:266px;">Portfolio project / venture</div>
+
+            <div class="eco-box eco-tv eco-t1">
+                <div class="eco-box-cat">TafelVent</div>
+                <div class="eco-box-name">Venture Building</div>
+            </div>
+            <div class="eco-box eco-tv eco-t2">
+                <div class="eco-box-cat">TafelVent</div>
+                <div class="eco-box-name">Infrastructure<br>Labs / Testbeds</div>
+            </div>
+
+            <div class="eco-box eco-cap eco-b1">
+                <div class="eco-box-cat">Capital</div>
+                <div class="eco-box-name">Venture / Private Capital</div>
+            </div>
+            <div class="eco-box eco-cap eco-b2">
+                <div class="eco-box-cat">Capital</div>
+                <div class="eco-box-name">Grants &amp; Public Funds</div>
+            </div>
+
+            <div class="eco-box eco-fn eco-l1">
+                <div class="eco-box-cat">FN Olomouc</div>
+                <div class="eco-box-name">Clinical Settings</div>
+            </div>
+            <div class="eco-box eco-com eco-l2">
+                <div class="eco-box-cat">Market</div>
+                <div class="eco-box-name">Companies &amp;<br>Commercial Partners</div>
+            </div>
+
+            <div class="eco-box eco-fn eco-r1">
+                <div class="eco-box-cat">FN Olomouc</div>
+                <div class="eco-box-name">Data &amp; ICT</div>
+            </div>
+            <div class="eco-box eco-com eco-r2">
+                <div class="eco-box-cat">Public</div>
+                <div class="eco-box-name">State / Public<br>Stakeholders</div>
+            </div>
+
+            <!-- Left side -->
+            <div class="eco-side-box" style="left:20px;top:115px;">FN projects</div>
+            <div class="eco-side-box" style="left:20px;top:232px;">Startups / MSP</div>
+            <div class="eco-side-box" style="left:20px;top:355px;">External projects</div>
+
+            <!-- Right side -->
+            <div class="eco-side-box" style="left:675px;top:115px;">FN projects</div>
+            <div class="eco-side-box" style="left:675px;top:232px;">Startups / MSP</div>
+            <div class="eco-side-box" style="left:675px;top:355px;">External projects</div>
+        </div>
+    </div>
+</section>
