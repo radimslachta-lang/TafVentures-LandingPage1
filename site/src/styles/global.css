@@ -492,9 +492,9 @@ nav {
 }
 .hex-btn:hover, .hex-btn.active { background: #1a3870; }
 
-/* Peak: cyan špička, neinteraktivní */
-.hex-peak { background: #17c3e6; pointer-events: none; cursor: default; }
-.hex-peak:hover { background: #17c3e6; }
+/* Peak: cyan špička = Tafelberg Ventures jako celek */
+.hex-peak { background: #17c3e6; }
+.hex-peak:hover, .hex-peak.active { background: #0fa3c2; }
 
 /* BERG row: červená jako v logu */
 .hex-red { background: #b21612; }

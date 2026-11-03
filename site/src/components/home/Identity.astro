@@ -6,7 +6,7 @@
         <div class="hive">
             <!-- Peak: cyan špička — dekorativní, neinteraktivní -->
             <div class="hive-row">
-                <div class="hex-btn hex-peak" aria-hidden="true"></div>
+                <button class="hex-btn hex-peak" data-key="TV" data-letter="TV" aria-label="Tafelberg Ventures"></button>
             </div>
             <!-- Row 1: T A -->
             <div class="hive-row">
@@ -50,6 +50,7 @@ const hpTitle     = document.getElementById('hpTitle');
 const hpDesc      = document.getElementById('hpDesc');
 const acronymInner = document.querySelector('.acronym-inner');
 const hexData  = {
+    TV: { word: 'Tafelberg Ventures',      desc: 'The summit where all nine meet — one platform connecting clinical practice, research, capital, and industry. We are building it now, together with those it is meant to serve.' },
     T:  { word: 'Technology',              desc: 'Driving innovation through cutting-edge MedTech solutions and digital health infrastructure built for real clinical environments.' },
     A:  { word: 'Artificial Intelligence', desc: 'Harnessing AI to transform healthcare data into actionable clinical and commercial insights that accelerate diagnosis, treatment, and research.' },
     F:  { word: 'Future Health',           desc: 'Building the healthcare platform of tomorrow — proactive, personalized, predictive, and grounded in the realities of modern medicine.' },
