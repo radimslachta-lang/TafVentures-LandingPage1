@@ -11,8 +11,10 @@ export const nav = [
     },
     {
         label: 'Platform',
-        href: '/#platform',
+        href: '/#different',
         children: [
+            { label: 'What makes us different', href: '/#different' },
+            { label: 'TafelVent Gate', href: '/#gate' },
             { label: 'How it works', href: '/#platform' },
             { label: 'Innovation Programs', href: '/#programs' },
             { label: 'Partners', href: '/#partners' },
@@ -20,8 +22,9 @@ export const nav = [
     },
     {
         label: 'How to join',
-        href: '/#join',
+        href: '/#shape',
         children: [
+            { label: 'Share your needs', href: '/#shape' },
             { label: 'Clinicians & Researchers', href: '/#join-clinicians' },
             { label: 'Startups & Innovators', href: '/#join-startups' },
             { label: 'Investors', href: '/#join-investors' },
@@ -31,4 +34,4 @@ export const nav = [
     { label: 'Contact', href: '/#contact' },
 ];
 
-export const cta = { label: 'Get in Touch', href: '/#contact' };
+export const cta = { label: 'Help us build it', href: '/#shape' };

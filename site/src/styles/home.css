@@ -1,0 +1,134 @@
+/* Anchor jumps land below the fixed ticker + nav */
+html { scroll-padding-top: 120px; }
+
+/* ─── HERO additions ─── */
+.hero-sub strong { color: var(--text); font-weight: 600; }
+.btn-lg { padding: 0.9rem 1.9rem; font-size: 0.95rem; }
+
+/* ─── CO-DESIGN: SHARE YOUR NEEDS ─── */
+.shape-wrap {
+    background: var(--accent);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.shape-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -40% -10% auto auto;
+    width: 640px;
+    height: 640px;
+    background: radial-gradient(circle, rgba(23,195,230,0.28) 0%, transparent 65%);
+    pointer-events: none;
+}
+.shape { position: relative; text-align: center; }
+.shape .label { color: var(--accent2); }
+.shape .section-h { color: #fff; }
+.shape .section-h .ac { color: var(--accent2); }
+.shape-lead {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.8;
+    color: rgba(255,255,255,0.88);
+}
+.shape-segments {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+.shape-segments li {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    color: rgba(255,255,255,0.9);
+}
+.shape-steps {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    max-width: 960px;
+    margin: 0 auto 3rem;
+    text-align: left;
+}
+.shape-step {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 10px;
+    padding: 1.5rem 1.4rem;
+}
+.shape-n {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent2);
+}
+.shape-step h3 { font-size: 1.05rem; margin: 0.4rem 0 0.5rem; color: #fff; }
+.shape-step p { font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.78); }
+.shape-cta .btn-primary {
+    background: #fff;
+    color: var(--accent);
+    font-size: 1rem;
+    padding: 1rem 2.4rem;
+}
+.shape-cta .btn-primary:hover { background: var(--accent2); color: #fff; box-shadow: 0 6px 28px rgba(23,195,230,0.45); }
+.shape-note { margin-top: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+
+/* ─── WHAT MAKES US DIFFERENT ─── */
+.diff-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    align-items: start;
+}
+.diff-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem 1.75rem;
+}
+.diff-gate {
+    border: 2px solid var(--accent);
+    box-shadow: 0 10px 40px rgba(36,74,144,0.12);
+}
+.diff-tag {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    background: rgba(29,99,208,0.1);
+    color: var(--accent);
+}
+.diff-gate .diff-tag { background: var(--accent); color: #fff; }
+.diff-card h3 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+.diff-gate h3 { color: var(--accent); font-size: 1.85rem; }
+.diff-hook { font-size: 0.95rem; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; }
+.diff-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+.diff-goal {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+@media (max-width: 720px) {
+    .shape-steps { grid-template-columns: 1fr; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .shape-cta .btn-primary { display: block; padding: 1rem 1.25rem; }
+}

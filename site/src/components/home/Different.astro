@@ -1,0 +1,40 @@
+---
+const gateFeatures = [
+    'Anonymised health and medical data within a clear legal framework',
+    'Pilot sites and clinical validation in real hospital practice',
+    'Clinical experts and key opinion leaders for your project',
+    'One entry point with transparent rules and predictable timelines',
+];
+---
+<!-- ═══ WHAT MAKES US DIFFERENT ═══ -->
+<section class="section" id="different">
+    <p class="label">What makes us different</p>
+    <h2 class="section-h">The Shortest Path from Idea to Clinic</h2>
+    <p class="section-lead">Access to the clinical environment and to health data is the hardest step for every health innovation. That is exactly where we want to make the biggest difference.</p>
+
+    <div class="diff-grid">
+        <article class="diff-card diff-gate" id="gate">
+            <span class="diff-tag">Flagship · in design</span>
+            <h3>TafelVent Gate</h3>
+            <p class="diff-hook">The simplest possible access to clinical data and practice.</p>
+            <p class="diff-desc">
+                One gateway for innovation partners to anonymised health and medical data and to the clinical environment of FN Olomouc —
+                clear rules and predictable timelines instead of months spent looking for the right door.
+            </p>
+            <ul class="audience-list">
+                {gateFeatures.map((f) => <li>{f}</li>)}
+            </ul>
+            <p class="diff-goal">Our goal: to make FN Olomouc the easiest hospital in the Czech Republic to innovate with.</p>
+        </article>
+
+        <article class="diff-card">
+            <span class="diff-tag">In design</span>
+            <h3>Two-way Needs Registry</h3>
+            <p class="diff-hook">Start with what is genuinely needed.</p>
+            <p class="diff-desc">
+                Clinicians tell us which real problems they face every day. Innovators tell us what they need from a hospital to move forward.
+                We match both sides — so that new solutions start from real clinical needs, not from what is easiest to build.
+            </p>
+        </article>
+    </div>
+</section>

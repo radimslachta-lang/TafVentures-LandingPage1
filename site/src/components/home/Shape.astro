@@ -1,0 +1,48 @@
+---
+import { intakeHref, intakeFormUrl } from '../../data/site.js';
+
+const segments = [
+    'Clinicians & Researchers',
+    'Startups & Innovators',
+    'Investors',
+    'Industry & Corporates',
+    'Public Bodies & Others',
+];
+
+const steps = [
+    { n: '01', title: 'Tell us about you', desc: 'Who you are, what you are working on, and what you would need from a hospital-based innovation platform.' },
+    { n: '02', title: 'We confirm and listen', desc: 'We confirm that we have received your input and work with it responsibly as we design the concept.' },
+    { n: '03', title: 'We come back when it is ready', desc: 'We will get in touch once the service designed for you is actually ready.' },
+];
+---
+<!-- ═══ CO-DESIGN: SHARE YOUR NEEDS ═══ -->
+<section class="shape-wrap" id="shape">
+    <div class="section shape">
+        <p class="label">Co-design phase · Open now</p>
+        <h2 class="section-h">We are not building this for ourselves.<br><span class="ac">We are building it for you.</span></h2>
+        <p class="shape-lead">
+            To create a system that truly fits the real needs of everyone who will work with it,
+            we need to know as much as possible about you — your plans, your needs, and the obstacles you face.
+            Your input will directly shape what we build first.
+        </p>
+
+        <ul class="shape-segments" aria-label="Who we want to hear from">
+            {segments.map((s) => <li>{s}</li>)}
+        </ul>
+
+        <ol class="shape-steps">
+            {steps.map((s) => (
+                <li class="shape-step">
+                    <span class="shape-n">{s.n}</span>
+                    <h3>{s.title}</h3>
+                    <p>{s.desc}</p>
+                </li>
+            ))}
+        </ol>
+
+        <div class="shape-cta">
+            <a href={intakeHref} class="btn btn-primary btn-lg" {...(intakeFormUrl ? { target: '_blank', rel: 'noopener' } : {})}>Share your needs →</a>
+            <p class="shape-note">Already have a concrete project? The questionnaire will lead you on to our pitch step.</p>
+        </div>
+    </div>
+</section>
