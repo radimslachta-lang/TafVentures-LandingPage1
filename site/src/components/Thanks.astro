@@ -2,7 +2,7 @@
 // Landing page after the needs questionnaire (Tally redirects here on completion
 // with ?pitch=<answer>&sid=<submission id>). Respondents who chose to continue
 // get a button to the pitch form, linked to their questionnaire by intake_id.
-import { pitchFormUrl } from '../data/site.js';
+import { pitchFormUrls } from '../data/site.js';
 
 const { label, heading, lead, urgent, pitchText, pitchCta, back, home, lang } = Astro.props;
 ---
@@ -14,7 +14,7 @@ const { label, heading, lead, urgent, pitchText, pitchCta, back, home, lang } = 
         <p class="shape-lead">{urgent}</p>
         <div class="shape-cta thanks-pitch" id="thanksPitch" hidden>
             <p class="shape-lead">{pitchText}</p>
-            <a href={pitchFormUrl} id="thanksPitchLink" class="btn btn-primary btn-lg" data-base={pitchFormUrl} data-lang={lang}>{pitchCta}</a>
+            <a href={pitchFormUrls[lang] ?? pitchFormUrls.cs} id="thanksPitchLink" class="btn btn-primary btn-lg" data-base={pitchFormUrls[lang] ?? pitchFormUrls.cs} data-lang={lang}>{pitchCta}</a>
         </div>
         <div class="shape-cta">
             <a href={home} class="btn btn-ghost btn-lg thanks-back">{back}</a>
