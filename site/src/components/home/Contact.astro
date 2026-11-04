@@ -1,47 +1,85 @@
+---
+import { langOf, url, pick } from '../../i18n.js';
+const lang = langOf(Astro);
+const t = pick({
+    en: {
+        label: 'Contact', h: 'A Question That Does Not Fit the Questionnaire?',
+        lead1: 'The', leadLink: 'needs questionnaire', lead2: 'is the best way to help shape the platform. For anything else — press, partnerships, or a simple question — write to us here.',
+        success: 'Thank you. We have received your message.',
+        subject: 'Tafelberg Ventures — New Contact Form Submission',
+        name: 'Full Name', namePh: 'Jane Smith', email: 'Email Address', emailPh: 'jane@company.com',
+        interest: 'Area of Interest', interestPh: 'Select your role or interest',
+        options: {
+            clinician: 'Clinician / Hospital Staff (FN Olomouc or other)',
+            researcher: 'Researcher / Academic — I have an idea to explore',
+            startup: 'Startup / Innovator seeking clinical validation',
+            investor: 'Investor / Venture Fund / Family Office',
+            industry: 'Healthcare Industry / Pharma / MedTech / Digital Health',
+            grants: 'Grants & Public Funding Body',
+            media: 'Media / Press',
+            other: 'Other',
+        },
+        msg: 'Message', optional: '(optional)', msgPh: 'Tell us briefly about your project or question...',
+        send: 'Send Message', sending: 'Sending…', error: 'Error — please try again', note: 'We read every message.',
+    },
+    cs: {
+        label: 'Kontakt', h: 'Máte otázku, která se nevejde do dotazníku?',
+        lead1: 'Nejlépe nám s návrhem platformy pomůžete vyplněním', leadLink: 'dotazníku potřeb', lead2: '. S čímkoli dalším — média, partnerství nebo jednoduchý dotaz — nám napište sem.',
+        success: 'Děkujeme. Vaši zprávu jsme přijali.',
+        subject: 'Tafelberg Ventures — nová zpráva z kontaktního formuláře (CZ)',
+        name: 'Jméno a příjmení', namePh: 'Jana Nováková', email: 'E-mail', emailPh: 'jana@firma.cz',
+        interest: 'Oblast zájmu', interestPh: 'Vyberte svou roli nebo zájem',
+        options: {
+            clinician: 'Lékař / zaměstnanec nemocnice (FN Olomouc nebo jiné)',
+            researcher: 'Výzkumník / akademik — mám nápad k prověření',
+            startup: 'Startup / inovátor hledající klinickou validaci',
+            investor: 'Investor / venture fond / family office',
+            industry: 'Zdravotnický průmysl / farmacie / MedTech / digital health',
+            grants: 'Grantová agentura / veřejný poskytovatel podpory',
+            media: 'Média / tisk',
+            other: 'Jiné',
+        },
+        msg: 'Zpráva', optional: '(nepovinné)', msgPh: 'Stručně nám popište svůj projekt nebo dotaz…',
+        send: 'Odeslat zprávu', sending: 'Odesílám…', error: 'Chyba — zkuste to prosím znovu', note: 'Čteme každou zprávu.',
+    },
+}, lang);
+---
 <!-- ═══ CONTACT ═══ -->
 <section class="section contact-wrap" id="contact">
-    <p class="label">Contact</p>
-    <h2 class="section-h">A Question That Does Not Fit the Questionnaire?</h2>
-    <p class="section-lead">The <a href="/#shape">needs questionnaire</a> is the best way to help shape the platform. For anything else — press, partnerships, or a simple question — write to us here.</p>
+    <p class="label">{t.label}</p>
+    <h2 class="section-h">{t.h}</h2>
+    <p class="section-lead">{t.lead1} <a href={url(lang, 'home', 'shape')}>{t.leadLink}</a>{lang === 'cs' ? '' : ' '}{t.lead2}</p>
 
-    <div class="success" id="successMsg">
-        Thank you. We have received your message.
-    </div>
+    <div class="success" id="successMsg">{t.success}</div>
 
-    <form class="form" id="contactForm" onsubmit="handleSubmit(event)">
-        <input type="hidden" name="_subject" value="Tafelberg Ventures — New Contact Form Submission">
+    <form class="form" id="contactForm" onsubmit="handleSubmit(event)" data-sending={t.sending} data-error={t.error}>
+        <input type="hidden" name="_subject" value={t.subject}>
         <input type="hidden" name="_replyto" value="">
+        <input type="hidden" name="lang" value={lang}>
         <div class="row2">
             <div class="fg">
-                <label for="fname">Full Name</label>
-                <input type="text" id="fname" name="name" placeholder="Jane Smith" required>
+                <label for="fname">{t.name}</label>
+                <input type="text" id="fname" name="name" placeholder={t.namePh} required>
             </div>
             <div class="fg">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+                <label for="email">{t.email}</label>
+                <input type="email" id="email" name="email" placeholder={t.emailPh} required>
             </div>
         </div>
         <div class="fg">
-            <label for="interest">Area of Interest</label>
+            <label for="interest">{t.interest}</label>
             <select id="interest" name="interest" required>
-                <option value="" disabled selected>Select your role or interest</option>
-                <option value="clinician">Clinician / Hospital Staff (FN Olomouc or other)</option>
-                <option value="researcher">Researcher / Academic — I have an idea to explore</option>
-                <option value="startup">Startup / Innovator seeking clinical validation</option>
-                <option value="investor">Investor / Venture Fund / Family Office</option>
-                <option value="industry">Healthcare Industry / Pharma / MedTech / Digital Health</option>
-                <option value="grants">Grants &amp; Public Funding Body</option>
-                <option value="media">Media / Press</option>
-                <option value="other">Other</option>
+                <option value="" disabled selected>{t.interestPh}</option>
+                {Object.entries(t.options).map(([v, l]) => <option value={v}>{l}</option>)}
             </select>
         </div>
         <div class="fg">
-            <label for="msg">Message <span style="opacity:.5;font-weight:400">(optional)</span></label>
-            <textarea id="msg" name="message" placeholder="Tell us briefly about your project or question..."></textarea>
+            <label for="msg">{t.msg} <span style="opacity:.5;font-weight:400">{t.optional}</span></label>
+            <textarea id="msg" name="message" placeholder={t.msgPh}></textarea>
         </div>
         <div class="form-foot">
-            <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
-            <span class="form-note">We read every message.</span>
+            <button type="submit" class="btn btn-primary" id="submitBtn">{t.send}</button>
+            <span class="form-note">{t.note}</span>
         </div>
     </form>
 </section>
@@ -57,7 +95,7 @@ async function handleSubmit(e) {
     // Mirror sender email into _replyto so Formspree threads replies correctly
     data.set('_replyto', data.get('email'));
 
-    btn.textContent = 'Sending…';
+    btn.textContent = form.dataset.sending;
     btn.disabled = true;
 
     try {
@@ -70,11 +108,11 @@ async function handleSubmit(e) {
             form.style.display = 'none';
             document.getElementById('successMsg').style.display = 'block';
         } else {
-            btn.textContent = 'Error — please try again';
+            btn.textContent = form.dataset.error;
             btn.disabled = false;
         }
     } catch {
-        btn.textContent = 'Error — please try again';
+        btn.textContent = form.dataset.error;
         btn.disabled = false;
     }
 }

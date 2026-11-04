@@ -1,71 +1,85 @@
 ---
 import { intakeHref } from '../../data/site.js';
+import { langOf, pick } from '../../i18n.js';
 
-const href = intakeHref('en');
+const lang = langOf(Astro);
+const href = intakeHref(lang);
 const linkAttrs = href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {};
+
+const t = pick({
+    en: {
+        label: 'Who It Is For', h: 'Built for Every Innovator',
+        lead: 'Whether you come from the lab, the clinic, or the boardroom — we are designing the platform around what you need. This is what we plan to offer, and your input will decide what comes first.',
+        cta: 'Tell us what you need →',
+        cards: [
+            { id: 'join-clinicians', tagClass: 'tag-clinical', tag: 'Clinicians & Researchers',
+              h: 'You have the knowledge. We want to handle the rest.',
+              hook: '"My job is medicine, not business" — we hear that. And we agree.',
+              desc: 'You should not have to become an entrepreneur. You need a partner who can translate your clinical insight into a scalable solution. We are building the structure, legal setup, business mentoring, and capital connections for this — so you can stay focused on what you do best.',
+              list: ['Business development support', 'IP protection and spin-off guidance', 'A route to clinical validation at FN Olomouc', 'Connections to investors and industry partners'] },
+            { id: 'join-startups', tagClass: 'tag-startup', tag: 'Startups & Innovators',
+              h: 'Validate in a real hospital. Scale with confidence.',
+              hook: '"We have the product — we need clinical proof."',
+              desc: 'Clinical validation is the hardest and most valuable step in MedTech. Through TafelVent Gate we want to open FN Olomouc for structured pilots, access to anonymised data within legal frameworks, and co-development with clinicians and researchers.',
+              list: ['Structured clinical pilots', 'Access to anonymised data and cohorts', 'Co-development with clinical specialists', 'Guidance on regulatory and reimbursement pathways'] },
+            { id: 'join-investors', tagClass: 'tag-investor', tag: 'Investors & Capital Partners',
+              h: 'Deal flow from the heart of clinical practice.',
+              hook: '"Where do I find validated MedTech opportunities in Central Europe?"',
+              desc: 'Projects in our future pipeline will be assessed by clinicians, tested against real patient needs, and checked for commercial viability. We want to connect venture funds, family offices, and angel investors with innovations that have a real hospital behind them.',
+              list: ['Clinically assessed deal flow', 'Co-investment alongside public grants', 'Early access to spin-off projects', 'Strategic partnership opportunities'] },
+            { id: 'join-industry', tagClass: 'tag-industry', tag: 'Industry & Corporate Partners',
+              h: 'A direct route to clinical co-development.',
+              hook: '"We need a real hospital partner for our innovation pipeline."',
+              desc: "We want to give Pharma, MedTech, Digital Health, and Life Sciences companies a structured gateway into FN Olomouc, one of the Czech Republic's leading university hospitals — to pilot technologies, run studies, or co-develop solutions with clinical teams under clear rules.",
+              list: ['Clear frameworks for industry collaboration', 'Access to clinical departments and data', 'Joint R&D and grant applications', 'Support for regional market entry'] },
+        ],
+    },
+    cs: {
+        label: 'Pro koho je platforma', h: 'Postavená pro každého inovátora',
+        lead: 'Ať přicházíte z laboratoře, z kliniky, nebo ze zasedačky — platformu navrhujeme podle toho, co potřebujete. Tohle plánujeme nabídnout a vaše odpovědi rozhodnou, co přijde na řadu jako první.',
+        cta: 'Napište nám, co potřebujete →',
+        cards: [
+            { id: 'join-clinicians', tagClass: 'tag-clinical', tag: 'Lékaři a výzkumníci',
+              h: 'Vy máte znalosti. O zbytek se chceme postarat my.',
+              hook: '„Moje práce je medicína, ne byznys“ — to slýcháme často. A souhlasíme.',
+              desc: 'Nemusíte se stát podnikatelem. Potřebujete partnera, který vaše klinické poznatky promění ve škálovatelné řešení. Budujeme k tomu strukturu, právní zázemí, obchodní mentoring a napojení na kapitál — abyste se mohli dál věnovat tomu, co umíte nejlépe.',
+              list: ['Podpora při rozvoji projektu a obchodu', 'Ochrana duševního vlastnictví a pomoc se spin-offem', 'Cesta ke klinické validaci ve FN Olomouc', 'Propojení s investory a průmyslovými partnery'] },
+            { id: 'join-startups', tagClass: 'tag-startup', tag: 'Startupy a inovátoři',
+              h: 'Ověřte řešení v reálné nemocnici. Škálujte s jistotou.',
+              hook: '„Produkt máme — potřebujeme klinický důkaz.“',
+              desc: 'Klinická validace je v MedTechu nejtěžší a zároveň nejcennější krok. Přes TafelVent Gate chceme otevřít FN Olomouc pro strukturované pilotní projekty, přístup k anonymizovaným datům v rámci právních pravidel a společný vývoj s lékaři a výzkumníky.',
+              list: ['Strukturované klinické pilotní projekty', 'Přístup k anonymizovaným datům a kohortám', 'Společný vývoj s klinickými specialisty', 'Pomoc s regulací a cestou k úhradám'] },
+            { id: 'join-investors', tagClass: 'tag-investor', tag: 'Investoři a kapitáloví partneři',
+              h: 'Investiční příležitosti přímo z klinické praxe.',
+              hook: '„Kde ve střední Evropě najdu ověřené MedTech příležitosti?“',
+              desc: 'Projekty v naší budoucí pipeline posoudí lékaři, prověří je proti skutečným potřebám pacientů a ověří jejich obchodní životaschopnost. Chceme propojit venture fondy, family offices a andělské investory s inovacemi, za kterými stojí skutečná nemocnice.',
+              list: ['Klinicky posouzené investiční příležitosti', 'Společné investice vedle veřejných grantů', 'Včasný přístup ke spin-off projektům', 'Příležitosti ke strategickému partnerství'] },
+            { id: 'join-industry', tagClass: 'tag-industry', tag: 'Průmysloví a firemní partneři',
+              h: 'Přímá cesta ke společnému vývoji s klinikou.',
+              hook: '„Pro naši inovační pipeline potřebujeme skutečného nemocničního partnera.“',
+              desc: 'Farmaceutickým, MedTech, digital health a life sciences firmám chceme nabídnout strukturovaný vstup do FN Olomouc, jedné z předních fakultních nemocnic v Česku — k pilotnímu ověření technologií, provádění studií nebo společnému vývoji řešení s klinickými týmy podle jasných pravidel.',
+              list: ['Jasný rámec pro spolupráci s průmyslem', 'Přístup na klinická pracoviště a k datům', 'Společný výzkum a vývoj a grantové žádosti', 'Podpora při vstupu na regionální trh'] },
+        ],
+    },
+}, lang);
 ---
 <!-- ═══ WHO WE WORK WITH ═══ -->
 <section class="section" id="join">
-    <p class="label">Who It Is For</p>
-    <h2 class="section-h">Built for Every Innovator</h2>
-    <p class="section-lead">Whether you come from the lab, the clinic, or the boardroom — we are designing the platform around what you need. This is what we plan to offer, and your input will decide what comes first.</p>
+    <p class="label">{t.label}</p>
+    <h2 class="section-h">{t.h}</h2>
+    <p class="section-lead">{t.lead}</p>
     <div class="audience-grid">
-
-        <div class="audience-card" id="join-clinicians">
-            <span class="audience-tag tag-clinical">Clinicians &amp; Researchers</span>
-            <h3>You have the knowledge. We want to handle the rest.</h3>
-            <p class="audience-hook">"My job is medicine, not business" — we hear that. And we agree.</p>
-            <p class="audience-desc">You should not have to become an entrepreneur. You need a partner who can translate your clinical insight into a scalable solution. We are building the structure, legal setup, business mentoring, and capital connections for this — so you can stay focused on what you do best.</p>
-            <ul class="audience-list">
-                <li>Business development support</li>
-                <li>IP protection and spin-off guidance</li>
-                <li>A route to clinical validation at FN Olomouc</li>
-                <li>Connections to investors and industry partners</li>
-            </ul>
-            <a href={href} class="audience-cta" {...linkAttrs}>Tell us what you need →</a>
-        </div>
-
-        <div class="audience-card" id="join-startups">
-            <span class="audience-tag tag-startup">Startups &amp; Innovators</span>
-            <h3>Validate in a real hospital. Scale with confidence.</h3>
-            <p class="audience-hook">"We have the product — we need clinical proof."</p>
-            <p class="audience-desc">Clinical validation is the hardest and most valuable step in MedTech. Through TafelVent Gate we want to open FN Olomouc for structured pilots, access to anonymised data within legal frameworks, and co-development with clinicians and researchers.</p>
-            <ul class="audience-list">
-                <li>Structured clinical pilots</li>
-                <li>Access to anonymised data and cohorts</li>
-                <li>Co-development with clinical specialists</li>
-                <li>Guidance on regulatory and reimbursement pathways</li>
-            </ul>
-            <a href={href} class="audience-cta" {...linkAttrs}>Tell us what you need →</a>
-        </div>
-
-        <div class="audience-card" id="join-investors">
-            <span class="audience-tag tag-investor">Investors &amp; Capital Partners</span>
-            <h3>Deal flow from the heart of clinical practice.</h3>
-            <p class="audience-hook">"Where do I find validated MedTech opportunities in Central Europe?"</p>
-            <p class="audience-desc">Projects in our future pipeline will be assessed by clinicians, tested against real patient needs, and checked for commercial viability. We want to connect venture funds, family offices, and angel investors with innovations that have a real hospital behind them.</p>
-            <ul class="audience-list">
-                <li>Clinically assessed deal flow</li>
-                <li>Co-investment alongside public grants</li>
-                <li>Early access to spin-off projects</li>
-                <li>Strategic partnership opportunities</li>
-            </ul>
-            <a href={href} class="audience-cta" {...linkAttrs}>Tell us what you need →</a>
-        </div>
-
-        <div class="audience-card" id="join-industry">
-            <span class="audience-tag tag-industry">Industry &amp; Corporate Partners</span>
-            <h3>A direct route to clinical co-development.</h3>
-            <p class="audience-hook">"We need a real hospital partner for our innovation pipeline."</p>
-            <p class="audience-desc">We want to give Pharma, MedTech, Digital Health, and Life Sciences companies a structured gateway into FN Olomouc, one of the Czech Republic's leading university hospitals — to pilot technologies, run studies, or co-develop solutions with clinical teams under clear rules.</p>
-            <ul class="audience-list">
-                <li>Clear frameworks for industry collaboration</li>
-                <li>Access to clinical departments and data</li>
-                <li>Joint R&amp;D and grant applications</li>
-                <li>Support for regional market entry</li>
-            </ul>
-            <a href={href} class="audience-cta" {...linkAttrs}>Tell us what you need →</a>
-        </div>
-
+        {t.cards.map((c) => (
+            <div class="audience-card" id={c.id}>
+                <span class={`audience-tag ${c.tagClass}`}>{c.tag}</span>
+                <h3>{c.h}</h3>
+                <p class="audience-hook">{c.hook}</p>
+                <p class="audience-desc">{c.desc}</p>
+                <ul class="audience-list">
+                    {c.list.map((li) => <li>{li}</li>)}
+                </ul>
+                <a href={href} class="audience-cta" {...linkAttrs}>{t.cta}</a>
+            </div>
+        ))}
     </div>
 </section>

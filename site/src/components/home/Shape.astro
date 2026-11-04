@@ -1,40 +1,55 @@
 ---
 import { intakeHref } from '../../data/site.js';
+import { langOf, pick } from '../../i18n.js';
 
-const href = intakeHref('en');
+const lang = langOf(Astro);
+const href = intakeHref(lang);
 const external = href.startsWith('http');
 
-const segments = [
-    'Clinicians & Researchers',
-    'Startups & Innovators',
-    'Investors',
-    'Industry & Corporates',
-    'Public Bodies & Others',
-];
-
-const steps = [
-    { n: '01', title: 'Tell us about you', desc: 'Who you are, what you are working on, and what you would need from a hospital-based innovation platform.' },
-    { n: '02', title: 'We confirm and listen', desc: 'We confirm that we have received your input and work with it responsibly as we design the concept.' },
-    { n: '03', title: 'We come back when it is ready', desc: 'We will get in touch once the service designed for you is actually ready.' },
-];
+const t = pick({
+    en: {
+        label: 'Co-design phase · Open now',
+        h1: 'We are not building this for ourselves.', h2: 'We are building it for you.',
+        lead: 'To create a system that truly fits the real needs of everyone who will work with it, we need to know as much as possible about you — your plans, your needs, and the obstacles you face. Your input will directly shape what we build first.',
+        segAria: 'Who we want to hear from',
+        segments: ['Clinicians & Researchers', 'Startups & Innovators', 'Investors', 'Industry & Corporates', 'Public Bodies & Others'],
+        steps: [
+            { n: '01', title: 'Tell us about you', desc: 'Who you are, what you are working on, and what you would need from a hospital-based innovation platform.' },
+            { n: '02', title: 'We confirm and listen', desc: 'We confirm that we have received your input and work with it responsibly as we design the concept.' },
+            { n: '03', title: 'We come back when it is ready', desc: 'We will get in touch once the service designed for you is actually ready.' },
+        ],
+        cta: 'Share your needs →',
+        note: 'Already have a concrete project? The questionnaire will lead you on to our pitch step.',
+    },
+    cs: {
+        label: 'Fáze společného návrhu · Otevřeno',
+        h1: 'Netvoříme systém pro sebe.', h2: 'Tvoříme ho pro vás.',
+        lead: 'Abychom vytvořili systém, který bude skutečně odpovídat potřebám všech, kdo s ním budou pracovat, potřebujeme o vás vědět co nejvíc — vaše plány, potřeby i překážky, na které narážíte. Vaše odpovědi přímo určí, co postavíme jako první.',
+        segAria: 'Od koho chceme slyšet',
+        segments: ['Lékaři a výzkumníci', 'Startupy a inovátoři', 'Investoři', 'Průmysl a firmy', 'Veřejné instituce a další'],
+        steps: [
+            { n: '01', title: 'Řekněte nám o sobě', desc: 'Kdo jste, na čem pracujete a co byste potřebovali od inovační platformy při nemocnici.' },
+            { n: '02', title: 'Potvrdíme a nasloucháme', desc: 'Potvrdíme přijetí vašeho podnětu a budeme s ním při návrhu konceptu zodpovědně pracovat.' },
+            { n: '03', title: 'Ozveme se, až to bude připravené', desc: 'Ozveme se, jakmile bude služba navržená pro vás skutečně připravená.' },
+        ],
+        cta: 'Sdílet své potřeby →',
+        note: 'Máte už konkrétní projekt? Dotazník vás dovede k dalšímu kroku — stručnému představení projektu.',
+    },
+}, lang);
 ---
 <!-- ═══ CO-DESIGN: SHARE YOUR NEEDS ═══ -->
 <section class="shape-wrap" id="shape">
     <div class="section shape">
-        <p class="label">Co-design phase · Open now</p>
-        <h2 class="section-h">We are not building this for ourselves.<br><span class="ac">We are building it for you.</span></h2>
-        <p class="shape-lead">
-            To create a system that truly fits the real needs of everyone who will work with it,
-            we need to know as much as possible about you — your plans, your needs, and the obstacles you face.
-            Your input will directly shape what we build first.
-        </p>
+        <p class="label">{t.label}</p>
+        <h2 class="section-h">{t.h1}<br><span class="ac">{t.h2}</span></h2>
+        <p class="shape-lead">{t.lead}</p>
 
-        <ul class="shape-segments" aria-label="Who we want to hear from">
-            {segments.map((s) => <li>{s}</li>)}
+        <ul class="shape-segments" aria-label={t.segAria}>
+            {t.segments.map((s) => <li>{s}</li>)}
         </ul>
 
         <ol class="shape-steps">
-            {steps.map((s) => (
+            {t.steps.map((s) => (
                 <li class="shape-step">
                     <span class="shape-n">{s.n}</span>
                     <h3>{s.title}</h3>
@@ -44,8 +59,8 @@ const steps = [
         </ol>
 
         <div class="shape-cta">
-            <a href={href} class="btn btn-primary btn-lg" {...(external ? { target: '_blank', rel: 'noopener' } : {})}>Share your needs →</a>
-            <p class="shape-note">Already have a concrete project? The questionnaire will lead you on to our pitch step.</p>
+            <a href={href} class="btn btn-primary btn-lg" {...(external ? { target: '_blank', rel: 'noopener' } : {})}>{t.cta}</a>
+            <p class="shape-note">{t.note}</p>
         </div>
     </div>
 </section>

@@ -1,19 +1,36 @@
+---
+import { langOf, pick } from '../../i18n.js';
+const t = pick({
+    en: {
+        tag: 'Innovation Platform and HUB (in preparation)',
+        sub: 'We are building a Health Innovation and Venture Building Platform at FN Olomouc — the simplest route for innovators into clinical practice and health data, and from research to real-world impact.',
+        subStrong: 'And we want to build it with you.',
+        cta: 'Help us build it →', explore: 'Explore the Platform', scroll: 'Scroll',
+    },
+    cs: {
+        tag: 'Inovační platforma a HUB (v přípravě)',
+        sub: 'Ve FN Olomouc budujeme platformu pro zdravotnické inovace a venture building — nejjednodušší cestu pro inovátory do klinické praxe a ke zdravotnickým datům a od výzkumu k reálnému dopadu.',
+        subStrong: 'A chceme ji postavit s vámi.',
+        cta: 'Pomozte nám ji postavit →', explore: 'Prozkoumat platformu', scroll: 'Dolů',
+    },
+}, langOf(Astro));
+---
 <!-- ═══ HERO ═══ -->
 <div class="hero">
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
-    <p class="hero-tag"><span style="color:#b21612">FN Olomouc</span> — Innovation Platform and HUB (in preparation)</p>
+    <p class="hero-tag"><span style="color:#b21612">FN Olomouc</span> — {t.tag}</p>
     <h1 class="hero-title">
         <span class="ac">Tafelberg</span><br>Ventures
     </h1>
-    <p class="hero-sub">We are building a Health Innovation and Venture Building Platform at FN Olomouc — the simplest route for innovators into clinical practice and health data, and from research to real-world impact. <strong>And we want to build it with you.</strong></p>
+    <p class="hero-sub">{t.sub} <strong>{t.subStrong}</strong></p>
     <div class="hero-cta">
-        <a href="#shape" class="btn btn-primary btn-lg">Help us build it →</a>
-        <a href="#platform" class="btn btn-ghost btn-lg">Explore the Platform</a>
+        <a href="#shape" class="btn btn-primary btn-lg">{t.cta}</a>
+        <a href="#platform" class="btn btn-ghost btn-lg">{t.explore}</a>
     </div>
     <div class="scroll-hint">
         <div class="scroll-bar"></div>
-        <span>Scroll</span>
+        <span>{t.scroll}</span>
     </div>
 </div>
 

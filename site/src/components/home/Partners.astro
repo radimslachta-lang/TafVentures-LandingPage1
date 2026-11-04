@@ -1,14 +1,29 @@
 ---
 import { intakeHref } from '../../data/site.js';
+import { langOf, pick } from '../../i18n.js';
 
-const href = intakeHref('en');
+const lang = langOf(Astro);
+const href = intakeHref(lang);
 const linkAttrs = href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {};
+
+const t = pick({
+    en: {
+        label: 'Partners & Network', h: 'Building It Together',
+        lead: 'We are building the platform together with investors and innovators who share our goal — and we are looking for more.',
+        openTitle: 'We are looking for more partners', openCta: 'Become a partner →',
+    },
+    cs: {
+        label: 'Partneři a síť', h: 'Stavíme ji společně',
+        lead: 'Platformu budujeme společně s investory a inovátory, kteří sdílejí náš cíl — a hledáme další.',
+        openTitle: 'Hledáme další partnery', openCta: 'Staňte se partnerem →',
+    },
+}, lang);
 ---
 <!-- ═══ PARTNERS ═══ -->
 <section class="section" id="partners">
-    <p class="label">Partners &amp; Network</p>
-    <h2 class="section-h">Building It Together</h2>
-    <p class="section-lead">We are building the platform together with investors and innovators who share our goal — and we are looking for more.</p>
+    <p class="label">{t.label}</p>
+    <h2 class="section-h">{t.h}</h2>
+    <p class="section-lead">{t.lead}</p>
     <div class="partners-grid">
         <a class="partner partner-invert" href="https://www.dendiscapital.com/" target="_blank" rel="noopener">
             <img src="https://www.dendiscapital.com/wp-content/uploads/2023/11/Group-4140.svg" alt="Dendis Capital" onerror="this.style.display='none'">
@@ -23,8 +38,8 @@ const linkAttrs = href.startsWith('http') ? { target: '_blank', rel: 'noopener' 
             <span class="partner-label">Garage Angels</span>
         </a>
         <a class="partner partner-open" href={href} {...linkAttrs}>
-            <span class="partner-open-title">We are looking for more partners</span>
-            <span class="partner-label">Become a partner →</span>
+            <span class="partner-open-title">{t.openTitle}</span>
+            <span class="partner-label">{t.openCta}</span>
         </a>
     </div>
 </section>

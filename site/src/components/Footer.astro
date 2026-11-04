@@ -1,8 +1,15 @@
+---
+import { langOf, pick } from '../i18n.js';
+const t = pick({
+    en: { of: 'An innovation platform of Fakultní nemocnice Olomouc', rights: '© 2026 Tafelberg Ventures. All rights reserved.' },
+    cs: { of: 'Inovační platforma Fakultní nemocnice Olomouc', rights: '© 2026 Tafelberg Ventures. Všechna práva vyhrazena.' },
+}, langOf(Astro));
+---
 <!-- ═══ FOOTER ═══ -->
 <footer>
     <div class="foot-inner">
         <span class="foot-logo">Tafelberg Ventures</span>
-        <span class="foot-copy">An innovation platform of Fakultní nemocnice Olomouc</span>
-        <span class="foot-copy">© 2026 Tafelberg Ventures. All rights reserved.</span>
+        <span class="foot-copy">{t.of}</span>
+        <span class="foot-copy">{t.rights}</span>
     </div>
 </footer>

@@ -102,3 +102,22 @@
     .nav-cta-mobile { display: block; border-bottom: none !important; padding-top: 1rem; }
     .nav-cta-mobile .btn { display: block; text-align: center; color: var(--bg); }
 }
+
+/* ─── Language switcher CZ | EN ─── */
+.nav-actions { display: flex; align-items: center; gap: 1.25rem; }
+.nav-lang {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+.nav-lang a { color: var(--muted); text-decoration: none; }
+.nav-lang a[href]:hover { color: var(--accent); }
+.nav-lang a.is-current { color: var(--accent); font-weight: 700; }
+
+@media (max-width: 900px) {
+    .nav-actions { margin-left: auto; margin-right: 0.5rem; }
+}

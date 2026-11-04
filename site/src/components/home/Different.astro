@@ -1,40 +1,63 @@
 ---
-const gateFeatures = [
-    'Anonymised health and medical data within a clear legal framework',
-    'Pilot sites and clinical validation in real hospital practice',
-    'Clinical experts and key opinion leaders for your project',
-    'One entry point with transparent rules and predictable timelines',
-];
+import { langOf, pick } from '../../i18n.js';
+const t = pick({
+    en: {
+        label: 'What makes us different', h: 'The Shortest Path from Idea to Clinic',
+        lead: 'Access to the clinical environment and to health data is the hardest step for every health innovation. That is exactly where we want to make the biggest difference.',
+        gateTag: 'Flagship · in design',
+        gateHook: 'The simplest possible access to clinical data and practice.',
+        gateDesc: 'One gateway for innovation partners to anonymised health and medical data and to the clinical environment of FN Olomouc — clear rules and predictable timelines instead of months spent looking for the right door.',
+        gateFeatures: [
+            'Anonymised health and medical data within a clear legal framework',
+            'Pilot sites and clinical validation in real hospital practice',
+            'Clinical experts and key opinion leaders for your project',
+            'One entry point with transparent rules and predictable timelines',
+        ],
+        gateGoal: 'Our goal: to make FN Olomouc the easiest hospital in the Czech Republic to innovate with.',
+        regTag: 'In design', regH: 'Two-way Needs Registry', regHook: 'Start with what is genuinely needed.',
+        regDesc: 'Clinicians tell us which real problems they face every day. Innovators tell us what they need from a hospital to move forward. We match both sides — so that new solutions start from real clinical needs, not from what is easiest to build.',
+    },
+    cs: {
+        label: 'Čím se odlišujeme', h: 'Nejkratší cesta od nápadu na kliniku',
+        lead: 'Přístup do klinického prostředí a ke zdravotnickým datům je pro každou zdravotnickou inovaci nejtěžším krokem. Právě tam chceme udělat největší rozdíl.',
+        gateTag: 'Vlajková služba · v přípravě',
+        gateHook: 'Co nejjednodušší přístup ke klinickým datům a do klinické praxe.',
+        gateDesc: 'Jedna brána, přes kterou inovační partneři získají přístup k anonymizovaným zdravotnickým datům a do klinického prostředí FN Olomouc — jasná pravidla a předvídatelné lhůty místo měsíců hledání těch správných dveří.',
+        gateFeatures: [
+            'Anonymizovaná zdravotnická data v jasném právním rámci',
+            'Pilotní pracoviště a klinická validace v reálné nemocniční praxi',
+            'Kliničtí experti a uznávané osobnosti oboru pro váš projekt',
+            'Jedno vstupní místo s transparentními pravidly a předvídatelnými lhůtami',
+        ],
+        gateGoal: 'Náš cíl: aby FN Olomouc byla nemocnicí, se kterou se v Česku inovuje nejsnáz.',
+        regTag: 'V přípravě', regH: 'Obousměrný registr potřeb', regHook: 'Začít tím, co je skutečně potřeba.',
+        regDesc: 'Lékaři nám řeknou, se kterými reálnými problémy se denně potýkají. Inovátoři nám řeknou, co od nemocnice potřebují, aby se posunuli dál. Obě strany propojíme — aby nová řešení vycházela ze skutečných klinických potřeb, ne z toho, co se nejsnáz postaví.',
+    },
+}, langOf(Astro));
 ---
 <!-- ═══ WHAT MAKES US DIFFERENT ═══ -->
 <section class="section" id="different">
-    <p class="label">What makes us different</p>
-    <h2 class="section-h">The Shortest Path from Idea to Clinic</h2>
-    <p class="section-lead">Access to the clinical environment and to health data is the hardest step for every health innovation. That is exactly where we want to make the biggest difference.</p>
+    <p class="label">{t.label}</p>
+    <h2 class="section-h">{t.h}</h2>
+    <p class="section-lead">{t.lead}</p>
 
     <div class="diff-grid">
         <article class="diff-card diff-gate" id="gate">
-            <span class="diff-tag">Flagship · in design</span>
+            <span class="diff-tag">{t.gateTag}</span>
             <h3>TafelVent Gate</h3>
-            <p class="diff-hook">The simplest possible access to clinical data and practice.</p>
-            <p class="diff-desc">
-                One gateway for innovation partners to anonymised health and medical data and to the clinical environment of FN Olomouc —
-                clear rules and predictable timelines instead of months spent looking for the right door.
-            </p>
+            <p class="diff-hook">{t.gateHook}</p>
+            <p class="diff-desc">{t.gateDesc}</p>
             <ul class="audience-list">
-                {gateFeatures.map((f) => <li>{f}</li>)}
+                {t.gateFeatures.map((f) => <li>{f}</li>)}
             </ul>
-            <p class="diff-goal">Our goal: to make FN Olomouc the easiest hospital in the Czech Republic to innovate with.</p>
+            <p class="diff-goal">{t.gateGoal}</p>
         </article>
 
         <article class="diff-card">
-            <span class="diff-tag">In design</span>
-            <h3>Two-way Needs Registry</h3>
-            <p class="diff-hook">Start with what is genuinely needed.</p>
-            <p class="diff-desc">
-                Clinicians tell us which real problems they face every day. Innovators tell us what they need from a hospital to move forward.
-                We match both sides — so that new solutions start from real clinical needs, not from what is easiest to build.
-            </p>
+            <span class="diff-tag">{t.regTag}</span>
+            <h3>{t.regH}</h3>
+            <p class="diff-hook">{t.regHook}</p>
+            <p class="diff-desc">{t.regDesc}</p>
         </article>
     </div>
 </section>

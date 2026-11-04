@@ -1,37 +1,41 @@
+---
+import { langOf, pick } from '../../i18n.js';
+const t = pick({
+    en: {
+        label: 'Innovation Programs · In design', h: 'How the Pipeline Will Work',
+        lead: 'From a first idea to a scaled health innovation — the programmes we are designing, stage by stage. Their final shape will follow what you tell us.',
+        stages: [
+            { t: 'Idea & Discovery', d: 'Identifying and evaluating innovations with genuine clinical potential — feasibility, patient relevance, and commercial fit, assessed together with your team.', b: 'Open to all' },
+            { t: 'Clinical Validation', d: 'Structured pilots within FN Olomouc departments. Real data, real clinical settings, real feedback. This is where ideas become evidence.', b: 'Cohort-based' },
+            { t: 'Incubation & Build', d: 'Company setup, IP structuring, product development, team building, and first capital. We want to provide the scaffolding — you build the company.', b: 'Selected projects' },
+            { t: 'Scale & Commercialise', d: 'Growth financing, market entry, regulatory approval, and international expansion — opening doors to investors, industry partners, and health markets.', b: 'Portfolio ventures' },
+        ],
+    },
+    cs: {
+        label: 'Inovační programy · V přípravě', h: 'Jak bude pipeline fungovat',
+        lead: 'Od prvního nápadu po rozšířenou zdravotnickou inovaci — programy, které navrhujeme, krok za krokem. Jejich konečnou podobu určí to, co nám řeknete.',
+        stages: [
+            { t: 'Nápad a průzkum', d: 'Vyhledávání a posouzení inovací se skutečným klinickým potenciálem — proveditelnost, přínos pro pacienty a obchodní uplatnění posuzujeme společně s vaším týmem.', b: 'Otevřeno všem' },
+            { t: 'Klinická validace', d: 'Strukturované pilotní projekty na pracovištích FN Olomouc. Reálná data, reálné klinické prostředí, reálná zpětná vazba. Tady se z nápadů stávají důkazy.', b: 'Po skupinách' },
+            { t: 'Inkubace a budování', d: 'Založení firmy, nastavení duševního vlastnictví, vývoj produktu, budování týmu a první kapitál. My chceme dodat lešení — firmu stavíte vy.', b: 'Vybrané projekty' },
+            { t: 'Růst a komercializace', d: 'Růstové financování, vstup na trh, regulační schválení a mezinárodní expanze — otevíráme dveře k investorům, průmyslovým partnerům a zdravotnickým trhům.', b: 'Portfoliové firmy' },
+        ],
+    },
+}, langOf(Astro));
+---
 <!-- ═══ INNOVATION PIPELINE ═══ -->
 <section class="section pipeline-section" id="programs">
-    <p class="label">Innovation Programs · In design</p>
-    <h2 class="section-h" style="text-align:center;">How the Pipeline Will Work</h2>
-    <p class="section-lead" style="margin:0 auto 0; text-align:center;">From a first idea to a scaled health innovation — the programmes we are designing, stage by stage. Their final shape will follow what you tell us.</p>
+    <p class="label">{t.label}</p>
+    <h2 class="section-h" style="text-align:center;">{t.h}</h2>
+    <p class="section-lead" style="margin:0 auto 0; text-align:center;">{t.lead}</p>
     <div class="pipeline">
-
-        <div class="stage">
-            <div class="stage-num">01</div>
-            <div class="stage-title">Idea &amp; Discovery</div>
-            <p class="stage-desc">Identifying and evaluating innovations with genuine clinical potential — feasibility, patient relevance, and commercial fit, assessed together with your team.</p>
-            <span class="stage-badge">Open to all</span>
-        </div>
-
-        <div class="stage">
-            <div class="stage-num">02</div>
-            <div class="stage-title">Clinical Validation</div>
-            <p class="stage-desc">Structured pilots within FN Olomouc departments. Real data, real clinical settings, real feedback. This is where ideas become evidence.</p>
-            <span class="stage-badge">Cohort-based</span>
-        </div>
-
-        <div class="stage">
-            <div class="stage-num">03</div>
-            <div class="stage-title">Incubation &amp; Build</div>
-            <p class="stage-desc">Company setup, IP structuring, product development, team building, and first capital. We want to provide the scaffolding — you build the company.</p>
-            <span class="stage-badge">Selected projects</span>
-        </div>
-
-        <div class="stage">
-            <div class="stage-num">04</div>
-            <div class="stage-title">Scale &amp; Commercialise</div>
-            <p class="stage-desc">Growth financing, market entry, regulatory approval, and international expansion — opening doors to investors, industry partners, and health markets.</p>
-            <span class="stage-badge">Portfolio ventures</span>
-        </div>
-
+        {t.stages.map((s, i) => (
+            <div class="stage">
+                <div class="stage-num">{String(i + 1).padStart(2, '0')}</div>
+                <div class="stage-title">{s.t}</div>
+                <p class="stage-desc">{s.d}</p>
+                <span class="stage-badge">{s.b}</span>
+            </div>
+        ))}
     </div>
 </section>

@@ -1,9 +1,16 @@
 ---
 import Logo from './Logo.astro';
-import { nav, cta } from '../data/nav.js';
+import { navFor, ctaFor } from '../data/nav.js';
+import { langOf, url, alternate } from '../i18n.js';
+
+const lang = langOf(Astro);
+const nav = navFor(lang);
+const cta = ctaFor(lang);
+const other = lang === 'cs' ? 'en' : 'cs';
+const otherHref = alternate(Astro.url.pathname, other);
 ---
 <nav id="nav" aria-label="Main">
-    <a href="/" class="nav-logo" aria-label="Tafelberg Ventures">
+    <a href={url(lang, 'home')} class="nav-logo" aria-label="Tafelberg Ventures">
         <Logo />
     </a>
     <ul class="nav-links" id="navLinks">
@@ -19,7 +26,14 @@ import { nav, cta } from '../data/nav.js';
         ))}
         <li class="nav-cta-mobile"><a href={cta.href} class="btn btn-primary">{cta.label}</a></li>
     </ul>
+    <div class="nav-actions">
+    <div class="nav-lang" aria-label={lang === 'cs' ? 'Jazyk' : 'Language'}>
+        <a href={lang === 'cs' ? otherHref : undefined} class={lang === 'en' ? 'is-current' : undefined} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+        <span aria-hidden="true">|</span>
+        <a href={lang === 'en' ? otherHref : undefined} class={lang === 'cs' ? 'is-current' : undefined} hreflang="cs" lang="cs" aria-current={lang === 'cs' ? 'true' : undefined}>CZ</a>
+    </div>
     <a href={cta.href} class="btn btn-primary nav-cta">{cta.label}</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
     </button>

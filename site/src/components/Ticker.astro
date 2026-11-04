@@ -1,7 +1,14 @@
+---
+import { langOf, pick } from '../i18n.js';
+const t = pick({
+    en: { label: 'Work in progress notice', text: 'This page is a working draft used to iteratively clarify the concept of a future innovation centre. All information presented is illustrative and indicative only.' },
+    cs: { label: 'Upozornění: rozpracovaná verze', text: 'Tato stránka je pracovní verzí, na které postupně upřesňujeme koncept budoucího inovačního centra. Všechny uvedené informace jsou ilustrativní a orientační.' },
+}, langOf(Astro));
+---
 <!-- ═══ TICKER ═══ -->
-<div class="ticker-bar" role="marquee" aria-label="Work in progress notice">
+<div class="ticker-bar" role="marquee" aria-label={t.label}>
     <div class="ticker-track">
-        <span>This page is a working draft used to iteratively clarify the concept of a future innovation centre. All information presented is illustrative and indicative only.</span>
-        <span>This page is a working draft used to iteratively clarify the concept of a future innovation centre. All information presented is illustrative and indicative only.</span>
+        <span>{t.text}</span>
+        <span>{t.text}</span>
     </div>
 </div>

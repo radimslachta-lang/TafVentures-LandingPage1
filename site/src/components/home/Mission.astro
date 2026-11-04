@@ -1,38 +1,54 @@
+---
+import { langOf, pick } from '../../i18n.js';
+const t = pick({
+    en: {
+        label: 'Our Mission', h: 'From Clinic to Real-World Impact',
+        s1: 'We are building Tafelberg Ventures as the innovation and venture-building platform of FN Olomouc —',
+        sStrong: 'bridging clinical excellence with entrepreneurial capital',
+        s2: ". Our aim is to turn medical research, biomedical expertise, and hospital data into real-world health solutions that improve patients' lives, and to support clinicians, researchers, and innovators in developing ideas with genuine patient impact — through spin-offs, commercial partnerships, and open innovation.",
+        pillars: [
+            { t: 'Clinical Depth', d: 'Rooted in real hospital practice and evidence-based research. Every innovation we support will have to show genuine clinical relevance and patient benefit.' },
+            { t: 'Entrepreneurial Drive', d: 'We believe great research deserves to reach the world. We are building the business infrastructure, networks, and mentorship that turn ideas into ventures.' },
+            { t: 'Evidence-based Impact', d: 'Results matter. We will measure success in patient outcomes, commercial traction, and the systemic change we help to enable in healthcare.' },
+        ],
+    },
+    cs: {
+        label: 'Naše mise', h: 'Z kliniky k reálnému dopadu',
+        s1: 'Tafelberg Ventures budujeme jako inovační a venture-buildingovou platformu FN Olomouc —',
+        sStrong: 'propojujeme klinickou excelenci s podnikatelským kapitálem',
+        s2: '. Chceme proměňovat lékařský výzkum, biomedicínskou expertizu a nemocniční data v reálná řešení, která zlepší život pacientů, a podporovat lékaře, výzkumníky a inovátory v rozvoji nápadů se skutečným přínosem pro pacienty — prostřednictvím spin-offů, obchodních partnerství a otevřených inovací.',
+        pillars: [
+            { t: 'Klinická hloubka', d: 'Vycházíme z reálné nemocniční praxe a z výzkumu založeného na důkazech. Každá inovace, kterou podpoříme, bude muset prokázat skutečný klinický význam a přínos pro pacienty.' },
+            { t: 'Podnikatelský tah', d: 'Věříme, že kvalitní výzkum si zaslouží dostat se do světa. Budujeme obchodní zázemí, sítě kontaktů a mentoring, díky kterým se z nápadů stávají firmy.' },
+            { t: 'Dopad založený na důkazech', d: 'Rozhodují výsledky. Úspěch budeme měřit přínosem pro pacienty, obchodní trakcí a systémovou změnou, kterou ve zdravotnictví pomůžeme umožnit.' },
+        ],
+    },
+}, langOf(Astro));
+
+const icons = [
+    '<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>',
+    '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
+    '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/>',
+];
+---
 <!-- ═══ MISSION ═══ -->
 <div class="mission-wrap">
     <div class="section" style="text-align:center;" id="mission">
-        <p class="label">Our Mission</p>
-        <h2 class="section-h">From Clinic to Real-World Impact</h2>
+        <p class="label">{t.label}</p>
+        <h2 class="section-h">{t.h}</h2>
         <p class="mission-statement">
-            We are building Tafelberg Ventures as the innovation and venture-building platform of FN Olomouc —
-            <strong>bridging clinical excellence with entrepreneurial capital</strong>.
-            Our aim is to turn medical research, biomedical expertise, and hospital data into real-world health solutions
-            that improve patients' lives, and to support clinicians, researchers, and innovators
-            in developing ideas with genuine patient impact —
-            through spin-offs, commercial partnerships, and open innovation.
+            {t.s1} <strong>{t.sStrong}</strong>{t.s2}
         </p>
         <div class="mission-pillars">
-            <div class="pillar">
-                <span class="pillar-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
-                </span>
-                <div class="pillar-title">Clinical Depth</div>
-                <p class="pillar-desc">Rooted in real hospital practice and evidence-based research. Every innovation we support will have to show genuine clinical relevance and patient benefit.</p>
-            </div>
-            <div class="pillar">
-                <span class="pillar-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                </span>
-                <div class="pillar-title">Entrepreneurial Drive</div>
-                <p class="pillar-desc">We believe great research deserves to reach the world. We are building the business infrastructure, networks, and mentorship that turn ideas into ventures.</p>
-            </div>
-            <div class="pillar">
-                <span class="pillar-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-                </span>
-                <div class="pillar-title">Evidence-based Impact</div>
-                <p class="pillar-desc">Results matter. We will measure success in patient outcomes, commercial traction, and the systemic change we help to enable in healthcare.</p>
-            </div>
+            {t.pillars.map((p, i) => (
+                <div class="pillar">
+                    <span class="pillar-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={icons[i]}></svg>
+                    </span>
+                    <div class="pillar-title">{p.t}</div>
+                    <p class="pillar-desc">{p.d}</p>
+                </div>
+            ))}
         </div>
     </div>
 </div>

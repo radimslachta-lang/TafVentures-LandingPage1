@@ -1,8 +1,52 @@
+---
+import { langOf, pick } from '../../i18n.js';
+// The acronym words stay in English in both languages (TAFELBERG only works in English);
+// only the descriptions are translated.
+const words = {
+    TV: 'Tafelberg Ventures', T: 'Technology', A: 'Artificial Intelligence', F: 'Future Health',
+    E1: 'Entrepreneurship', L: 'Longevity', B: 'Biomedical', E2: 'Evidence-based', R: 'Research', G: 'Growth',
+};
+const t = pick({
+    en: {
+        label: 'Our Identity', h: 'What TAFELBERG Stands For',
+        beyond: ['Beyond the acronym, Tafelberg Ventures is equally focused on', 'Medicine', 'Prevention', 'and', 'Startups', '— integrating clinical practice, proactive health innovation, and entrepreneurial venture-building into one cohesive platform.'],
+        desc: {
+            TV: 'The summit where all nine meet — one platform connecting clinical practice, research, capital, and industry. We are building it now, together with those it is meant to serve.',
+            T: 'Driving innovation through cutting-edge MedTech solutions and digital health infrastructure built for real clinical environments.',
+            A: 'Harnessing AI to transform healthcare data into actionable clinical and commercial insights that accelerate diagnosis, treatment, and research.',
+            F: 'Building the healthcare platform of tomorrow — proactive, personalized, predictive, and grounded in the realities of modern medicine.',
+            E1: 'Empowering founders and innovators with hospital-grade validation, clinical access, and venture support to bring ideas to market.',
+            L: 'Advancing science and business at the frontier of healthy aging, precision medicine, and evidence-backed longevity interventions.',
+            B: "Grounded in world-class biomedical research and clinical expertise at one of the Czech Republic's top teaching hospitals.",
+            E2: 'Every innovation validated against rigorous clinical evidence and real-world outcomes — not just theory or prototype-stage assumptions.',
+            R: 'Deep integration with academic and applied research programs to accelerate translational medicine and bring discoveries to patients faster.',
+            G: 'Scaling healthcare ventures from concept to commercialization with strategic capital connections, partnership networks, and venture-building expertise.',
+        },
+    },
+    cs: {
+        label: 'Naše identita', h: 'Co znamená TAFELBERG',
+        beyond: ['Kromě samotného akronymu se Tafelberg Ventures stejnou měrou věnuje', 'medicíně', 'prevenci', 'a', 'startupům', '— spojuje klinickou praxi, proaktivní zdravotnické inovace a podnikatelský venture building do jedné ucelené platformy.'],
+        desc: {
+            TV: 'Vrchol, kde se všech devět setkává — jedna platforma propojující klinickou praxi, výzkum, kapitál a průmysl. Budujeme ji teď, společně s těmi, kterým má sloužit.',
+            T: 'Technologie: inovace postavené na špičkových MedTech řešeních a digitální zdravotnické infrastruktuře pro reálné klinické prostředí.',
+            A: 'Umělá inteligence: AI, která mění zdravotnická data v použitelné klinické a obchodní poznatky a urychluje diagnostiku, léčbu i výzkum.',
+            F: 'Zdraví budoucnosti: platforma zdravotnictví zítřka — proaktivní, personalizovaná, prediktivní a ukotvená v realitě moderní medicíny.',
+            E1: 'Podnikání: podpora zakladatelů a inovátorů validací na úrovni nemocnice, přístupem na kliniku a venture podporou na cestě na trh.',
+            L: 'Dlouhověkost: rozvoj vědy a byznysu na hranici zdravého stárnutí, precizní medicíny a intervencí pro dlouhověkost podložených důkazy.',
+            B: 'Biomedicína: opora ve špičkovém biomedicínském výzkumu a klinické expertize jedné z předních fakultních nemocnic v Česku.',
+            E2: 'Založené na důkazech: každá inovace ověřená přísnými klinickými důkazy a reálnými výsledky — ne jen teorií či předpoklady z fáze prototypu.',
+            R: 'Výzkum: úzké propojení s akademickým i aplikovaným výzkumem, které urychluje translační medicínu a přináší objevy pacientům rychleji.',
+            G: 'Růst: škálování zdravotnických firem od konceptu po komercializaci díky strategickému kapitálu, partnerským sítím a zkušenostem s venture buildingem.',
+        },
+    },
+}, langOf(Astro));
+const hexData = Object.fromEntries(Object.keys(words).map((k) => [k, { word: words[k], desc: t.desc[k] }]));
+---
 <!-- ═══ TAFELBERG ACRONYM ═══ -->
 <div class="acronym-wrap" id="vision">
     <div class="acronym-inner">
-        <p class="label">Our Identity</p>
-        <h2 class="section-h">What TAFELBERG Stands For</h2>
+        <p class="label">{t.label}</p>
+        <h2 class="section-h">{t.h}</h2>
         <div class="hive">
             <!-- Peak: cyan špička — dekorativní, neinteraktivní -->
             <div class="hive-row">
@@ -36,12 +80,12 @@
             </div>
         </div>
         <p style="margin-top:2rem;font-size:0.85rem;color:var(--muted);line-height:1.7;max-width:660px;margin-left:auto;margin-right:auto;">
-            Beyond the acronym, Tafelberg Ventures is equally focused on <strong style="color:var(--text);font-weight:600;">Medicine</strong>, <strong style="color:var(--text);font-weight:600;">Prevention</strong>, and <strong style="color:var(--text);font-weight:600;">Startups</strong> — integrating clinical practice, proactive health innovation, and entrepreneurial venture-building into one cohesive platform.
+            {t.beyond[0]} <strong style="color:var(--text);font-weight:600;">{t.beyond[1]}</strong>, <strong style="color:var(--text);font-weight:600;">{t.beyond[2]}</strong> {t.beyond[3]} <strong style="color:var(--text);font-weight:600;">{t.beyond[4]}</strong> {t.beyond[5]}
         </p>
     </div>
 </div>
 
-<script is:inline>
+<script is:inline define:vars={{ hexData }}>
 // ── Hex acronym panel (hover) ──
 const hexBtns     = document.querySelectorAll('.hex-btn');
 const hexPanel    = document.getElementById('hexPanel');
@@ -49,18 +93,6 @@ const hpLetter    = document.getElementById('hpLetter');
 const hpTitle     = document.getElementById('hpTitle');
 const hpDesc      = document.getElementById('hpDesc');
 const acronymInner = document.querySelector('.acronym-inner');
-const hexData  = {
-    TV: { word: 'Tafelberg Ventures',      desc: 'The summit where all nine meet — one platform connecting clinical practice, research, capital, and industry. We are building it now, together with those it is meant to serve.' },
-    T:  { word: 'Technology',              desc: 'Driving innovation through cutting-edge MedTech solutions and digital health infrastructure built for real clinical environments.' },
-    A:  { word: 'Artificial Intelligence', desc: 'Harnessing AI to transform healthcare data into actionable clinical and commercial insights that accelerate diagnosis, treatment, and research.' },
-    F:  { word: 'Future Health',           desc: 'Building the healthcare platform of tomorrow — proactive, personalized, predictive, and grounded in the realities of modern medicine.' },
-    E1: { word: 'Entrepreneurship',        desc: 'Empowering founders and innovators with hospital-grade validation, clinical access, and venture support to bring ideas to market.' },
-    L:  { word: 'Longevity',               desc: 'Advancing science and business at the frontier of healthy aging, precision medicine, and evidence-backed longevity interventions.' },
-    B:  { word: 'Biomedical',              desc: 'Grounded in world-class biomedical research and clinical expertise at one of the Czech Republic\'s top teaching hospitals.' },
-    E2: { word: 'Evidence-based',          desc: 'Every innovation validated against rigorous clinical evidence and real-world outcomes — not just theory or prototype-stage assumptions.' },
-    R:  { word: 'Research',                desc: 'Deep integration with academic and applied research programs to accelerate translational medicine and bring discoveries to patients faster.' },
-    G:  { word: 'Growth',                  desc: 'Scaling healthcare ventures from concept to commercialization with strategic capital connections, partnership networks, and venture-building expertise.' }
-};
 const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
 function showHex(btn) {

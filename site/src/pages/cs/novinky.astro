@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import { url } from '../../i18n.js';
+---
+<Base title="Novinky | Tafelberg Ventures">
+    <section class="section page-head">
+        <p class="label">Novinky</p>
+        <h1 class="section-h">Zprávy ze stavby platformy</h1>
+        <div class="news-empty">
+            <p>Zatím tu žádné novinky nejsou. První zprávy přidáme, jakmile platforma začne získávat podobu — milníky, programy a výzvy ke spolupráci.</p>
+            <a href={url('cs', 'home', 'shape')} class="btn btn-primary">Pomozte nám ji postavit →</a>
+        </div>
+    </section>
+</Base>

@@ -1,8 +1,40 @@
+---
+import { langOf, pick } from '../../i18n.js';
+const lang = langOf(Astro);
+const all = {
+    label: { en: 'Platform', cs: 'Platforma' },
+    h: { en: 'The Innovation Platform', cs: 'Inovační platforma' },
+    lead: { en: 'This is the platform we are setting out to build: Tafelberg Ventures at the intersection of clinical excellence, capital flows, research infrastructure, and commercial partnerships — a healthcare innovation flywheel.', cs: 'Takovou platformu se chystáme postavit: Tafelberg Ventures na průsečíku klinické excelence, toků kapitálu, výzkumné infrastruktury a obchodních partnerství — setrvačník zdravotnických inovací.' },
+    svc: { en: 'SUPPORT/SERVICES', cs: 'PODPORA/SLUŽBY' },
+    sel: { en: 'APPLICATION/SELECTION', cs: 'PŘIHLÁŠKA/VÝBĚR' },
+    zSvc: { en: 'Platform services', cs: 'Služby platformy' },
+    zPl: { en: 'Platform players', cs: 'Aktéři platformy' },
+    inc: { en: 'Platform incubation', cs: 'Inkubace v platformě' },
+    pv: { en: 'Portfolio project / venture', cs: 'Projekt / firma z portfolia' },
+    cap: { en: 'Capital', cs: 'Kapitál' },
+    vc: { en: 'Venture / Private Capital', cs: 'Venture / soukromý kapitál' },
+    gr: { en: 'Grants & Public Funds', cs: 'Granty a veřejné zdroje' },
+    cl: { en: 'Clinical Settings', cs: 'Klinické prostředí' },
+    mk: { en: 'Market', cs: 'Trh' },
+    data: { en: 'Data & ICT', cs: 'Data a ICT' },
+    pub: { en: 'Public', cs: 'Veřejný sektor' },
+    fnp: { en: 'FN projects', cs: 'Projekty FN' },
+    st: { en: 'Startups / MSP', cs: 'Startupy / MSP' },
+    ext: { en: 'External projects', cs: 'Externí projekty' },
+    labs: { en: 'Infrastructure<br>Labs / Testbeds', cs: 'Infrastruktura<br>laboratoře / testbedy' },
+    com: { en: 'Companies &<br>Commercial Partners', cs: 'Firmy a<br>obchodní partneři' },
+    state: { en: 'State / Public<br>Stakeholders', cs: 'Stát / veřejné<br>instituce' },
+};
+const t = pick({
+    en: Object.fromEntries(Object.entries(all).map(([k, v]) => [k, v.en])),
+    cs: Object.fromEntries(Object.entries(all).map(([k, v]) => [k, v.cs])),
+}, lang);
+---
 <!-- ═══ PLATFORM DIAGRAM ═══ -->
 <section class="section" id="platform">
-    <p class="label">Platform</p>
-    <h2 class="section-h">The Innovation Platform</h2>
-    <p class="section-lead">This is the platform we are setting out to build: Tafelberg Ventures at the intersection of clinical excellence, capital flows, research infrastructure, and commercial partnerships — a healthcare innovation flywheel.</p>
+    <p class="label">{t.label}</p>
+    <h2 class="section-h">{t.h}</h2>
+    <p class="section-lead">{t.lead}</p>
 
     <div class="eco-scroll">
         <div class="eco-diagram">
@@ -51,7 +83,7 @@
                       marker-end="url(#arrowSvc)" class="flow-svc"/>
                 <text x="160" y="64" text-anchor="end"
                       font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
-                      fill="rgba(29,99,208,0.85)">SUPPORT/SERVICES</text>
+                      fill="rgba(29,99,208,0.85)">{t.svc}</text>
 
                 <!-- SERVICES — bottom-right: hex BR vertex → lower-right outer space (no box crossings) -->
                 <path d="M 593,350 Q 637,394 675,434"
@@ -59,7 +91,7 @@
                       marker-end="url(#arrowSvc)" class="flow-svc"/>
                 <text x="680" y="438" text-anchor="start"
                       font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
-                      fill="rgba(29,99,208,0.85)">SUPPORT/SERVICES</text>
+                      fill="rgba(29,99,208,0.85)">{t.svc}</text>
 
                 <!-- SELECTION — bottom-left: lower-left outer → small hex left face y=280 -->
                 <path d="M 155,415 Q 228,374 340,280"
@@ -67,7 +99,7 @@
                       marker-end="url(#arrowSel)" class="flow-sel"/>
                 <text x="148" y="420" text-anchor="end"
                       font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
-                      fill="rgba(178,22,18,0.85)">APPLICATION/SELECTION</text>
+                      fill="rgba(178,22,18,0.85)">{t.sel}</text>
 
                 <!-- SELECTION — top-right: upper-right outer → small hex right face y=220 -->
                 <path d="M 685,85 Q 612,128 500,220"
@@ -75,20 +107,20 @@
                       marker-end="url(#arrowSel)" class="flow-sel"/>
                 <text x="690" y="82" text-anchor="start"
                       font-family="'Space Mono',monospace" font-size="6.5" letter-spacing="1.3"
-                      fill="rgba(178,22,18,0.85)">APPLICATION/SELECTION</text>
+                      fill="rgba(178,22,18,0.85)">{t.sel}</text>
             </svg>
 
             <div class="eco-hex"></div>
 
             <!-- Zone labels -->
-            <div class="eco-zone-label" style="left:310px;top:18px;width:220px;">Platform services</div>
-            <div class="eco-zone-label" style="left:310px;top:134px;width:220px;">Platform players</div>
+            <div class="eco-zone-label" style="left:310px;top:18px;width:220px;">{t.zSvc}</div>
+            <div class="eco-zone-label" style="left:310px;top:134px;width:220px;">{t.zPl}</div>
 
-            <div class="eco-inner-label">Platform incubation</div>
-            <div class="eco-inner-box" style="left:350px;top:226px;">Portfolio project / venture</div>
-            <div class="eco-inner-box" style="left:424px;top:226px;">Portfolio project / venture</div>
-            <div class="eco-inner-box" style="left:350px;top:266px;">Portfolio project / venture</div>
-            <div class="eco-inner-box" style="left:424px;top:266px;">Portfolio project / venture</div>
+            <div class="eco-inner-label">{t.inc}</div>
+            <div class="eco-inner-box" style="left:350px;top:226px;">{t.pv}</div>
+            <div class="eco-inner-box" style="left:424px;top:226px;">{t.pv}</div>
+            <div class="eco-inner-box" style="left:350px;top:266px;">{t.pv}</div>
+            <div class="eco-inner-box" style="left:424px;top:266px;">{t.pv}</div>
 
             <div class="eco-box eco-tv eco-t1">
                 <div class="eco-box-cat">TafelVent</div>
@@ -96,45 +128,45 @@
             </div>
             <div class="eco-box eco-tv eco-t2">
                 <div class="eco-box-cat">TafelVent</div>
-                <div class="eco-box-name">Infrastructure<br>Labs / Testbeds</div>
+                <div class="eco-box-name" set:html={t.labs}></div>
             </div>
 
             <div class="eco-box eco-cap eco-b1">
-                <div class="eco-box-cat">Capital</div>
-                <div class="eco-box-name">Venture / Private Capital</div>
+                <div class="eco-box-cat">{t.cap}</div>
+                <div class="eco-box-name">{t.vc}</div>
             </div>
             <div class="eco-box eco-cap eco-b2">
-                <div class="eco-box-cat">Capital</div>
-                <div class="eco-box-name">Grants &amp; Public Funds</div>
+                <div class="eco-box-cat">{t.cap}</div>
+                <div class="eco-box-name">{t.gr}</div>
             </div>
 
             <div class="eco-box eco-fn eco-l1">
                 <div class="eco-box-cat">FN Olomouc</div>
-                <div class="eco-box-name">Clinical Settings</div>
+                <div class="eco-box-name">{t.cl}</div>
             </div>
             <div class="eco-box eco-com eco-l2">
-                <div class="eco-box-cat">Market</div>
-                <div class="eco-box-name">Companies &amp;<br>Commercial Partners</div>
+                <div class="eco-box-cat">{t.mk}</div>
+                <div class="eco-box-name" set:html={t.com.replace("&", "&amp;")}></div>
             </div>
 
             <div class="eco-box eco-fn eco-r1">
                 <div class="eco-box-cat">FN Olomouc</div>
-                <div class="eco-box-name">Data &amp; ICT</div>
+                <div class="eco-box-name">{t.data}</div>
             </div>
             <div class="eco-box eco-com eco-r2">
-                <div class="eco-box-cat">Public</div>
-                <div class="eco-box-name">State / Public<br>Stakeholders</div>
+                <div class="eco-box-cat">{t.pub}</div>
+                <div class="eco-box-name" set:html={t.state}></div>
             </div>
 
             <!-- Left side -->
-            <div class="eco-side-box" style="left:20px;top:115px;">FN projects</div>
-            <div class="eco-side-box" style="left:20px;top:232px;">Startups / MSP</div>
-            <div class="eco-side-box" style="left:20px;top:355px;">External projects</div>
+            <div class="eco-side-box" style="left:20px;top:115px;">{t.fnp}</div>
+            <div class="eco-side-box" style="left:20px;top:232px;">{t.st}</div>
+            <div class="eco-side-box" style="left:20px;top:355px;">{t.ext}</div>
 
             <!-- Right side -->
-            <div class="eco-side-box" style="left:675px;top:115px;">FN projects</div>
-            <div class="eco-side-box" style="left:675px;top:232px;">Startups / MSP</div>
-            <div class="eco-side-box" style="left:675px;top:355px;">External projects</div>
+            <div class="eco-side-box" style="left:675px;top:115px;">{t.fnp}</div>
+            <div class="eco-side-box" style="left:675px;top:232px;">{t.st}</div>
+            <div class="eco-side-box" style="left:675px;top:355px;">{t.ext}</div>
         </div>
     </div>
 </section>
