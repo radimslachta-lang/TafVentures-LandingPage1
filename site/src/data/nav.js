@@ -3,10 +3,12 @@
 export const nav = [
     {
         label: 'About us',
-        href: '/#mission',
+        href: '/about',
         children: [
-            { label: 'Mission & Vision', href: '/#mission' },
-            { label: 'Our Identity', href: '/#vision' },
+            { label: 'Mission & Vision', href: '/about#mission' },
+            { label: 'Why now', href: '/about#why-now' },
+            { label: 'Our Identity', href: '/about#vision' },
+            { label: 'Team', href: '/about#team' },
         ],
     },
     {
@@ -22,15 +24,16 @@ export const nav = [
     },
     {
         label: 'How to join',
-        href: '/#shape',
+        href: '/how-to-join',
         children: [
-            { label: 'Share your needs', href: '/#shape' },
-            { label: 'Clinicians & Researchers', href: '/#join-clinicians' },
-            { label: 'Startups & Innovators', href: '/#join-startups' },
-            { label: 'Investors', href: '/#join-investors' },
-            { label: 'Industry Partners', href: '/#join-industry' },
+            { label: 'Share your needs', href: '/how-to-join#shape' },
+            { label: 'Clinicians & Researchers', href: '/how-to-join#join-clinicians' },
+            { label: 'Startups & Innovators', href: '/how-to-join#join-startups' },
+            { label: 'Investors', href: '/how-to-join#join-investors' },
+            { label: 'Industry Partners', href: '/how-to-join#join-industry' },
         ],
     },
+    { label: 'News', href: '/news' },
     { label: 'Contact', href: '/#contact' },
 ];
 

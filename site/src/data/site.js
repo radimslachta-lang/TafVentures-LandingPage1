@@ -1,5 +1,15 @@
-// Link to the intake questionnaire for all segments (Tally).
-// While it is empty, every "Share your needs" button falls back to the contact form.
-export const intakeFormUrl = '';
+// Needs questionnaire for all segments (Tally), one form per language.
+// An empty URL makes the "Share your needs" buttons fall back to the contact form.
+// Tally redirects respondents to /cs/dekujeme or /thanks after submitting.
+export const intakeFormUrls = {
+    cs: 'https://tally.so/r/Z98M00',
+    en: 'https://tally.so/r/6DLq85',
+};
 
-export const intakeHref = intakeFormUrl || '/#contact';
+export function intakeHref(lang = 'en') {
+    const url = intakeFormUrls[lang];
+    return url ? `${url}?lang=${lang}&source=lp` : '/#contact';
+}
+
+// Pitch form (second step for respondents with a concrete project).
+export const pitchFormUrl = 'https://tally.so/r/WJO9Rj';

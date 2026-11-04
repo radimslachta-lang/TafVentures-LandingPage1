@@ -1,32 +1,30 @@
+---
+import { intakeHref } from '../../data/site.js';
+
+const href = intakeHref('en');
+const linkAttrs = href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {};
+---
 <!-- ═══ PARTNERS ═══ -->
 <section class="section" id="partners">
     <p class="label">Partners &amp; Network</p>
-    <h2 class="section-h">Our Partners</h2>
-    <p class="section-lead">Building the future of healthcare innovation together with world-class institutions, investors, and industry leaders.</p>
-    <div class="partners-disclaimer">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span>The partners listed are for illustrative purposes only — they represent areas where we are actively seeking partnerships and conducting initial discussions.</span>
-    </div>
+    <h2 class="section-h">Building It Together</h2>
+    <p class="section-lead">We are building the platform together with investors and innovators who share our goal — and we are looking for more.</p>
     <div class="partners-grid">
         <a class="partner partner-invert" href="https://www.dendiscapital.com/" target="_blank" rel="noopener">
             <img src="https://www.dendiscapital.com/wp-content/uploads/2023/11/Group-4140.svg" alt="Dendis Capital" onerror="this.style.display='none'">
             <span class="partner-label">Dendis Capital</span>
         </a>
-        <a class="partner" href="https://www.siemens-healthineers.com/" target="_blank" rel="noopener">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Siemens_Healthineers_logo.svg/250px-Siemens_Healthineers_logo.svg.png" alt="Siemens Healthineers" onerror="this.style.display='none'">
-            <span class="partner-label">Siemens Healthineers</span>
-        </a>
         <a class="partner partner-invert" href="https://genespector.com/" target="_blank" rel="noopener">
             <img src="https://genespector.com/img/gs-logo.svg" alt="Genespector" onerror="this.style.display='none'">
             <span class="partner-label">Genespector</span>
         </a>
-        <a class="partner" href="https://www.ministrzdravi.cz/" target="_blank" rel="noopener">
-            <img src="https://www.ministrzdravi.cz/app/themes/ipress/build/images/logo.svg" alt="Ministry of Health" onerror="this.style.display='none'">
-            <span class="partner-label">Health Minister</span>
-        </a>
         <a class="partner" href="https://g-angels.cz/" target="_blank" rel="noopener">
             <img src="https://g-angels.cz/wp-content/uploads/2022/09/ga-black-final.svg" alt="Garage Angels" onerror="this.style.display='none'">
             <span class="partner-label">Garage Angels</span>
+        </a>
+        <a class="partner partner-open" href={href} {...linkAttrs}>
+            <span class="partner-open-title">We are looking for more partners</span>
+            <span class="partner-label">Become a partner →</span>
         </a>
     </div>
 </section>

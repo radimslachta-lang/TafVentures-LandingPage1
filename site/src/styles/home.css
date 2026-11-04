@@ -82,6 +82,13 @@ html { scroll-padding-top: 120px; }
 .shape-cta .btn-primary:hover { background: var(--accent2); color: #fff; box-shadow: 0 6px 28px rgba(23,195,230,0.45); }
 .shape-note { margin-top: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.7); }
 
+/* Thank-you page after the questionnaire */
+.thanks { min-height: 70vh; display: flex; align-items: center; padding-top: 6rem; }
+.thanks .shape { width: 100%; }
+.thanks-pitch { margin-bottom: 1.5rem; }
+.thanks-pitch[hidden] { display: none; }
+.thanks-back { color: #fff; border-color: rgba(255,255,255,0.5); }
+
 /* ─── WHAT MAKES US DIFFERENT ─── */
 .diff-grid {
     display: grid;
@@ -126,6 +133,40 @@ html { scroll-padding-top: 120px; }
     font-weight: 600;
     color: var(--text);
 }
+
+/* ─── WHY NOW ─── */
+.why-now { text-align: center; }
+.why-now .section-lead { margin-left: auto; margin-right: auto; }
+.why-grid { margin-top: 2.5rem; }
+.why-grid .pillar-title { font-size: 0.75rem; }
+
+/* ─── JOIN / PARTNERS additions ─── */
+.audience-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+}
+.audience-cta:hover { text-decoration: underline; }
+.partner-open { border-style: dashed; text-decoration: none; }
+.partner-open-title { font-size: 0.9rem; font-weight: 600; color: var(--text); text-align: center; }
+.partner-open .partner-label { color: var(--accent); }
+
+/* ─── SUBPAGES ─── */
+.page-head { padding-top: 9rem; padding-bottom: 1rem; }
+.page-head .section-lead { max-width: 760px; }
+.team-placeholder, .news-empty {
+    margin-top: 2rem;
+    padding: 2rem 1.75rem;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    background: var(--bg-card);
+    max-width: 760px;
+}
+.team-placeholder p, .news-empty p { color: var(--muted); line-height: 1.75; font-size: 0.95rem; }
+.news-empty .btn { margin-top: 1.25rem; }
 
 @media (max-width: 720px) {
     .shape-steps { grid-template-columns: 1fr; }

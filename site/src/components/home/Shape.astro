@@ -1,5 +1,8 @@
 ---
-import { intakeHref, intakeFormUrl } from '../../data/site.js';
+import { intakeHref } from '../../data/site.js';
+
+const href = intakeHref('en');
+const external = href.startsWith('http');
 
 const segments = [
     'Clinicians & Researchers',
@@ -41,7 +44,7 @@ const steps = [
         </ol>
 
         <div class="shape-cta">
-            <a href={intakeHref} class="btn btn-primary btn-lg" {...(intakeFormUrl ? { target: '_blank', rel: 'noopener' } : {})}>Share your needs →</a>
+            <a href={href} class="btn btn-primary btn-lg" {...(external ? { target: '_blank', rel: 'noopener' } : {})}>Share your needs →</a>
             <p class="shape-note">Already have a concrete project? The questionnaire will lead you on to our pitch step.</p>
         </div>
     </div>

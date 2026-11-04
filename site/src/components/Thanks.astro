@@ -1,0 +1,39 @@
+---
+// Landing page after the needs questionnaire (Tally redirects here on completion
+// with ?pitch=<answer>&sid=<submission id>). Respondents who chose to continue
+// get a button to the pitch form, linked to their questionnaire by intake_id.
+import { pitchFormUrl } from '../data/site.js';
+
+const { label, heading, lead, urgent, pitchText, pitchCta, back, home, lang } = Astro.props;
+---
+<section class="shape-wrap thanks">
+    <div class="section shape">
+        <p class="label">{label}</p>
+        <h1 class="section-h">{heading}</h1>
+        <p class="shape-lead">{lead}</p>
+        <p class="shape-lead">{urgent}</p>
+        <div class="shape-cta thanks-pitch" id="thanksPitch" hidden>
+            <p class="shape-lead">{pitchText}</p>
+            <a href={pitchFormUrl} id="thanksPitchLink" class="btn btn-primary btn-lg" data-base={pitchFormUrl} data-lang={lang}>{pitchCta}</a>
+        </div>
+        <div class="shape-cta">
+            <a href={home} class="btn btn-ghost btn-lg thanks-back">{back}</a>
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    (function () {
+        var q = new URLSearchParams(location.search);
+        var pitch = (q.get('pitch') || '').toLowerCase();
+        // CZ answer "Ano, chci pokračovat", EN answer "Yes, ..."
+        if (pitch.indexOf('ano') !== 0 && pitch.indexOf('yes') !== 0) return;
+        var link = document.getElementById('thanksPitchLink');
+        var url = new URL(link.dataset.base);
+        var sid = q.get('sid');
+        if (sid) url.searchParams.set('intake_id', sid);
+        url.searchParams.set('lang', link.dataset.lang);
+        link.href = url.toString();
+        document.getElementById('thanksPitch').hidden = false;
+    })();
+</script>
