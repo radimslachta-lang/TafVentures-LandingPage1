@@ -9,7 +9,8 @@ const t = pick({
     },
     cs: {
         tag: 'Inovační platforma a HUB (v přípravě)',
-        sub: 'Ve Fakultní nemocnici Olomouc budujeme platformu pro inovace ve zdravotnictví a rozvoj podnikatelských projektů (tzv. Venture Building). Představuje tu nejjednodušší cestu, jak mohou inovátoři proniknout do klinické praxe a k zdravotnickým datům – a jak přetavit výzkum v reálný dopad. A chceme ji budovat společně s vámi.',
+        sub: 'Ve Fakultní nemocnici Olomouc budujeme platformu pro inovace ve zdravotnictví a rozvoj podnikatelských projektů (tzv. Venture Building). Představuje tu nejjednodušší cestu, jak mohou inovátoři proniknout do klinické praxe a k zdravotnickým datům – a jak přetavit výzkum v reálný dopad.',
+        subStrong: 'A chceme ji budovat společně s vámi.',
         cta: 'Pomozte nám ji postavit →', explore: 'Prozkoumat platformu', scroll: 'Dolů',
     },
 }, langOf(Astro));
@@ -22,7 +23,7 @@ const t = pick({
     <h1 class="hero-title">
         <span class="ac">Tafelberg</span><br>Ventures
     </h1>
-    <p class="hero-sub">{t.sub}{t.subStrong && <> <strong>{t.subStrong}</strong></>}</p>
+    <p class="hero-sub">{t.sub}<br><strong>{t.subStrong}</strong></p>
     <div class="hero-cta">
         <a href="#shape" class="btn btn-primary btn-lg">{t.cta}</a>
         <a href="#platform" class="btn btn-ghost btn-lg">{t.explore}</a>
