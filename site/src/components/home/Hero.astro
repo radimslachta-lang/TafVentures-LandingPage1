@@ -3,16 +3,18 @@ import { langOf, pick } from '../../i18n.js';
 const t = pick({
     en: {
         tag: 'Innovation Platform and HUB (in preparation)',
-        sub: 'We are building a Health Innovation and Venture Building Platform at FN Olomouc — the simplest route for innovators into clinical practice and health data, and from research to real-world impact.',
+        sub1: 'We are building a Health Innovation and',
+        subLink: 'Venture Building',
+        sub2: 'Platform at FN Olomouc — the simplest route for innovators into clinical practice and health data, and from research to real-world impact.',
         subStrong: 'And we want to build it with you.',
-        more: 'What venture building means to us ↓',
         cta: 'Help us build it →', explore: 'Explore the Platform', scroll: 'Scroll',
     },
     cs: {
         tag: 'Inovační platforma a HUB (v přípravě)',
-        sub: 'Ve Fakultní nemocnici Olomouc budujeme platformu pro inovace ve zdravotnictví a rozvoj podnikatelských projektů (tzv. Venture Building). Představuje tu nejjednodušší cestu, jak mohou inovátoři proniknout do klinické praxe a k zdravotnickým datům – a jak přetavit výzkum v reálný dopad.',
+        sub1: 'Ve Fakultní nemocnici Olomouc budujeme platformu pro inovace a',
+        subLink: 'Venture Building',
+        sub2: 've zdravotnictví. Představuje tu nejjednodušší cestu, jak mohou inovátoři proniknout do klinické praxe a k zdravotnickým datům – a jak přetavit výzkum v reálný dopad.',
         subStrong: 'A chceme ji budovat společně s vámi.',
-        more: 'Co pro nás znamená venture building ↓',
         cta: 'Pomozte nám ji postavit →', explore: 'Prozkoumat platformu', scroll: 'Dolů',
     },
 }, langOf(Astro));
@@ -25,7 +27,7 @@ const t = pick({
     <h1 class="hero-title">
         <span class="ac">Tafelberg</span><br>Ventures
     </h1>
-    <p class="hero-sub">{t.sub}<br><strong>{t.subStrong}</strong><br><a class="hero-more" href="#venture">{t.more}</a></p>
+    <p class="hero-sub">{t.sub1}&nbsp;<a class="hero-link" href="#venture">{t.subLink}</a> {t.sub2}<br><strong>{t.subStrong}</strong></p>
     <div class="hero-cta">
         <a href="#shape" class="btn btn-primary btn-lg">{t.cta}</a>
         <a href="#platform" class="btn btn-ghost btn-lg">{t.explore}</a>
