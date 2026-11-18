@@ -3,6 +3,8 @@ html { scroll-padding-top: 120px; }
 
 /* ─── HERO additions ─── */
 .hero-sub strong { color: var(--text); font-weight: 600; }
+.hero-more { display: inline-block; margin-top: 0.9rem; font-size: 0.9rem; font-weight: 600; color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(36,74,144,0.35); }
+.hero-more:hover { border-bottom-color: var(--accent); }
 .btn-lg { padding: 0.9rem 1.9rem; font-size: 0.95rem; }
 
 /* ─── CO-DESIGN: SHARE YOUR NEEDS ─── */

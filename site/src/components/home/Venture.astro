@@ -1,0 +1,161 @@
+---
+// "Venture ≠ Venture capital": the core idea behind the name (agreed with Radim 2026-11-18).
+import { langOf, pick } from '../../i18n.js';
+const t = pick({
+    en: {
+        h1: 'Venture', h2: 'Venture capital',
+        lead: 'There is "Ventures" in our name. That does not make us an investment fund. It describes how we work.',
+        vTag: 'Venture',
+        vDef: 'A venture is, by nature, a risky business undertaking with an uncertain outcome.',
+        bTag: 'Venture building · our approach',
+        bDef: 'Venture building is a systematic process that tests a new business idea step by step, with small investments and clear go / pivot / stop decisions. Serious capital comes only once there is evidence.',
+        flowLabel: 'How a project moves forward',
+        steps: [
+            { t: 'Small step', d: 'Test the riskiest assumption first, with a small investment.' },
+            { t: 'Evidence', d: 'Clinical, user or market data, not opinions.' },
+            { t: 'Decision', d: 'Go · Pivot · Stop', decision: true },
+            { t: 'Capital', d: 'Larger investment comes once the evidence is there.' },
+        ],
+        capital: 'Capital grows with evidence',
+        decisions: [
+            { k: 'go', t: 'Go', d: 'continue to the next step' },
+            { k: 'pivot', t: 'Pivot', d: 'change direction' },
+            { k: 'stop', t: 'Stop', d: 'end early and cheaply' },
+        ],
+    },
+    cs: {
+        h1: 'Venture', h2: 'Venture capital',
+        lead: 'Slovo „Ventures“ máme v názvu. Neznamená to, že jsme investiční fond. Popisuje, jak pracujeme.',
+        vTag: 'Venture',
+        vDef: 'Venture je ze své podstaty riskantní podnikatelský počin s nejistým výsledkem.',
+        bTag: 'Venture building · náš přístup',
+        bDef: 'Venture building je systematický proces, který nový podnikatelský záměr ověřuje krok za krokem, s malými vklady a jasnými rozhodnutími pokračovat, změnit směr, nebo skončit. Velký kapitál přichází až s důkazy.',
+        flowLabel: 'Jak se projekt posouvá',
+        steps: [
+            { t: 'Malý krok', d: 'Nejdřív ověřit nejrizikovější předpoklad, s malým vkladem.' },
+            { t: 'Důkaz', d: 'Klinická, uživatelská nebo tržní data, ne názory.' },
+            { t: 'Rozhodnutí', d: 'Pokračovat · Změnit směr · Skončit', decision: true },
+            { t: 'Kapitál', d: 'Větší investice přichází, až když jsou důkazy.' },
+        ],
+        capital: 'Kapitál roste s důkazy',
+        decisions: [
+            { k: 'go', t: 'Pokračovat', d: 'další krok' },
+            { k: 'pivot', t: 'Změnit směr', d: 'upravit záměr' },
+            { k: 'stop', t: 'Skončit', d: 'včas a levně' },
+        ],
+    },
+}, langOf(Astro));
+---
+<!-- ═══ VENTURE ≠ VENTURE CAPITAL ═══ -->
+<section class="section venture" id="venture">
+    <h2 class="venture-h">
+        <span>{t.h1}</span>
+        <span class="venture-ne" aria-label="≠">≠</span>
+        <span class="venture-vc">{t.h2}</span>
+    </h2>
+    <p class="section-lead venture-lead">{t.lead}</p>
+
+    <div class="venture-defs">
+        <article class="venture-def">
+            <span class="diff-tag">{t.vTag}</span>
+            <p>{t.vDef}</p>
+        </article>
+        <article class="venture-def venture-def-main">
+            <span class="diff-tag">{t.bTag}</span>
+            <p>{t.bDef}</p>
+        </article>
+    </div>
+
+    <p class="venture-flow-label">{t.flowLabel}</p>
+    <ol class="venture-flow">
+        {t.steps.map((s, i) => (
+            <li class:list={['venture-step', { 'venture-step-decision': s.decision }]}>
+                <span class="venture-num">{String(i + 1).padStart(2, '0')}</span>
+                <span class="venture-step-t">{s.t}</span>
+                {s.decision ? (
+                    <span class="venture-decisions">
+                        {t.decisions.map((d) => (
+                            <span class={`venture-dec venture-dec-${d.k}`}><b>{d.t}</b> {d.d}</span>
+                        ))}
+                    </span>
+                ) : (
+                    <span class="venture-step-d">{s.d}</span>
+                )}
+                <span class="venture-bar" style={`--h:${[12, 22, 34, 100][i]}%`}></span>
+            </li>
+        ))}
+    </ol>
+    <p class="venture-capital">{t.capital} →</p>
+</section>
+
+<style>
+    .venture { text-align: center; }
+    .venture-h {
+        display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline;
+        gap: 0.2em 0.45em;
+        font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 1.25rem;
+    }
+    .venture-ne { color: var(--accent2); font-weight: 400; }
+    .venture-vc { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 3px; text-decoration-color: rgba(100,116,139,0.45); }
+    .venture-lead { margin: 0 auto; }
+
+    .venture-defs {
+        display: grid; grid-template-columns: 2fr 3fr; gap: 1.5rem;
+        margin-top: 2.5rem; text-align: left;
+    }
+    .venture-def {
+        background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+        padding: 1.75rem;
+    }
+    .venture-def p { font-size: 1.15rem; line-height: 1.6; font-weight: 500; }
+    .venture-def-main { border: 2px solid var(--accent); box-shadow: 0 10px 40px rgba(36,74,144,0.12); }
+    .venture-def-main .diff-tag { background: var(--accent); color: #fff; }
+
+    .venture-flow-label {
+        margin-top: 3rem; margin-bottom: 1rem;
+        font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em;
+        text-transform: uppercase; color: var(--muted);
+    }
+    .venture-flow {
+        list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: left;
+    }
+    .venture-step {
+        position: relative; overflow: hidden;
+        background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+        padding: 1.25rem 1.25rem 2.75rem; display: flex; flex-direction: column; gap: 0.35rem;
+    }
+    .venture-step:not(:last-child)::after {
+        content: '→'; position: absolute; right: 0.6rem; top: 1.1rem; color: var(--accent2); font-weight: 700;
+    }
+    .venture-num { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--accent2); }
+    .venture-step-t { font-weight: 700; font-size: 1.05rem; }
+    .venture-step-d { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+    .venture-step-decision { border: 2px solid var(--accent); }
+    .venture-decisions { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.8rem; color: var(--muted); }
+    .venture-dec b { display: inline-block; min-width: 6.5em; color: var(--text); }
+    .venture-dec-go b { color: #1a8a5a; }
+    .venture-dec-pivot b { color: #c27c0e; }
+    .venture-dec-stop b { color: #b21612; }
+    /* bar at the bottom of each step: grows with capital */
+    .venture-bar {
+        position: absolute; left: 1.25rem; right: 1.25rem; bottom: 1rem; height: 6px;
+        background: rgba(36,74,144,0.08); border-radius: 3px;
+    }
+    .venture-bar::before {
+        content: ''; position: absolute; inset: 0 auto 0 0; width: var(--h);
+        background: linear-gradient(90deg, var(--accent2), var(--accent)); border-radius: 3px;
+    }
+    .venture-capital { margin-top: 1rem; font-weight: 600; color: var(--accent); text-align: right; font-size: 0.9rem; }
+
+    @media (max-width: 860px) {
+        .venture-defs { grid-template-columns: 1fr; }
+        .venture-flow { grid-template-columns: 1fr 1fr; }
+        .venture-step:nth-child(2)::after { content: none; }
+    }
+    @media (max-width: 520px) {
+        .venture-flow { grid-template-columns: 1fr; }
+        .venture-step::after { content: none !important; }
+        .venture-capital { text-align: center; }
+    }
+</style>

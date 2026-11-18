@@ -8,6 +8,7 @@ function build(lang, L) {
             label: L.about,
             href: url(lang, 'about'),
             children: [
+                { label: L.venture, href: url(lang, 'about', 'venture') },
                 { label: L.mission, href: url(lang, 'about', 'mission') },
                 { label: L.whyNow, href: url(lang, 'about', 'why-now') },
                 { label: L.identity, href: url(lang, 'about', 'vision') },
@@ -43,7 +44,7 @@ function build(lang, L) {
 
 const labels = {
     en: {
-        about: 'About us', mission: 'Mission & Vision', whyNow: 'Why now', identity: 'Our Identity', team: 'Team',
+        about: 'About us', venture: 'What "Venture" means', mission: 'Mission & Vision', whyNow: 'Why now', identity: 'Our Identity', team: 'Team',
         platform: 'Platform', different: 'What makes us different', howItWorks: 'How it works',
         programs: 'Innovation Programs', partners: 'Partners',
         join: 'How to join', share: 'Share your needs', clinicians: 'Clinicians & Researchers',
@@ -51,7 +52,7 @@ const labels = {
         news: 'News', contact: 'Contact', cta: 'Help us build it',
     },
     cs: {
-        about: 'O nás', mission: 'Mise a vize', whyNow: 'Proč právě teď', identity: 'Naše identita', team: 'Tým',
+        about: 'O nás', venture: 'Co znamená Venture', mission: 'Mise a vize', whyNow: 'Proč právě teď', identity: 'Naše identita', team: 'Tým',
         platform: 'Platforma', different: 'Čím se odlišujeme', howItWorks: 'Jak to funguje',
         programs: 'Inovační programy', partners: 'Partneři',
         join: 'Jak se zapojit', share: 'Sdílejte své potřeby', clinicians: 'Lékaři a výzkumníci',

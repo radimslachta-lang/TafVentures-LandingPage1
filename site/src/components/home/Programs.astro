@@ -4,6 +4,9 @@ const t = pick({
     en: {
         label: 'Innovation Programs · In design', h: 'How the Pipeline Will Work',
         lead: 'From a first idea to a scaled health innovation — the programmes we are designing, stage by stage. Their final shape will follow what you tell us.',
+        gateLead: 'Between every stage:',
+        gateText: 'a decision based on evidence',
+        gates: ['Go', 'Pivot', 'Stop'],
         stages: [
             { t: 'Idea & Discovery', d: 'Identifying and evaluating innovations with genuine clinical potential — feasibility, patient relevance, and commercial fit, assessed together with your team.', b: 'Open to all' },
             { t: 'Clinical Validation', d: 'Structured pilots within FN Olomouc departments. Real data, real clinical settings, real feedback. This is where ideas become evidence.', b: 'Cohort-based' },
@@ -14,6 +17,9 @@ const t = pick({
     cs: {
         label: 'Inovační programy · V přípravě', h: 'Jak bude pipeline fungovat',
         lead: 'Od prvního nápadu po rozšířenou zdravotnickou inovaci — programy, které navrhujeme, krok za krokem. Jejich konečnou podobu určí to, co nám řeknete.',
+        gateLead: 'Mezi každou fází:',
+        gateText: 'rozhodnutí na základě důkazů',
+        gates: ['Pokračovat', 'Změnit směr', 'Skončit'],
         stages: [
             { t: 'Nápad a průzkum', d: 'Vyhledávání a posouzení inovací se skutečným klinickým potenciálem — proveditelnost, přínos pro pacienty a obchodní uplatnění posuzujeme společně s vaším týmem.', b: 'Otevřeno všem' },
             { t: 'Klinická validace', d: 'Strukturované pilotní projekty na pracovištích FN Olomouc. Reálná data, reálné klinické prostředí, reálná zpětná vazba. Tady se z nápadů stávají důkazy.', b: 'Po skupinách' },
@@ -29,6 +35,7 @@ const t = pick({
     <h2 class="section-h" style="text-align:center;">{t.h}</h2>
     <p class="section-lead" style="margin:0 auto 0; text-align:center;">{t.lead}</p>
     <div class="pipeline">
+        {[1, 2, 3].map((i) => <span class="gate-mark" style={`left:${i * 25}%`} aria-hidden="true"></span>)}
         {t.stages.map((s, i) => (
             <div class="stage">
                 <div class="stage-num">{String(i + 1).padStart(2, '0')}</div>
@@ -38,4 +45,34 @@ const t = pick({
             </div>
         ))}
     </div>
+    <p class="gate-row">
+        <span class="gate-diamond" aria-hidden="true"></span>
+        <span>{t.gateLead} <b>{t.gateText}</b></span>
+        <span class="gate-opts">
+            <span class="g-go">{t.gates[0]}</span> · <span class="g-pivot">{t.gates[1]}</span> · <span class="g-stop">{t.gates[2]}</span>
+        </span>
+    </p>
 </section>
+
+<style>
+    .gate-mark {
+        position: absolute; top: 29px; width: 14px; height: 14px; margin-left: -7px;
+        background: var(--bg-card); border: 2px solid var(--accent2); transform: rotate(45deg); z-index: 2;
+    }
+    .gate-row {
+        display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem 0.9rem;
+        margin: 2.5rem auto 0; padding: 0.9rem 1.25rem; max-width: 760px;
+        background: var(--bg-card); border: 1px solid var(--border); border-radius: 999px;
+        font-size: 0.88rem; color: var(--muted);
+    }
+    .gate-row b { color: var(--text); }
+    .gate-diamond { width: 12px; height: 12px; border: 2px solid var(--accent2); transform: rotate(45deg); flex: none; }
+    .gate-opts { font-weight: 700; }
+    .g-go { color: #1a8a5a; }
+    .g-pivot { color: #c27c0e; }
+    .g-stop { color: #b21612; }
+    @media (max-width: 720px) {
+        .gate-mark { display: none; }
+        .gate-row { border-radius: 12px; }
+    }
+</style>
