@@ -1,0 +1,2080 @@
+[
+ {
+  "file": "components/Ticker.astro",
+  "key": "label",
+  "section": "Všechny stránky › Běžící lišta",
+  "en": "Work in progress notice",
+  "cs": "Upozornění: rozpracovaná verze",
+  "id": "T001"
+ },
+ {
+  "file": "components/Ticker.astro",
+  "key": "text",
+  "section": "Všechny stránky › Běžící lišta",
+  "en": "This page is a working draft used to iteratively clarify the concept of a future innovation centre. All information presented is illustrative and indicative only.",
+  "cs": "Tato stránka je pracovní verzí, na které postupně upřesňujeme koncept budoucího inovačního centra. Všechny uvedené informace jsou ilustrativní a orientační.",
+  "id": "T002"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "about",
+  "section": "Všechny stránky › Menu",
+  "en": "About us",
+  "cs": "O nás",
+  "id": "T003"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "mission",
+  "section": "Všechny stránky › Menu",
+  "en": "Mission & Vision",
+  "cs": "Mise a vize",
+  "id": "T004"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "whyNow",
+  "section": "Všechny stránky › Menu",
+  "en": "Why now",
+  "cs": "Proč právě teď",
+  "id": "T005"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "identity",
+  "section": "Všechny stránky › Menu",
+  "en": "Our Identity",
+  "cs": "Naše identita",
+  "id": "T006"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "team",
+  "section": "Všechny stránky › Menu",
+  "en": "Team",
+  "cs": "Tým",
+  "id": "T007"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "platform",
+  "section": "Všechny stránky › Menu",
+  "en": "Platform",
+  "cs": "Platforma",
+  "id": "T008"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "different",
+  "section": "Všechny stránky › Menu",
+  "en": "What makes us different",
+  "cs": "Čím se odlišujeme",
+  "id": "T009"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "howItWorks",
+  "section": "Všechny stránky › Menu",
+  "en": "How it works",
+  "cs": "Jak to funguje",
+  "id": "T010"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "programs",
+  "section": "Všechny stránky › Menu",
+  "en": "Innovation Programs",
+  "cs": "Inovační programy",
+  "id": "T011"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "partners",
+  "section": "Všechny stránky › Menu",
+  "en": "Partners",
+  "cs": "Partneři",
+  "id": "T012"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "join",
+  "section": "Všechny stránky › Menu",
+  "en": "How to join",
+  "cs": "Jak se zapojit",
+  "id": "T013"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "share",
+  "section": "Všechny stránky › Menu",
+  "en": "Share your needs",
+  "cs": "Sdílejte své potřeby",
+  "id": "T014"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "clinicians",
+  "section": "Všechny stránky › Menu",
+  "en": "Clinicians & Researchers",
+  "cs": "Lékaři a výzkumníci",
+  "id": "T015"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "startups",
+  "section": "Všechny stránky › Menu",
+  "en": "Startups & Innovators",
+  "cs": "Startupy a inovátoři",
+  "id": "T016"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "investors",
+  "section": "Všechny stránky › Menu",
+  "en": "Investors",
+  "cs": "Investoři",
+  "id": "T017"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "industry",
+  "section": "Všechny stránky › Menu",
+  "en": "Industry Partners",
+  "cs": "Průmysloví partneři",
+  "id": "T018"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "news",
+  "section": "Všechny stránky › Menu",
+  "en": "News",
+  "cs": "Novinky",
+  "id": "T019"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "contact",
+  "section": "Všechny stránky › Menu",
+  "en": "Contact",
+  "cs": "Kontakt",
+  "id": "T020"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "cta",
+  "section": "Všechny stránky › Menu",
+  "en": "Help us build it",
+  "cs": "Pomozte nám ji postavit",
+  "id": "T021"
+ },
+ {
+  "file": "components/home/Hero.astro",
+  "key": "tag",
+  "section": "Úvod › Hero",
+  "en": "Innovation Platform and HUB (in preparation)",
+  "cs": "Inovační platforma a HUB (v přípravě)",
+  "id": "T022"
+ },
+ {
+  "file": "components/home/Hero.astro",
+  "key": "sub1 + subLink + sub2",
+  "section": "Úvod › Hero",
+  "en": "We are building a Health Innovation and Venture Building Platform at FN Olomouc — the simplest route for innovators into clinical practice and health data, and from research to real-world impact.",
+  "cs": "Ve Fakultní nemocnici Olomouc budujeme platformu pro inovace ve zdravotnictví a rozvoj podnikatelských projektů (tzv. Venture Building). Představuje tu nejjednodušší cestu, jak mohou inovátoři proniknout do klinické praxe a k zdravotnickým datům – a jak přetavit výzkum v reálný dopad.",
+  "id": "T023",
+  "note": "2026-11-18: hero text split around the Venture Building link; CZ first sentence changed by Radim"
+ },
+ {
+  "file": "components/home/Hero.astro",
+  "key": "subStrong",
+  "section": "Úvod › Hero",
+  "en": "And we want to build it with you.",
+  "cs": "A chceme ji budovat společně s vámi.",
+  "id": "T024"
+ },
+ {
+  "file": "components/home/Hero.astro",
+  "key": "cta",
+  "section": "Úvod › Hero",
+  "en": "Help us build it →",
+  "cs": "Pomozte nám ji postavit →",
+  "id": "T025"
+ },
+ {
+  "file": "components/home/Hero.astro",
+  "key": "explore",
+  "section": "Úvod › Hero",
+  "en": "Explore the Platform",
+  "cs": "Prozkoumat platformu",
+  "id": "T026"
+ },
+ {
+  "file": "components/home/Hero.astro",
+  "key": "scroll",
+  "section": "Úvod › Hero",
+  "en": "Scroll",
+  "cs": "Dolů",
+  "id": "T027"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "label",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Co-design phase · Open now",
+  "cs": "Fáze společného návrhu · Otevřeno",
+  "id": "T028"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "h1",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "We are not building this for ourselves.",
+  "cs": "Netvoříme systém pro sebe.",
+  "id": "T029"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "h2",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "We are building it for you.",
+  "cs": "Tvoříme ho pro vás.",
+  "id": "T030"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "lead",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "To create a system that truly fits the real needs of everyone who will work with it, we need to know as much as possible about you — your plans, your needs, and the obstacles you face. Your input will directly shape what we build first.",
+  "cs": "Abychom vytvořili systém, který bude skutečně odpovídat potřebám všech, kdo s ním budou pracovat, potřebujeme o vás vědět co nejvíc — vaše plány, potřeby i překážky, na které narážíte. Vaše odpovědi přímo určí, co postavíme jako první.",
+  "id": "T031"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "segAria",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Who we want to hear from",
+  "cs": "Od koho chceme slyšet",
+  "id": "T032"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "segments[0]",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Clinicians & Researchers",
+  "cs": "Lékaři a výzkumníci",
+  "id": "T033"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "segments[1]",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Startups & Innovators",
+  "cs": "Startupy a inovátoři",
+  "id": "T034"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "segments[2]",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Investors",
+  "cs": "Investoři",
+  "id": "T035"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "segments[3]",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Industry & Corporates",
+  "cs": "Průmysl a firmy",
+  "id": "T036"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "segments[4]",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Public Bodies & Others",
+  "cs": "Veřejné instituce a další",
+  "id": "T037"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "steps[0].title",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Tell us about you",
+  "cs": "Řekněte nám o sobě",
+  "id": "T038"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "steps[0].desc",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Who you are, what you are working on, and what you would need from a hospital-based innovation platform.",
+  "cs": "Kdo jste, na čem pracujete a co byste potřebovali od inovační platformy při nemocnici.",
+  "id": "T039"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "steps[1].title",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "We confirm and listen",
+  "cs": "Potvrdíme a nasloucháme",
+  "id": "T040"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "steps[1].desc",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "We confirm that we have received your input and work with it responsibly as we design the concept.",
+  "cs": "Potvrdíme přijetí vašeho podnětu a budeme s ním při návrhu konceptu zodpovědně pracovat.",
+  "id": "T041"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "steps[2].title",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "We come back when it is ready",
+  "cs": "Ozveme se, až to bude připravené",
+  "id": "T042"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "steps[2].desc",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "We will get in touch once the service designed for you is actually ready.",
+  "cs": "Ozveme se, jakmile bude služba navržená pro vás skutečně připravená.",
+  "id": "T043"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "cta",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Share your needs →",
+  "cs": "Sdílet své potřeby →",
+  "id": "T044"
+ },
+ {
+  "file": "components/home/Shape.astro",
+  "key": "note",
+  "section": "Úvod / Jak se zapojit › Sdílejte potřeby",
+  "en": "Already have a concrete project? The questionnaire will lead you on to our pitch step.",
+  "cs": "Máte už konkrétní projekt? Dotazník vás dovede k dalšímu kroku — stručnému představení projektu.",
+  "id": "T045"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "label",
+  "section": "Úvod / O nás › Mise",
+  "en": "Our Mission",
+  "cs": "Naše mise",
+  "id": "T046"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "h",
+  "section": "Úvod / O nás › Mise",
+  "en": "From Clinic to Real-World Impact",
+  "cs": "Z kliniky k reálnému dopadu",
+  "id": "T047"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "s1",
+  "section": "Úvod / O nás › Mise",
+  "en": "We are building Tafelberg Ventures as the innovation and venture-building platform of FN Olomouc —",
+  "cs": "Tafelberg Ventures budujeme jako inovační a venture-buildingovou platformu FN Olomouc —",
+  "id": "T048"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "sStrong",
+  "section": "Úvod / O nás › Mise",
+  "en": "bridging clinical excellence with entrepreneurial capital",
+  "cs": "propojujeme klinickou excelenci s podnikatelským kapitálem",
+  "id": "T049"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "s2",
+  "section": "Úvod / O nás › Mise",
+  "en": ". Our aim is to turn medical research, biomedical expertise, and hospital data into real-world health solutions that improve patients' lives, and to support clinicians, researchers, and innovators in developing ideas with genuine patient impact — through spin-offs, commercial partnerships, and open innovation.",
+  "cs": ". Chceme proměňovat lékařský výzkum, biomedicínskou expertizu a nemocniční data v reálná řešení, která zlepší život pacientů, a podporovat lékaře, výzkumníky a inovátory v rozvoji nápadů se skutečným přínosem pro pacienty — prostřednictvím spin-offů, obchodních partnerství a otevřených inovací.",
+  "id": "T050"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "pillars[0].t",
+  "section": "Úvod / O nás › Mise",
+  "en": "Clinical Depth",
+  "cs": "Klinická hloubka",
+  "id": "T051"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "pillars[0].d",
+  "section": "Úvod / O nás › Mise",
+  "en": "Rooted in real hospital practice and evidence-based research. Every innovation we support will have to show genuine clinical relevance and patient benefit.",
+  "cs": "Vycházíme z reálné nemocniční praxe a z výzkumu založeného na důkazech. Každá inovace, kterou podpoříme, bude muset prokázat skutečný klinický význam a přínos pro pacienty.",
+  "id": "T052"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "pillars[1].t",
+  "section": "Úvod / O nás › Mise",
+  "en": "Entrepreneurial Drive",
+  "cs": "Podnikatelský tah",
+  "id": "T053"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "pillars[1].d",
+  "section": "Úvod / O nás › Mise",
+  "en": "We believe great research deserves to reach the world. We are building the business infrastructure, networks, and mentorship that turn ideas into ventures.",
+  "cs": "Věříme, že kvalitní výzkum si zaslouží dostat se do světa. Budujeme obchodní zázemí, sítě kontaktů a mentoring, díky kterým se z nápadů stávají firmy.",
+  "id": "T054"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "pillars[2].t",
+  "section": "Úvod / O nás › Mise",
+  "en": "Evidence-based Impact",
+  "cs": "Dopad založený na důkazech",
+  "id": "T055"
+ },
+ {
+  "file": "components/home/Mission.astro",
+  "key": "pillars[2].d",
+  "section": "Úvod / O nás › Mise",
+  "en": "Results matter. We will measure success in patient outcomes, commercial traction, and the systemic change we help to enable in healthcare.",
+  "cs": "Rozhodují výsledky. Úspěch budeme měřit přínosem pro pacienty, obchodní trakcí a systémovou změnou, kterou ve zdravotnictví pomůžeme umožnit.",
+  "id": "T056"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "label",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "What makes us different",
+  "cs": "Čím se odlišujeme",
+  "id": "T057"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "h",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "The Shortest Path from Idea to Clinic",
+  "cs": "Nejkratší cesta od nápadu na kliniku",
+  "id": "T058"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "lead",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "Access to the clinical environment and to health data is the hardest step for every health innovation. That is exactly where we want to make the biggest difference.",
+  "cs": "Přístup do klinického prostředí a ke zdravotnickým datům je pro každou zdravotnickou inovaci nejtěžším krokem. Právě tam chceme udělat největší rozdíl.",
+  "id": "T059"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "gateTag",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "Flagship · in design",
+  "cs": "Vlajková služba · v přípravě",
+  "id": "T060"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "gateHook",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "The simplest possible access to clinical data and practice.",
+  "cs": "Co nejjednodušší přístup ke klinickým datům a do klinické praxe.",
+  "id": "T061"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "gateDesc",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "One gateway for innovation partners to anonymised health and medical data and to the clinical environment of FN Olomouc — clear rules and predictable timelines instead of months spent looking for the right door.",
+  "cs": "Jedna brána, přes kterou inovační partneři získají přístup k anonymizovaným zdravotnickým datům a do klinického prostředí FN Olomouc — jasná pravidla a předvídatelné lhůty místo měsíců hledání těch správných dveří.",
+  "id": "T062"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "gateFeatures[0]",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "Anonymised health and medical data within a clear legal framework",
+  "cs": "Anonymizovaná zdravotnická data v jasném právním rámci",
+  "id": "T063"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "gateFeatures[1]",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "Pilot sites and clinical validation in real hospital practice",
+  "cs": "Pilotní pracoviště a klinická validace v reálné nemocniční praxi",
+  "id": "T064"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "gateFeatures[2]",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "Clinical experts and key opinion leaders for your project",
+  "cs": "Kliničtí experti a uznávané osobnosti oboru pro váš projekt",
+  "id": "T065"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "gateFeatures[3]",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "One entry point with transparent rules and predictable timelines",
+  "cs": "Jedno vstupní místo s transparentními pravidly a předvídatelnými lhůtami",
+  "id": "T066"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "gateGoal",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "Our goal: to make FN Olomouc the easiest hospital in the Czech Republic to innovate with.",
+  "cs": "Náš cíl: aby FN Olomouc byla nemocnicí, se kterou se v Česku inovuje nejsnáz.",
+  "id": "T067"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "regTag",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "In design",
+  "cs": "V přípravě",
+  "id": "T068"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "regH",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "Two-way Needs Registry",
+  "cs": "Obousměrný registr potřeb",
+  "id": "T069"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "regHook",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "Start with what is genuinely needed.",
+  "cs": "Začít tím, co je skutečně potřeba.",
+  "id": "T070"
+ },
+ {
+  "file": "components/home/Different.astro",
+  "key": "regDesc",
+  "section": "Úvod › Čím se odlišujeme",
+  "en": "Clinicians tell us which real problems they face every day. Innovators tell us what they need from a hospital to move forward. We match both sides — so that new solutions start from real clinical needs, not from what is easiest to build.",
+  "cs": "Lékaři nám řeknou, se kterými reálnými problémy se denně potýkají. Inovátoři nám řeknou, co od nemocnice potřebují, aby se posunuli dál. Obě strany propojíme — aby nová řešení vycházela ze skutečných klinických potřeb, ne z toho, co se nejsnáz postaví.",
+  "id": "T071"
+ },
+ {
+  "file": "components/home/WhyNow.astro",
+  "key": "label",
+  "section": "Úvod / O nás › Proč právě teď",
+  "en": "Why now",
+  "cs": "Proč právě teď",
+  "id": "T072"
+ },
+ {
+  "file": "components/home/WhyNow.astro",
+  "key": "h",
+  "section": "Úvod / O nás › Proč právě teď",
+  "en": "The Rules Are Changing in 2027",
+  "cs": "Od roku 2027 se mění pravidla",
+  "id": "T073"
+ },
+ {
+  "file": "components/home/WhyNow.astro",
+  "key": "lead",
+  "section": "Úvod / O nás › Proč právě teď",
+  "en": "From 1 January 2027, the new Czech Act on Research, Development, Innovation and Knowledge Transfer (No. 328/2025 Coll.) makes it considerably easier for public research organisations — university hospitals included — to bring their results to market. We want FN Olomouc to be ready on day one.",
+  "cs": "Od 1. ledna 2027 nový zákon o výzkumu, vývoji, inovacích a transferu znalostí (č. 328/2025 Sb.) výrazně usnadní veřejným výzkumným organizacím — včetně fakultních nemocnic — uvádět výsledky výzkumu na trh. Chceme, aby FN Olomouc byla připravená od prvního dne.",
+  "id": "T074"
+ },
+ {
+  "file": "components/home/WhyNow.astro",
+  "key": "items[0].t",
+  "section": "Úvod / O nás › Proč právě teď",
+  "en": "Simpler licensing",
+  "cs": "Jednodušší licencování",
+  "id": "T075"
+ },
+ {
+  "file": "components/home/WhyNow.astro",
+  "key": "items[0].d",
+  "section": "Úvod / O nás › Proč právě teď",
+  "en": "State-funded organisations will be able to license their own research results without the consent of their founding ministry — a faster, more direct way to work with companies.",
+  "cs": "Státní příspěvkové organizace budou moci licencovat vlastní výsledky výzkumu bez souhlasu zřizovatele — rychlejší a přímější cesta ke spolupráci s firmami.",
+  "id": "T076"
+ },
+ {
+  "file": "components/home/WhyNow.astro",
+  "key": "items[1].t",
+  "section": "Úvod / O nás › Proč právě teď",
+  "en": "A legal basis for spin-offs",
+  "cs": "Zákonná opora pro spin-offy",
+  "id": "T077"
+ },
+ {
+  "file": "components/home/WhyNow.astro",
+  "key": "items[1].d",
+  "section": "Úvod / O nás › Proč právě teď",
+  "en": "Institutional support may be used to set up knowledge-transfer companies, with profits returning to research. Turning clinical research into ventures gets a clear legal footing.",
+  "cs": "Institucionální podporu bude možné využít k založení transferových společností, jejichž zisk se vrací do výzkumu. Přeměna klinického výzkumu ve firmy tak získá jasný právní rámec.",
+  "id": "T078"
+ },
+ {
+  "file": "components/home/WhyNow.astro",
+  "key": "items[2].t",
+  "section": "Úvod / O nás › Proč právě teď",
+  "en": "Transfer becomes a duty",
+  "cs": "Transfer se stává povinností",
+  "id": "T079"
+ },
+ {
+  "file": "components/home/WhyNow.astro",
+  "key": "items[2].d",
+  "section": "Úvod / O nás › Proč právě teď",
+  "en": "Knowledge transfer becomes a statutory part of research, with yearly reporting of licences and transfer companies. It is no longer an optional extra — it needs a home.",
+  "cs": "Transfer znalostí se stává zákonnou součástí výzkumu a licence i transferové společnosti se budou každoročně vykazovat. Už to není volitelný doplněk — potřebuje své zázemí.",
+  "id": "T080"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "label",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Our Identity",
+  "cs": "Naše identita",
+  "id": "T081"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "h",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "What TAFELBERG Stands For",
+  "cs": "Co znamená TAFELBERG",
+  "id": "T082"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "beyond[0]",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Beyond the acronym, Tafelberg Ventures is equally focused on",
+  "cs": "Kromě samotného akronymu se Tafelberg Ventures stejnou měrou věnuje",
+  "id": "T083"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "beyond[1]",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Medicine",
+  "cs": "medicíně",
+  "id": "T084"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "beyond[2]",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Prevention",
+  "cs": "prevenci",
+  "id": "T085"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "beyond[3]",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "and",
+  "cs": "a",
+  "id": "T086"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "beyond[4]",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Startups",
+  "cs": "startupům",
+  "id": "T087"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "beyond[5]",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "— integrating clinical practice, proactive health innovation, and entrepreneurial venture-building into one cohesive platform.",
+  "cs": "— spojuje klinickou praxi, proaktivní zdravotnické inovace a podnikatelský venture building do jedné ucelené platformy.",
+  "id": "T088"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.TV",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "The summit where all nine meet — one platform connecting clinical practice, research, capital, and industry. We are building it now, together with those it is meant to serve.",
+  "cs": "Vrchol, kde se všech devět setkává — jedna platforma propojující klinickou praxi, výzkum, kapitál a průmysl. Budujeme ji teď, společně s těmi, kterým má sloužit.",
+  "id": "T089"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.T",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Driving innovation through cutting-edge MedTech solutions and digital health infrastructure built for real clinical environments.",
+  "cs": "Technologie: inovace postavené na špičkových MedTech řešeních a digitální zdravotnické infrastruktuře pro reálné klinické prostředí.",
+  "id": "T090"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.A",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Harnessing AI to transform healthcare data into actionable clinical and commercial insights that accelerate diagnosis, treatment, and research.",
+  "cs": "Umělá inteligence: AI, která mění zdravotnická data v použitelné klinické a obchodní poznatky a urychluje diagnostiku, léčbu i výzkum.",
+  "id": "T091"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.F",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Building the healthcare platform of tomorrow — proactive, personalized, predictive, and grounded in the realities of modern medicine.",
+  "cs": "Zdraví budoucnosti: platforma zdravotnictví zítřka — proaktivní, personalizovaná, prediktivní a ukotvená v realitě moderní medicíny.",
+  "id": "T092"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.E1",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Empowering founders and innovators with hospital-grade validation, clinical access, and venture support to bring ideas to market.",
+  "cs": "Podnikání: podpora zakladatelů a inovátorů validací na úrovni nemocnice, přístupem na kliniku a venture podporou na cestě na trh.",
+  "id": "T093"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.L",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Advancing science and business at the frontier of healthy aging, precision medicine, and evidence-backed longevity interventions.",
+  "cs": "Dlouhověkost: rozvoj vědy a byznysu na hranici zdravého stárnutí, precizní medicíny a intervencí pro dlouhověkost podložených důkazy.",
+  "id": "T094"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.B",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Grounded in world-class biomedical research and clinical expertise at one of the Czech Republic's top teaching hospitals.",
+  "cs": "Biomedicína: opora ve špičkovém biomedicínském výzkumu a klinické expertize jedné z předních fakultních nemocnic v Česku.",
+  "id": "T095"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.E2",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Every innovation validated against rigorous clinical evidence and real-world outcomes — not just theory or prototype-stage assumptions.",
+  "cs": "Založené na důkazech: každá inovace ověřená přísnými klinickými důkazy a reálnými výsledky — ne jen teorií či předpoklady z fáze prototypu.",
+  "id": "T096"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.R",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Deep integration with academic and applied research programs to accelerate translational medicine and bring discoveries to patients faster.",
+  "cs": "Výzkum: úzké propojení s akademickým i aplikovaným výzkumem, které urychluje translační medicínu a přináší objevy pacientům rychleji.",
+  "id": "T097"
+ },
+ {
+  "file": "components/home/Identity.astro",
+  "key": "desc.G",
+  "section": "Úvod / O nás › Identita TAFELBERG",
+  "en": "Scaling healthcare ventures from concept to commercialization with strategic capital connections, partnership networks, and venture-building expertise.",
+  "cs": "Růst: škálování zdravotnických firem od konceptu po komercializaci díky strategickému kapitálu, partnerským sítím a zkušenostem s venture buildingem.",
+  "id": "T098"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "label",
+  "section": "Úvod › Diagram platformy",
+  "en": "Platform",
+  "cs": "Platforma",
+  "id": "T099"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "h",
+  "section": "Úvod › Diagram platformy",
+  "en": "The Innovation Platform",
+  "cs": "Inovační platforma",
+  "id": "T100"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "lead",
+  "section": "Úvod › Diagram platformy",
+  "en": "This is the platform we are setting out to build: Tafelberg Ventures at the intersection of clinical excellence, capital flows, research infrastructure, and commercial partnerships — a healthcare innovation flywheel.",
+  "cs": "Takovou platformu se chystáme postavit: Tafelberg Ventures na průsečíku klinické excelence, toků kapitálu, výzkumné infrastruktury a obchodních partnerství — setrvačník zdravotnických inovací.",
+  "id": "T101"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "svc",
+  "section": "Úvod › Diagram platformy",
+  "en": "SUPPORT/SERVICES",
+  "cs": "PODPORA/SLUŽBY",
+  "id": "T102"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "sel",
+  "section": "Úvod › Diagram platformy",
+  "en": "APPLICATION/SELECTION",
+  "cs": "PŘIHLÁŠKA/VÝBĚR",
+  "id": "T103"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "zSvc",
+  "section": "Úvod › Diagram platformy",
+  "en": "Platform services",
+  "cs": "Služby platformy",
+  "id": "T104"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "zPl",
+  "section": "Úvod › Diagram platformy",
+  "en": "Platform players",
+  "cs": "Aktéři platformy",
+  "id": "T105"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "inc",
+  "section": "Úvod › Diagram platformy",
+  "en": "Platform incubation",
+  "cs": "Inkubace v platformě",
+  "id": "T106"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "pv",
+  "section": "Úvod › Diagram platformy",
+  "en": "Portfolio project / venture",
+  "cs": "Projekt / firma z portfolia",
+  "id": "T107"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "cap",
+  "section": "Úvod › Diagram platformy",
+  "en": "Capital",
+  "cs": "Kapitál",
+  "id": "T108"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "vc",
+  "section": "Úvod › Diagram platformy",
+  "en": "Venture / Private Capital",
+  "cs": "Venture / soukromý kapitál",
+  "id": "T109"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "gr",
+  "section": "Úvod › Diagram platformy",
+  "en": "Grants & Public Funds",
+  "cs": "Granty a veřejné zdroje",
+  "id": "T110"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "cl",
+  "section": "Úvod › Diagram platformy",
+  "en": "Clinical Settings",
+  "cs": "Klinické prostředí",
+  "id": "T111"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "mk",
+  "section": "Úvod › Diagram platformy",
+  "en": "Market",
+  "cs": "Trh",
+  "id": "T112"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "data",
+  "section": "Úvod › Diagram platformy",
+  "en": "Data & ICT",
+  "cs": "Data a ICT",
+  "id": "T113"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "pub",
+  "section": "Úvod › Diagram platformy",
+  "en": "Public",
+  "cs": "Veřejný sektor",
+  "id": "T114"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "fnp",
+  "section": "Úvod › Diagram platformy",
+  "en": "FN projects",
+  "cs": "Projekty FN",
+  "id": "T115"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "st",
+  "section": "Úvod › Diagram platformy",
+  "en": "Startups / MSP",
+  "cs": "Startupy / MSP",
+  "id": "T116"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "ext",
+  "section": "Úvod › Diagram platformy",
+  "en": "External projects",
+  "cs": "Externí projekty",
+  "id": "T117"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "labs",
+  "section": "Úvod › Diagram platformy",
+  "en": "Infrastructure<br>Labs / Testbeds",
+  "cs": "Infrastruktura<br>laboratoře / testbedy",
+  "id": "T118"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "com",
+  "section": "Úvod › Diagram platformy",
+  "en": "Companies &<br>Commercial Partners",
+  "cs": "Firmy a<br>obchodní partneři",
+  "id": "T119"
+ },
+ {
+  "file": "components/home/Platform.astro",
+  "key": "state",
+  "section": "Úvod › Diagram platformy",
+  "en": "State / Public<br>Stakeholders",
+  "cs": "Stát / veřejné<br>instituce",
+  "id": "T120"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "label",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Who It Is For",
+  "cs": "Pro koho je platforma",
+  "id": "T121"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "h",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Built for Every Innovator",
+  "cs": "Postavená pro každého inovátora",
+  "id": "T122"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "lead",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Whether you come from the lab, the clinic, or the boardroom — we are designing the platform around what you need. This is what we plan to offer, and your input will decide what comes first.",
+  "cs": "Ať přicházíte z laboratoře, z kliniky, nebo ze zasedačky — platformu navrhujeme podle toho, co potřebujete. Tohle plánujeme nabídnout a vaše odpovědi rozhodnou, co přijde na řadu jako první.",
+  "id": "T123"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cta",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Tell us what you need →",
+  "cs": "Napište nám, co potřebujete →",
+  "id": "T124"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[0].tag",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Clinicians & Researchers",
+  "cs": "Lékaři a výzkumníci",
+  "id": "T125"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[0].h",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "You have the knowledge. We want to handle the rest.",
+  "cs": "Vy máte znalosti. O zbytek se chceme postarat my.",
+  "id": "T126"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[0].hook",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "\"My job is medicine, not business\" — we hear that. And we agree.",
+  "cs": "„Moje práce je medicína, ne byznys“ — to slýcháme často. A souhlasíme.",
+  "id": "T127"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[0].desc",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "You should not have to become an entrepreneur. You need a partner who can translate your clinical insight into a scalable solution. We are building the structure, legal setup, business mentoring, and capital connections for this — so you can stay focused on what you do best.",
+  "cs": "Nemusíte se stát podnikatelem. Potřebujete partnera, který vaše klinické poznatky promění ve škálovatelné řešení. Budujeme k tomu strukturu, právní zázemí, obchodní mentoring a napojení na kapitál — abyste se mohli dál věnovat tomu, co umíte nejlépe.",
+  "id": "T128"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[0].list[0]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Business development support",
+  "cs": "Podpora při rozvoji projektu a obchodu",
+  "id": "T129"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[0].list[1]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "IP protection and spin-off guidance",
+  "cs": "Ochrana duševního vlastnictví a pomoc se spin-offem",
+  "id": "T130"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[0].list[2]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "A route to clinical validation at FN Olomouc",
+  "cs": "Cesta ke klinické validaci ve FN Olomouc",
+  "id": "T131"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[0].list[3]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Connections to investors and industry partners",
+  "cs": "Propojení s investory a průmyslovými partnery",
+  "id": "T132"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[1].tag",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Startups & Innovators",
+  "cs": "Startupy a inovátoři",
+  "id": "T133"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[1].h",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Validate in a real hospital. Scale with confidence.",
+  "cs": "Ověřte řešení v reálné nemocnici. Škálujte s jistotou.",
+  "id": "T134"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[1].hook",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "\"We have the product — we need clinical proof.\"",
+  "cs": "„Produkt máme — potřebujeme klinický důkaz.“",
+  "id": "T135"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[1].desc",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Clinical validation is the hardest and most valuable step in MedTech. Through TafelVent Gate we want to open FN Olomouc for structured pilots, access to anonymised data within legal frameworks, and co-development with clinicians and researchers.",
+  "cs": "Klinická validace je v MedTechu nejtěžší a zároveň nejcennější krok. Přes TafelVent Gate chceme otevřít FN Olomouc pro strukturované pilotní projekty, přístup k anonymizovaným datům v rámci právních pravidel a společný vývoj s lékaři a výzkumníky.",
+  "id": "T136"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[1].list[0]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Structured clinical pilots",
+  "cs": "Strukturované klinické pilotní projekty",
+  "id": "T137"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[1].list[1]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Access to anonymised data and cohorts",
+  "cs": "Přístup k anonymizovaným datům a kohortám",
+  "id": "T138"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[1].list[2]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Co-development with clinical specialists",
+  "cs": "Společný vývoj s klinickými specialisty",
+  "id": "T139"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[1].list[3]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Guidance on regulatory and reimbursement pathways",
+  "cs": "Pomoc s regulací a cestou k úhradám",
+  "id": "T140"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[2].tag",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Investors & Capital Partners",
+  "cs": "Investoři a kapitáloví partneři",
+  "id": "T141"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[2].h",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Deal flow from the heart of clinical practice.",
+  "cs": "Investiční příležitosti přímo z klinické praxe.",
+  "id": "T142"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[2].hook",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "\"Where do I find validated MedTech opportunities in Central Europe?\"",
+  "cs": "„Kde ve střední Evropě najdu ověřené MedTech příležitosti?“",
+  "id": "T143"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[2].desc",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Projects in our future pipeline will be assessed by clinicians, tested against real patient needs, and checked for commercial viability. We want to connect venture funds, family offices, and angel investors with innovations that have a real hospital behind them.",
+  "cs": "Projekty v naší budoucí pipeline posoudí lékaři, prověří je proti skutečným potřebám pacientů a ověří jejich obchodní životaschopnost. Chceme propojit venture fondy, family offices a andělské investory s inovacemi, za kterými stojí skutečná nemocnice.",
+  "id": "T144"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[2].list[0]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Clinically assessed deal flow",
+  "cs": "Klinicky posouzené investiční příležitosti",
+  "id": "T145"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[2].list[1]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Co-investment alongside public grants",
+  "cs": "Společné investice vedle veřejných grantů",
+  "id": "T146"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[2].list[2]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Early access to spin-off projects",
+  "cs": "Včasný přístup ke spin-off projektům",
+  "id": "T147"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[2].list[3]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Strategic partnership opportunities",
+  "cs": "Příležitosti ke strategickému partnerství",
+  "id": "T148"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[3].tag",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Industry & Corporate Partners",
+  "cs": "Průmysloví a firemní partneři",
+  "id": "T149"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[3].h",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "A direct route to clinical co-development.",
+  "cs": "Přímá cesta ke společnému vývoji s klinikou.",
+  "id": "T150"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[3].hook",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "\"We need a real hospital partner for our innovation pipeline.\"",
+  "cs": "„Pro naši inovační pipeline potřebujeme skutečného nemocničního partnera.“",
+  "id": "T151"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[3].desc",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "We want to give Pharma, MedTech, Digital Health, and Life Sciences companies a structured gateway into FN Olomouc, one of the Czech Republic's leading university hospitals — to pilot technologies, run studies, or co-develop solutions with clinical teams under clear rules.",
+  "cs": "Farmaceutickým, MedTech, digital health a life sciences firmám chceme nabídnout strukturovaný vstup do FN Olomouc, jedné z předních fakultních nemocnic v Česku — k pilotnímu ověření technologií, provádění studií nebo společnému vývoji řešení s klinickými týmy podle jasných pravidel.",
+  "id": "T152"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[3].list[0]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Clear frameworks for industry collaboration",
+  "cs": "Jasný rámec pro spolupráci s průmyslem",
+  "id": "T153"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[3].list[1]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Access to clinical departments and data",
+  "cs": "Přístup na klinická pracoviště a k datům",
+  "id": "T154"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[3].list[2]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Joint R&D and grant applications",
+  "cs": "Společný výzkum a vývoj a grantové žádosti",
+  "id": "T155"
+ },
+ {
+  "file": "components/home/Join.astro",
+  "key": "cards[3].list[3]",
+  "section": "Úvod / Jak se zapojit › Cílové skupiny",
+  "en": "Support for regional market entry",
+  "cs": "Podpora při vstupu na regionální trh",
+  "id": "T156"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "label",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Innovation Programs · In design",
+  "cs": "Inovační programy · V přípravě",
+  "id": "T157"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "h",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "How the Pipeline Will Work",
+  "cs": "Jak bude pipeline fungovat",
+  "id": "T158"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "lead",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "From a first idea to a scaled health innovation — the programmes we are designing, stage by stage. Their final shape will follow what you tell us.",
+  "cs": "Od prvního nápadu po rozšířenou zdravotnickou inovaci — programy, které navrhujeme, krok za krokem. Jejich konečnou podobu určí to, co nám řeknete.",
+  "id": "T159"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[0].t",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Idea & Discovery",
+  "cs": "Nápad a průzkum",
+  "id": "T160"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[0].d",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Identifying and evaluating innovations with genuine clinical potential — feasibility, patient relevance, and commercial fit, assessed together with your team.",
+  "cs": "Vyhledávání a posouzení inovací se skutečným klinickým potenciálem — proveditelnost, přínos pro pacienty a obchodní uplatnění posuzujeme společně s vaším týmem.",
+  "id": "T161"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[0].b",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Open to all",
+  "cs": "Otevřeno všem",
+  "id": "T162"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[1].t",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Clinical Validation",
+  "cs": "Klinická validace",
+  "id": "T163"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[1].d",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Structured pilots within FN Olomouc departments. Real data, real clinical settings, real feedback. This is where ideas become evidence.",
+  "cs": "Strukturované pilotní projekty na pracovištích FN Olomouc. Reálná data, reálné klinické prostředí, reálná zpětná vazba. Tady se z nápadů stávají důkazy.",
+  "id": "T164"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[1].b",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Cohort-based",
+  "cs": "Po skupinách",
+  "id": "T165"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[2].t",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Incubation & Build",
+  "cs": "Inkubace a budování",
+  "id": "T166"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[2].d",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Company setup, IP structuring, product development, team building, and first capital. We want to provide the scaffolding — you build the company.",
+  "cs": "Založení firmy, nastavení duševního vlastnictví, vývoj produktu, budování týmu a první kapitál. My chceme dodat lešení — firmu stavíte vy.",
+  "id": "T167"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[2].b",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Selected projects",
+  "cs": "Vybrané projekty",
+  "id": "T168"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[3].t",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Scale & Commercialise",
+  "cs": "Růst a komercializace",
+  "id": "T169"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[3].d",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Growth financing, market entry, regulatory approval, and international expansion — opening doors to investors, industry partners, and health markets.",
+  "cs": "Růstové financování, vstup na trh, regulační schválení a mezinárodní expanze — otevíráme dveře k investorům, průmyslovým partnerům a zdravotnickým trhům.",
+  "id": "T170"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "stages[3].b",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Portfolio ventures",
+  "cs": "Portfoliové firmy",
+  "id": "T171"
+ },
+ {
+  "file": "components/home/Partners.astro",
+  "key": "label",
+  "section": "Úvod › Partneři",
+  "en": "Partners & Network",
+  "cs": "Partneři a síť",
+  "id": "T172"
+ },
+ {
+  "file": "components/home/Partners.astro",
+  "key": "h",
+  "section": "Úvod › Partneři",
+  "en": "Building It Together",
+  "cs": "Stavíme ji společně",
+  "id": "T173"
+ },
+ {
+  "file": "components/home/Partners.astro",
+  "key": "lead",
+  "section": "Úvod › Partneři",
+  "en": "We are building the platform together with investors and innovators who share our goal — and we are looking for more.",
+  "cs": "Platformu budujeme společně s investory a inovátory, kteří sdílejí náš cíl — a hledáme další.",
+  "id": "T174"
+ },
+ {
+  "file": "components/home/Partners.astro",
+  "key": "openTitle",
+  "section": "Úvod › Partneři",
+  "en": "We are looking for more partners",
+  "cs": "Hledáme další partnery",
+  "id": "T175"
+ },
+ {
+  "file": "components/home/Partners.astro",
+  "key": "openCta",
+  "section": "Úvod › Partneři",
+  "en": "Become a partner →",
+  "cs": "Staňte se partnerem →",
+  "id": "T176"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "label",
+  "section": "Úvod › Kontakt",
+  "en": "Contact",
+  "cs": "Kontakt",
+  "id": "T177"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "h",
+  "section": "Úvod › Kontakt",
+  "en": "A Question That Does Not Fit the Questionnaire?",
+  "cs": "Máte otázku, která se nevejde do dotazníku?",
+  "id": "T178"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "lead1",
+  "section": "Úvod › Kontakt",
+  "en": "The",
+  "cs": "Nejlépe nám s návrhem platformy pomůžete vyplněním",
+  "id": "T179"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "leadLink",
+  "section": "Úvod › Kontakt",
+  "en": "needs questionnaire",
+  "cs": "dotazníku potřeb",
+  "id": "T180"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "lead2",
+  "section": "Úvod › Kontakt",
+  "en": "is the best way to help shape the platform. For anything else — press, partnerships, or a simple question — write to us here.",
+  "cs": ". S čímkoli dalším — média, partnerství nebo jednoduchý dotaz — nám napište sem.",
+  "id": "T181"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "success",
+  "section": "Úvod › Kontakt",
+  "en": "Thank you. We have received your message.",
+  "cs": "Děkujeme. Vaši zprávu jsme přijali.",
+  "id": "T182"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "subject",
+  "section": "Úvod › Kontakt",
+  "en": "Tafelberg Ventures — New Contact Form Submission",
+  "cs": "Tafelberg Ventures — nová zpráva z kontaktního formuláře (CZ)",
+  "id": "T183"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "name",
+  "section": "Úvod › Kontakt",
+  "en": "Full Name",
+  "cs": "Jméno a příjmení",
+  "id": "T184"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "namePh",
+  "section": "Úvod › Kontakt",
+  "en": "Jane Smith",
+  "cs": "Jana Nováková",
+  "id": "T185"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "email",
+  "section": "Úvod › Kontakt",
+  "en": "Email Address",
+  "cs": "E-mail",
+  "id": "T186"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "emailPh",
+  "section": "Úvod › Kontakt",
+  "en": "jane@company.com",
+  "cs": "jana@firma.cz",
+  "id": "T187"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "interest",
+  "section": "Úvod › Kontakt",
+  "en": "Area of Interest",
+  "cs": "Oblast zájmu",
+  "id": "T188"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "interestPh",
+  "section": "Úvod › Kontakt",
+  "en": "Select your role or interest",
+  "cs": "Vyberte svou roli nebo zájem",
+  "id": "T189"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "options.clinician",
+  "section": "Úvod › Kontakt",
+  "en": "Clinician / Hospital Staff (FN Olomouc or other)",
+  "cs": "Lékař / zaměstnanec nemocnice (FN Olomouc nebo jiné)",
+  "id": "T190"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "options.researcher",
+  "section": "Úvod › Kontakt",
+  "en": "Researcher / Academic — I have an idea to explore",
+  "cs": "Výzkumník / akademik — mám nápad k prověření",
+  "id": "T191"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "options.startup",
+  "section": "Úvod › Kontakt",
+  "en": "Startup / Innovator seeking clinical validation",
+  "cs": "Startup / inovátor hledající klinickou validaci",
+  "id": "T192"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "options.investor",
+  "section": "Úvod › Kontakt",
+  "en": "Investor / Venture Fund / Family Office",
+  "cs": "Investor / venture fond / family office",
+  "id": "T193"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "options.industry",
+  "section": "Úvod › Kontakt",
+  "en": "Healthcare Industry / Pharma / MedTech / Digital Health",
+  "cs": "Zdravotnický průmysl / farmacie / MedTech / digital health",
+  "id": "T194"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "options.grants",
+  "section": "Úvod › Kontakt",
+  "en": "Grants & Public Funding Body",
+  "cs": "Grantová agentura / veřejný poskytovatel podpory",
+  "id": "T195"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "options.media",
+  "section": "Úvod › Kontakt",
+  "en": "Media / Press",
+  "cs": "Média / tisk",
+  "id": "T196"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "options.other",
+  "section": "Úvod › Kontakt",
+  "en": "Other",
+  "cs": "Jiné",
+  "id": "T197"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "msg",
+  "section": "Úvod › Kontakt",
+  "en": "Message",
+  "cs": "Zpráva",
+  "id": "T198"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "optional",
+  "section": "Úvod › Kontakt",
+  "en": "(optional)",
+  "cs": "(nepovinné)",
+  "id": "T199"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "msgPh",
+  "section": "Úvod › Kontakt",
+  "en": "Tell us briefly about your project or question...",
+  "cs": "Stručně nám popište svůj projekt nebo dotaz…",
+  "id": "T200"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "send",
+  "section": "Úvod › Kontakt",
+  "en": "Send Message",
+  "cs": "Odeslat zprávu",
+  "id": "T201"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "sending",
+  "section": "Úvod › Kontakt",
+  "en": "Sending…",
+  "cs": "Odesílám…",
+  "id": "T202"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "error",
+  "section": "Úvod › Kontakt",
+  "en": "Error — please try again",
+  "cs": "Chyba — zkuste to prosím znovu",
+  "id": "T203"
+ },
+ {
+  "file": "components/home/Contact.astro",
+  "key": "note",
+  "section": "Úvod › Kontakt",
+  "en": "We read every message.",
+  "cs": "Čteme každou zprávu.",
+  "id": "T204"
+ },
+ {
+  "file": "components/Footer.astro",
+  "key": "of",
+  "section": "Všechny stránky › Patička",
+  "en": "An innovation platform of Fakultní nemocnice Olomouc",
+  "cs": "Inovační platforma Fakultní nemocnice Olomouc",
+  "id": "T205"
+ },
+ {
+  "file": "components/Footer.astro",
+  "key": "rights",
+  "section": "Všechny stránky › Patička",
+  "en": "© 2026 Tafelberg Ventures. All rights reserved.",
+  "cs": "© 2026 Tafelberg Ventures. Všechna práva vyhrazena.",
+  "id": "T206"
+ },
+ {
+  "file": "layouts/Base.astro",
+  "key": "defaultTitle",
+  "section": "Všechny stránky › Titulek okna (výchozí)",
+  "en": "Tafelberg Ventures | Health Innovation & Venture Building Platform",
+  "cs": "Tafelberg Ventures | Platforma pro zdravotnické inovace a venture building",
+  "id": "T207"
+ },
+ {
+  "file": "pages/about.astro | pages/cs/o-nas.astro",
+  "key": "#1 title",
+  "section": "O nás › Stránka",
+  "en": "About us | Tafelberg Ventures",
+  "cs": "O nás | Tafelberg Ventures",
+  "id": "T208"
+ },
+ {
+  "file": "pages/about.astro | pages/cs/o-nas.astro",
+  "key": "#2 text",
+  "section": "O nás › Stránka",
+  "en": "About us",
+  "cs": "O nás",
+  "id": "T209"
+ },
+ {
+  "file": "pages/about.astro | pages/cs/o-nas.astro",
+  "key": "#3 text",
+  "section": "O nás › Stránka",
+  "en": "An Innovation Platform in the Making",
+  "cs": "Inovační platforma, která právě vzniká",
+  "id": "T210"
+ },
+ {
+  "file": "pages/about.astro | pages/cs/o-nas.astro",
+  "key": "#4 text",
+  "section": "O nás › Stránka",
+  "en": "Tafelberg Ventures is being built at FN Olomouc University Hospital to connect clinical practice, research, capital, and industry. We are at the very beginning — and we are building it together with the people it is meant to serve.",
+  "cs": "Tafelberg Ventures vzniká při Fakultní nemocnici Olomouc, aby propojila klinickou praxi, výzkum, kapitál a průmysl. Jsme na úplném začátku — a stavíme ji společně s lidmi, kterým má sloužit.",
+  "id": "T211"
+ },
+ {
+  "file": "pages/about.astro | pages/cs/o-nas.astro",
+  "key": "#5 text",
+  "section": "O nás › Stránka",
+  "en": "Team",
+  "cs": "Tým",
+  "id": "T212"
+ },
+ {
+  "file": "pages/about.astro | pages/cs/o-nas.astro",
+  "key": "#6 text",
+  "section": "O nás › Stránka",
+  "en": "The People Behind It",
+  "cs": "Lidé za platformou",
+  "id": "T213"
+ },
+ {
+  "file": "pages/about.astro | pages/cs/o-nas.astro",
+  "key": "#7 text",
+  "section": "O nás › Stránka",
+  "en": "We are putting the team together now. Introductions will follow here as the platform takes shape.",
+  "cs": "Tým právě skládáme. Představíme ho tady, jakmile platforma získá konkrétní podobu.",
+  "id": "T214"
+ },
+ {
+  "file": "pages/how-to-join.astro | pages/cs/jak-se-zapojit.astro",
+  "key": "#1 title",
+  "section": "Jak se zapojit › Stránka",
+  "en": "How to join | Tafelberg Ventures",
+  "cs": "Jak se zapojit | Tafelberg Ventures",
+  "id": "T215"
+ },
+ {
+  "file": "pages/how-to-join.astro | pages/cs/jak-se-zapojit.astro",
+  "key": "#2 text",
+  "section": "Jak se zapojit › Stránka",
+  "en": "How to join",
+  "cs": "Jak se zapojit",
+  "id": "T216"
+ },
+ {
+  "file": "pages/how-to-join.astro | pages/cs/jak-se-zapojit.astro",
+  "key": "#3 text",
+  "section": "Jak se zapojit › Stránka",
+  "en": "Start by Telling Us What You Need",
+  "cs": "Začněte tím, že nám řeknete, co potřebujete",
+  "id": "T217"
+ },
+ {
+  "file": "pages/how-to-join.astro | pages/cs/jak-se-zapojit.astro",
+  "key": "#4 text",
+  "section": "Jak se zapojit › Stránka",
+  "en": "The platform is in its co-design phase. The first and most important step is our needs questionnaire — your answers decide what we build first. If you already have a concrete project, the questionnaire leads you on to a short pitch.",
+  "cs": "Platforma je ve fázi společného návrhu. Prvním a nejdůležitějším krokem je náš dotazník potřeb — vaše odpovědi rozhodnou, co postavíme jako první. Pokud už máte konkrétní projekt, dotazník vás dovede ke stručnému představení projektu.",
+  "id": "T218"
+ },
+ {
+  "file": "pages/news.astro | pages/cs/novinky.astro",
+  "key": "#1 title",
+  "section": "Novinky › Stránka",
+  "en": "News | Tafelberg Ventures",
+  "cs": "Novinky | Tafelberg Ventures",
+  "id": "T219"
+ },
+ {
+  "file": "pages/news.astro | pages/cs/novinky.astro",
+  "key": "#2 text",
+  "section": "Novinky › Stránka",
+  "en": "News",
+  "cs": "Novinky",
+  "id": "T220"
+ },
+ {
+  "file": "pages/news.astro | pages/cs/novinky.astro",
+  "key": "#3 text",
+  "section": "Novinky › Stránka",
+  "en": "Updates From the Build",
+  "cs": "Zprávy ze stavby platformy",
+  "id": "T221"
+ },
+ {
+  "file": "pages/news.astro | pages/cs/novinky.astro",
+  "key": "#4 text",
+  "section": "Novinky › Stránka",
+  "en": "No news yet. We will share the first updates here as the platform takes shape — milestones, programmes, and calls for collaboration.",
+  "cs": "Zatím tu žádné novinky nejsou. První zprávy přidáme, jakmile platforma začne získávat podobu — milníky, programy a výzvy ke spolupráci.",
+  "id": "T222"
+ },
+ {
+  "file": "pages/news.astro | pages/cs/novinky.astro",
+  "key": "#5 text",
+  "section": "Novinky › Stránka",
+  "en": "Help us build it →",
+  "cs": "Pomozte nám ji postavit →",
+  "id": "T223"
+ },
+ {
+  "file": "pages/thanks.astro | pages/cs/dekujeme.astro",
+  "key": "#1 title",
+  "section": "Děkovací stránka",
+  "en": "Thank you | Tafelberg Ventures",
+  "cs": "Děkujeme | Tafelberg Ventures",
+  "id": "T224"
+ },
+ {
+  "file": "pages/thanks.astro | pages/cs/dekujeme.astro",
+  "key": "#2 label",
+  "section": "Děkovací stránka",
+  "en": "Received",
+  "cs": "Přijato",
+  "id": "T225"
+ },
+ {
+  "file": "pages/thanks.astro | pages/cs/dekujeme.astro",
+  "key": "#3 heading",
+  "section": "Děkovací stránka",
+  "en": "Thank you for helping us build it.",
+  "cs": "Děkujeme, že nám pomáháte platformu postavit.",
+  "id": "T226"
+ },
+ {
+  "file": "pages/thanks.astro | pages/cs/dekujeme.astro",
+  "key": "#4 lead",
+  "section": "Děkovací stránka",
+  "en": "We have received your input and will work with it responsibly as we design the platform. We will get in touch once the service designed for you is actually ready.",
+  "cs": "Váš podnět jsme přijali a budeme s ním při tvorbě platformy zodpovědně pracovat. Ozveme se, až pro vás službu skutečně připravíme.",
+  "id": "T227"
+ },
+ {
+  "file": "pages/thanks.astro | pages/cs/dekujeme.astro",
+  "key": "#5 urgent",
+  "section": "Děkovací stránka",
+  "en": "If you told us you need to collaborate right away, we will review your request individually.",
+  "cs": "Pokud jste uvedli potřebu okamžité spolupráce, posoudíme ji individuálně.",
+  "id": "T228"
+ },
+ {
+  "file": "pages/thanks.astro | pages/cs/dekujeme.astro",
+  "key": "#6 pitchText",
+  "section": "Děkovací stránka",
+  "en": "Have a concrete project? The second step is a short pitch.",
+  "cs": "Máte konkrétní projekt? Druhým krokem je jeho stručné představení (pitch).",
+  "id": "T229"
+ },
+ {
+  "file": "pages/thanks.astro | pages/cs/dekujeme.astro",
+  "key": "#7 pitchCta",
+  "section": "Děkovací stránka",
+  "en": "Continue to the pitch →",
+  "cs": "Pokračovat k představení projektu →",
+  "id": "T230"
+ },
+ {
+  "file": "pages/thanks.astro | pages/cs/dekujeme.astro",
+  "key": "#8 back",
+  "section": "Děkovací stránka",
+  "en": "Back to the homepage",
+  "cs": "Zpět na úvodní stránku",
+  "id": "T231"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "h1",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Venture",
+  "cs": "Venture",
+  "id": "T232",
+  "note": "Nadpis: Venture ≠ Venture capital (levá část)"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "h2",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Venture capital",
+  "cs": "Venture capital",
+  "id": "T233",
+  "note": "Nadpis: pravá, přeškrtnutá část"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "lead",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "There is \"Ventures\" in our name. That does not make us an investment fund. It describes how we work.",
+  "cs": "Slovo „Ventures“ máme v názvu. Neznamená to, že jsme investiční fond. Popisuje, jak pracujeme.",
+  "id": "T234"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "vTag",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Venture",
+  "cs": "Venture",
+  "id": "T235",
+  "note": "Štítek karty"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "vDef",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "A venture is, by nature, a risky business undertaking with an uncertain outcome.",
+  "cs": "Venture je ze své podstaty riskantní podnikatelský počin s nejistým výsledkem.",
+  "id": "T236",
+  "note": "Vaše definice, přesné znění"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "bTag",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Venture building · our approach",
+  "cs": "Venture building · náš přístup",
+  "id": "T237"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "bDef",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Venture building is a systematic process that tests a new business idea step by step, with small investments and clear go / pivot / stop decisions. Serious capital comes only once there is evidence.",
+  "cs": "Venture building je systematický proces, který nový podnikatelský záměr ověřuje krok za krokem, s malými vklady a jasnými rozhodnutími pokračovat, změnit směr, nebo skončit. Velký kapitál přichází až s důkazy.",
+  "id": "T238",
+  "note": "Vaše definice, přesné znění"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "flowLabel",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "How a project moves forward",
+  "cs": "Jak se projekt posouvá",
+  "id": "T239"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "steps[0].t",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Small step",
+  "cs": "Malý krok",
+  "id": "T240"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "steps[0].d",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Test the riskiest assumption first, with a small investment.",
+  "cs": "Nejdřív ověřit nejrizikovější předpoklad, s malým vkladem.",
+  "id": "T241"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "steps[1].t",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Evidence",
+  "cs": "Důkaz",
+  "id": "T242"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "steps[1].d",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Clinical, user or market data, not opinions.",
+  "cs": "Klinická, uživatelská nebo tržní data, ne názory.",
+  "id": "T243"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "steps[2].t",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Decision",
+  "cs": "Rozhodnutí",
+  "id": "T244"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "steps[3].t",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Capital",
+  "cs": "Kapitál",
+  "id": "T245"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "steps[3].d",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Larger investment comes once the evidence is there.",
+  "cs": "Větší investice přichází, až když jsou důkazy.",
+  "id": "T246"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "capital",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Capital grows with evidence",
+  "cs": "Kapitál roste s důkazy",
+  "id": "T247"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "decisions[0].t",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Go",
+  "cs": "Pokračovat",
+  "id": "T248"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "decisions[0].d",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "continue to the next step",
+  "cs": "další krok",
+  "id": "T249"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "decisions[1].t",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Pivot",
+  "cs": "Změnit směr",
+  "id": "T250"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "decisions[1].d",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "change direction",
+  "cs": "upravit záměr",
+  "id": "T251"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "decisions[2].t",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "Stop",
+  "cs": "Skončit",
+  "id": "T252"
+ },
+ {
+  "file": "components/home/Venture.astro",
+  "key": "decisions[2].d",
+  "section": "Úvod / O nás › Venture ≠ Venture capital",
+  "en": "end early and cheaply",
+  "cs": "včas a levně",
+  "id": "T253"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "gateLead",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Between every stage:",
+  "cs": "Mezi každou fází:",
+  "id": "T254"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "gateText",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "a decision based on evidence",
+  "cs": "rozhodnutí na základě důkazů",
+  "id": "T255"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "gates[0]",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Go",
+  "cs": "Pokračovat",
+  "id": "T256"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "gates[1]",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Pivot",
+  "cs": "Změnit směr",
+  "id": "T257"
+ },
+ {
+  "file": "components/home/Programs.astro",
+  "key": "gates[2]",
+  "section": "Úvod / Jak se zapojit › Inovační programy",
+  "en": "Stop",
+  "cs": "Skončit",
+  "id": "T258"
+ },
+ {
+  "file": "data/nav.js",
+  "key": "venture",
+  "section": "Všechny stránky › Menu",
+  "en": "What \"Venture\" means",
+  "cs": "Co znamená Venture",
+  "id": "T259"
+ }
+]
